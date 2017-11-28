@@ -1,0 +1,8 @@
+.*
+!/.gitignore
+*.csv
+*.jpg
+*.h5
+*.tfevents*
+*.txt
+*__pycache__*
