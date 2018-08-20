@@ -86,7 +86,7 @@ class DoubleQLearningModel(object):
         squared_error = K.square(target - q_value)
         mse = K.mean(squared_error)
         optimizer = RMSprop(lr=self._lr)
-        updates = optimizer.get_updates(loss=mse, params=self._online_model.trainable_weights, constraints=[])
+        updates = optimizer.get_updates(loss=mse, params=self._online_model.trainable_weights)
 
         return K.function(inputs=[self._online_model.input, target, a_1_hot], outputs=[], updates=updates)
 
