@@ -6,3 +6,6 @@
 *.tfevents*
 *.txt
 *__pycache__*
+
+!/CL1/iris.csv
+
