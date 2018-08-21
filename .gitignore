@@ -7,5 +7,8 @@
 *.txt
 *__pycache__*
 
-!/CL1/iris.csv
+!/Computer Labs/CL1/iris.csv
+!/Home Assignments/HA2/conll_2002_ner_dataset.csv
+!/Home Assignments/HA3/cartpole.jpg
+!/Poster Template/img/*
 
