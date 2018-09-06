@@ -1,4 +1,4 @@
-name: dml
+name: dml 
 channels:
 - !!python/unicode
   'defaults'
@@ -19,3 +19,4 @@ dependencies:
   - tensorflow
   - keras
   - gym
+  - pillow
