@@ -48,11 +48,6 @@ def test_shuffle_xy_pairs(f):
 
 def test_relu(f):
 
-    try:
-        f(1)
-    except:
-        raise AssertionError("You function doesn't work for scalar values")
-    assert f(1) == 1, "Scalar input values give wrong answer for relu"
     for i in np.random.uniform(0,sys.float_info.max, 1000):
         assert(f(i) == i), "Positive values for relu function gives wrong output"
     for i in np.random.uniform(-sys.float_info.max, -sys.float_info.min, 1000):
