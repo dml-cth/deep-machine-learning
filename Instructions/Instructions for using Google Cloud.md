@@ -13,7 +13,7 @@ You will always be interacting with your virtual machine in Google Cloud's serve
 
 - Click on the "Navigation Menu" button, on the top left corner of the Google Cloud console (three parallel horizontal bars). This brings up all the options you have in Google Cloud.
 
-- Hover your mouse over "Compute Engine", and then click "VM instances" in the new menu that pops up. This brings you to the VM instances web page. Here you can see the instance (the computer in Google Cloud's servers) that you have access for our course, called `gpu-instance`.
+- Hover your mouse over "Compute Engine", and then click "VM instances" in the new menu that pops up. This brings you to the VM instances web page. Here you can see the instance (the computer in Google Cloud's servers) that you have access to for our course, called `gpu-instance`.
 - Eventually you will be a member of more than one project in Google Cloud (one for HA1 and the project, and another one for HA2). Each project has a different `gpu-instance` in it. The current active project's name is shown in the top blue bar in Google Cloud's console, to the right of "Google Cloud Platform". Click on it to change the current active project.
 
 
