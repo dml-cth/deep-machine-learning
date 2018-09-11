@@ -20,7 +20,7 @@ You will always be interacting with your virtual machine in Google Cloud's serve
 
 #### 2. Connecting to your instance
 
-- Click on the check box to the left of the instance's name to select it. After selecting it, click on "START" in the top menu (below the blue bar). This starts the instance booting procedure. When the instance is ready to be used its icon will change to a green circle.s
+- Click on the check box to the left of the instance's name to select it. After selecting it, click on "START" in the top menu (below the blue bar). This starts the instance booting procedure. When the instance is ready to be used its icon will change to a green circle.
 
 - When the instance is ready, you can click on the "SSH" button. This button is located in the same line where you can see the name of your instance. That will pop-up a new browser window with a terminal emulator connected to your instance.
 
