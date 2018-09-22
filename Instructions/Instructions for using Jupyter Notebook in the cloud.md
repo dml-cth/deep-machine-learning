@@ -17,3 +17,15 @@
 - If all of the steps above have been followed correctly, you will now see a web page asking you for the authentication token you obtained when starting the Jupyter server. In my case, that was `6d0810daf275a4a15c1237f8f44657ace6036d68de27609e`, so I input that and press "Log in".
 
 - You are now connected to your Jupyter server running in the Google Cloud's instance.
+
+
+
+### Tips
+
+- You can use the Jupyter web interface to upload files to your instance (for example, Python notebooks you have developed when working in your local computer, or datasets that you'll use to train on the Cloud). To do so, simply click the button "Upload" on the top of the Jupyter web interface (to the right of the text "Select items to perform actions on them.", and to the left of the "New" button).
+
+- Instead of using an authentication token, you can specify a password for logging in more easily with the command:
+
+  ```bash
+  jupyter notebook password		
+  ```
