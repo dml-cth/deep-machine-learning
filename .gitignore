@@ -4,7 +4,7 @@
 *.jpg
 *.h5
 *.tfevents*
-*.txt
+#*.txt
 *__pycache__*
 
 !/Computer Labs/CL1/iris.csv
