@@ -1,19 +1,25 @@
-# Instructions for using TensorBoard in the cloud
+## Instructions for using TensorBoard
+**Note:** Before starting out, walk through the Docker instructions and make sure you are familiar with running Docker.
 
-- When running a Keras method for training your model, make sure to supply TensorBoard as one of the callbacks (CL2 has an example).
+If you make use of TensorBoard in your assignments, you will let experiment files will be written to a directory of your choice (assumed to be called `logs`) in the following. This guide will show you how to start up a TensorBoard server, in order to visualize the results of your experiments.
 
-- Once your network is being trained, a folder (usually called `logs`) will be created in the same directory.
+### On your local computer
+Start up the server by running:
+```bash
+docker run --rm -p 6006:6006 tensorflow/tensorflow tensorboard --logdir logs
+```
+- TensorBoard will search through the `logs` directory for any experiment files produced by your training.
 
-- Open a new terminal in the instance (for instance, by clicking again in the SSH button for your instance, then changing user, etc) , `cd` to the directory that has the notebook you're running (and contains the `logs` folder), and run:
-
-  ```bash
-  tensorboard --logdir=logs
-  ```
-
-  where `logs` is the name of the directory created by the TensorBoard callback.
-
-- Now open a new browser window in your local machine and go to `http://<instance_ip>:6006`, where `<instance_ip>` is your instance's external IP address (which you can find in the same line that shows the instance's name).
-
-
+- Open a new browser window and go to `http://localhost:6006`.
 
 Tip: for discerning between different runs of the same network, you can create TensorBoard callbacks that save the log files to different subfolders of the `logs` folder. This way TensorBoard will know that each one is a different run, and display all of them with different colors (CL2 has an example of this).
+
+### On the cloud
+- Connect to the compute instance with a new SSH session (for instance, by opening a new tab in the Cloud Shell), and change to the `dml-host` user. `cd` to the directory that has the notebook you're running (and contains the `logs` folder)
+
+- Run the same command as above to start up a TensorBoard server:
+```bash
+docker run --rm -p 6006:6006 tensorflow/tensorflow tensorboard --logdir logs
+```
+
+- Now open a new browser window on your local machine and go to `http://<instance_ip>:6006`, where `<instance_ip>` is your instance's external IP address (which you should know how to assess by now).
