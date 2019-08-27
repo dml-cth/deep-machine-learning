@@ -116,7 +116,7 @@ Connect to the compute instance via SSH. When asked to generate SSH keys, just c
 ```bash
 gcloud compute ssh gpu-instance
 ```
-
+Note that after starting up the instance, it may take a little while before it is ready to receive SSH connections (a few seconds up to a minute at most). If the above command is failing but the instance is running, simply try again.
 
 
 #### 8. Changing to the `dml-host` user and run the docker container
