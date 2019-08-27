@@ -72,6 +72,26 @@ gcloud compute instances create gpu-instance \
      --image-project ssy340dml-image-project \
      --image ssy340dml-host-image
 ```
+<!-- ```
+gcloud compute instances create-with-container gpu-instance \
+     --accelerator type=nvidia-tesla-k80,count=1 \
+     --maintenance-policy TERMINATE \
+     --restart-on-failure \
+     --custom-cpu=8 \
+     --custom-memory=16 \
+     --container-image registry.hub.docker.com/ssy340dml/gcloud-host-image
+```
+```
+gcloud compute instances create-with-container gpu-instance \
+     --accelerator type=nvidia-tesla-k80,count=1 \
+     --maintenance-policy TERMINATE \
+     --restart-on-failure \
+     --custom-cpu=8 \
+     --custom-memory=16 \
+     --boot-disk-size=20GB \
+     --boot-disk-type=pd-standard \
+     --container-image registry.hub.docker.com/ssy340dml/gcloud-host-image
+``` -->
 **Stop** the instance if you do not plan on using it directly.
 ```
 gcloud compute instances stop gpu-instance
@@ -150,3 +170,6 @@ You can verify that the instance has stopped, by checking its status, either usi
 ```
 gcloud compute instances list
 ```
+
+<!-- - When you are done using the instance, you can close the browser window with the terminal emulator to disconnect from it. **HOWEVER**: the instance will still be running, and therefore still consuming your hour quota. Hence, it's extremely important to also stop your instance.
+- To stop the instance, simply click on the check box to the left of its name, and then click on "STOP". Wait until the instance's icon changes to a gray circle with a white square inside it. It's good practice to wait until that happens, since if any errors occur after you click "STOP", and you close the browser's window right after, you might still have the instance running without knowing. -->
