@@ -153,7 +153,10 @@ Start with cloning the course git repository, like explained in the Docker usage
 docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v $PWD:/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
 ```
 
-  This creates the course folder in the current directory you are in.
+This creates the course folder in the current directory you are in.
+
+**DO NOT FORK THIS REPOSITORY**\
+You might be tempted to use git for syncing your work within your groups or between your local computer and the cloud. This is fine as long as you know what you are doing, but you are under no circumstances allowed to make your assignments publicly available. Be aware that GitHub forks of public repositories (such as this one) will always be public.
 
 
 
