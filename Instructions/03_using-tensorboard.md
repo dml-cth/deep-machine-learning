@@ -1,5 +1,5 @@
 ## Instructions for using TensorBoard
-**Note:** Before starting out, walk through the Docker instructions and make sure you are familiar with running Docker.
+**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker.
 
 If you make use of TensorBoard in your assignments, you will let experiment files will be written to a directory of your choice (assumed to be called `logs`) in the following. This guide will show you how to start up a TensorBoard server, in order to visualize the results of your experiments.
 

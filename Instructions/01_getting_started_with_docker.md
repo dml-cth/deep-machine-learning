@@ -22,7 +22,7 @@ But there are also some differences:
 - **Docker container:** An instance of a Docker image. A container represents the execution of a single application, process, or service.
 
 ## Install Docker
-If you haven't already, install Docker as explained in the separate installation instructions, before proceeding.
+If you haven't already, install Docker as explained in [00_installing_docker.md](00_installing_docker.md), before proceeding.
 
 ## Clone course git repository
 The course git repository is used to distribute all the assignments.

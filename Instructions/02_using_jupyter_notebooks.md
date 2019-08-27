@@ -1,5 +1,5 @@
 # Instructions for using Jupyter Notebooks
-**Note:** Before starting out, walk through the Docker instructions and make sure you are familiar with running Docker.
+**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker.
 
 ## How to run Jupyter Notebooks on your local computer
 
