@@ -5,7 +5,7 @@ If you make use of TensorBoard in your assignments, you will let experiment file
 
 ### On your local computer
 Start up the server by running:
-```bash
+```
 docker run --rm -p 6006:6006 tensorflow/tensorflow tensorboard --logdir logs
 ```
 - TensorBoard will search through the `logs` directory for any experiment files produced by your training.
@@ -18,7 +18,7 @@ Tip: for discerning between different runs of the same network, you can create T
 - Connect to the compute instance with a new SSH session (for instance, by opening a new tab in the Cloud Shell), and change to the `dml-host` user. `cd` to the directory that has the notebook you're running (and contains the `logs` folder)
 
 - Run the same command as above to start up a TensorBoard server:
-```bash
+```
 docker run --rm -p 6006:6006 tensorflow/tensorflow tensorboard --logdir logs
 ```
 
