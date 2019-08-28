@@ -11,11 +11,11 @@ https://docs.microsoft.com/en-us/powershell/
 For working locally with your GPU:
 * Linux host environment (Mac / Windows not supported)
 * CUDA-enabled GPU with compute capability >= 3.0 (required for CUDA 9, which is used for the course) https://developer.nvidia.com/cuda-gpus
-* Proprietary Nvidia driver (CUDA will not work with open-source alternatives such as Nouveau)
+* Proprietary NVIDIA driver (CUDA will not work with open-source alternatives such as Nouveau)
 * Docker >= 19.03
 * NVIDIA Container Runtime https://nvidia.github.io/nvidia-container-runtime/
 
-## Installation
+## Installing Docker
 We advice to install the "Docker Engine - Community" edition since we have verified that it is working fine. Other editions might work just as fine.
 The following page provides links to a number of ways of obtaining Docker:
 https://docs.docker.com/install/
@@ -23,6 +23,8 @@ https://docs.docker.com/install/
 On the menu on the left-hand-side there are links to installation instructions for different host environments (Windows / Mac / Linux). Some of these links will bring you to Docker Hub, where a Docker Hub account is needed for access.
 
 There are however other ways to download Docker, e.g. by following the link provided in the instructions under the "Releases" section at https://docs.docker.com/install/
+
+If you want to work locally in your GPU-enabled Linux environment, remember to install all dependencies listed above, i.e. not only Docker (>= 19.03), but also NVIDIA drivers & NVIDIA Container Runtime.
 
 <!-- Windows 10
 Install: https://docs.docker.com/docker-for-windows/install/
