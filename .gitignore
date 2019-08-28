@@ -4,6 +4,7 @@
 *.jpg
 *.h5
 *.tfevents*
+PASSWD_HASH.txt
 #*.txt
 *__pycache__*
 
