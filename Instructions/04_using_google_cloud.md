@@ -151,7 +151,7 @@ You can now run Docker just like on your local computer, as explained in the sep
 
 Start with cloning the course git repository, like explained in [01_getting_started_with_docker.md](01_getting_started_with_docker.md):
 ```
-docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v $PWD:/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
+docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v "$PWD":/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
 ```
 
 This creates the course folder in the current directory you are in.

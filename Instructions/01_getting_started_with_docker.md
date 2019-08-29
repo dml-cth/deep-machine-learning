@@ -35,8 +35,9 @@ docker run -v %cd%:/workspace ssy340dml/dml-image:gpu git clone https://github.c
 ```
 Cloning with Docker on Mac / Linux:
 ```
-docker run -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v $PWD:/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
+docker run -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v "$PWD":/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
 ```
+If you receive the error `docker: invalid reference format`, see the note below.
 
 `cd` into the local repository:
 ```
@@ -72,21 +73,22 @@ Run the `ls -l` command to list the contents of `/workspace` (it should be empty
 docker run ssy340dml/dml-image:gpu ls -l
 ```
 
-Run the `ls -l` command once again, but now mounting (mapping) your current directory on the host, to the `/workspace` directory inside the container. You should now see the contents of the current directory instead.\
-Mac / Linux:
-```
-docker run -v $PWD:/workspace ssy340dml/dml-image:gpu ls -l
-```
+Run the `ls -l` command once again, but now mounting (mapping) your current directory on the host (`%cd%` or `"$PWD"`), to the `/workspace` directory inside the container. You should now see the contents of the current directory instead.\
 Windows:
 ```
 docker run -v %cd%:/workspace ssy340dml/dml-image:gpu ls -l
 ```
+Mac / Linux:
+```
+docker run -v "$PWD":/workspace ssy340dml/dml-image:gpu ls -l
+```
+**Note:** On some systems there is a (really annoying) issue with mounting a host directory, if the path to it contains any spaces. If you receive the error `docker: invalid reference format`, you might be suffering from this. The only workaround we know of, is to move to a path without spaces, and do all your work from there. The issue is mentioned [here](https://www.reddit.com/r/docker/comments/3p3in6/how_do_you_mount_host_directories_with_spaces_in/) as well.
 
 Next, read through the list of arguments below, and make sure you understand their behavior and purpose.
 - `-it` (always use if unsure)\
     This argument (the `-i` and `-t` arguments combined) lets you interact with the container while its process is running. Your keyboard strokes will only be received by the process if this argument is proved. If no input to the process is required, this argument is actually redundant (i.e. for `cd`, `ls`, `pwd` commands etc.), but it will never cause any harm for you.
-- `-v $PWD:/workspace` (UNIX) / `-v %cd%:/workspace` (Windows)\
-    Mount (map) the current directory on the host to `/workspace` inside the container
+- `-v "$PWD":/workspace` (UNIX) / `-v %cd%:/workspace` (Windows)\
+    Mount (map) the current directory on the host to `/workspace` inside the container. 
 - `-e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g)` (UNIX only)\
     This will ensure that the user inside the container shares user ID and group ID with the user on the host. Whenever you are using the `-v` argument to mount directories, these arguments should be provided as well to ensure proper file permissions, both on read/write.
 - `-p <HOST_PORT>:<CONTAINER_PORT>`\
