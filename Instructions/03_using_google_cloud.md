@@ -24,13 +24,13 @@ Create a Google Cloud project (you will have to be a bit creative with the proje
 ```
 gcloud projects create <PROJECT_ID>
 ```
-Verify access to billing account. You are expected to see an account `Deep machine learning` with account ID `013B3B-8CF3E0-E28AE6`.
+Verify access to billing account. You are expected to see an account `Deep machine learning` with an `ACCOUNT_ID`.
 ```
 gcloud alpha billing accounts list
 ```
 Link project to billing account (this allows the project to use the cloud credits)
 ```
-gcloud alpha billing projects link <PROJECT_ID> --billing-account 013B3B-8CF3E0-E28AE6
+gcloud alpha billing projects link <PROJECT_ID> --billing-account <ACCOUNT_ID>
 ```
 Set the default project & zone (so they need not be specified in the following commands). Alternatively, most commands accept --project & --zone arguments, which override the defaults.
 ```
