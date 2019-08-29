@@ -49,7 +49,6 @@ gcloud services enable compute.googleapis.com
 Configure project firewall, to allow remote connections to the cloud
 ```
 gcloud compute firewall-rules create open-port-jupyter --allow tcp:9090 --direction INGRESS
-gcloud compute firewall-rules create open-port-tensorboard --allow tcp:6006 --direction INGRESS
 ```
 
 #### 3. Request GPU quota increase

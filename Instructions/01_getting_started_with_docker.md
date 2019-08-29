@@ -88,11 +88,11 @@ Next, read through the list of arguments below, and make sure you understand the
 - `-it` (always use if unsure)\
     This argument (the `-i` and `-t` arguments combined) lets you interact with the container while its process is running. Your keyboard strokes will only be received by the process if this argument is proved. If no input to the process is required, this argument is actually redundant (i.e. for `cd`, `ls`, `pwd` commands etc.), but it will never cause any harm for you.
 - `-v "$PWD":/workspace` (UNIX) / `-v %cd%:/workspace` (Windows)\
-    Mount (map) the current directory on the host to `/workspace` inside the container. 
+    Mount (map) the current directory on the host to `/workspace` inside the container.
 - `-e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g)` (UNIX only)\
     This will ensure that the user inside the container shares user ID and group ID with the user on the host. Whenever you are using the `-v` argument to mount directories, these arguments should be provided as well to ensure proper file permissions, both on read/write.
 - `-p <HOST_PORT>:<CONTAINER_PORT>`\
-    Publish a port. Make port <CONTAINER_PORT> visible outside of the container, mapping it to <HOST_PORT>. For example, we will use the `-p 9090:8888` and `-p 6006:6006` arguments to make Jupyter Notebooks and TensorBoard servers visible outside of the container.
+    Publish a port. Make port <CONTAINER_PORT> visible outside of the container, mapping it to <HOST_PORT>. For example, we will use the `-p 9090:8888` argument to make Jupyter Notebooks visible outside of the container.
 - `--gpus all`\
     Provide the container access to the host GPU(s). Can only be used if certain requirements are met on the host (Docker >= 19.03, Linux, etc.)
 
