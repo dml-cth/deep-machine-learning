@@ -1,6 +1,15 @@
 # Instructions for installing Docker on your local machine
 When working on the cloud, you should already have a working Docker installation, as long as you set up a compute instance as outlined in the instructions for using Google Cloud. For working on your local machine, you do however need to install Docker as outlined below.
 
+## Developement without your own computer
+If you don't have one or don't want to use your local machine, you can use the computers at Chalmers' computer labs.
+Unfortunately we lack the priviliges to install Docker on these machines. The solution is to always work via Google Cloud.
+Simply keep following the instructions but only follow the ones concerning cloud development.
+
+**Note:** Pay extra attention at [this](https://github.com/JulianoLagana/deep-machine-learning/blob/master/Instructions/03_using_google_cloud.md#5-if-needed-create-a-cpu-only-instance)
+section and make sure that you set up both the GPU and CPU version of the Docker image.
+Using the much cheaper CPU version will reduce the toll that the extra cloud development will have on your credits.
+
 ## Dependencies
 For working locally with your CPU:
 * Linux / Mac, or Windows 10 Pro host environment (Note: Windows 10 Home is not included)
