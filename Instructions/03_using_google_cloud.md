@@ -176,3 +176,15 @@ gcloud compute instances list
 
 <!-- - When you are done using the instance, you can close the browser window with the terminal emulator to disconnect from it. **HOWEVER**: the instance will still be running, and therefore still consuming your hour quota. Hence, it's extremely important to also stop your instance.
 - To stop the instance, simply click on the check box to the left of its name, and then click on "STOP". Wait until the instance's icon changes to a gray circle with a white square inside it. It's good practice to wait until that happens, since if any errors occur after you click "STOP", and you close the browser's window right after, you might still have the instance running without knowing. -->
+
+
+#### 10. Monitor your credit balance and past consumption
+Go to http://console.cloud.google.com
+
+- Click on the "Navigation Menu" button, on the top left corner of the Google Cloud console (three parallel horizontal bars). Then click "Billing".
+
+- You should now see the billing overview. Make sure that the billing account of the course (named "Deep machine learning") is selected at the top of the page.
+
+- On the right of the page, under "Promotional credits", you should see your current balance of credits.
+
+- To see your past consumption, click on "Reports" in the left-hand sidebar. Here there are various options for filtering, selecting time period, etc. By default, the checkbox "One time credits" on the right is checked, meaning that all you see is actual money spent, which will always be zero, since the cost is compensated for by the promotional credits we have received. Uncheck the box, and your consumed credits will be taken into account, which is what you want.
