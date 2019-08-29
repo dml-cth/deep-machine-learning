@@ -11,17 +11,18 @@ You are advised to perform steps 1-3 early on in the course, as they involve red
 
 - We will redeem a $50 Google Cloud coupon for each of you, upon which you will get an e-mail from Google Cloud to confirm that the personal details we have provided are correct.
 - When you have confirmed this, login to https://console.cloud.google.com. This is the web page you will always use to access Google Cloud.
+- Again: the $50 coupon should last for the entirety of the course, provided that you handle your Google cloud machine with care.
 
 
 #### 2. Create & configure a Google Cloud project
 
-Essentially all operations on Google Cloud can be performed either via a GUI, referred to as the Cloud Console, or via a command-line interpreter using the `gcloud` CLI tool. The `gcloud` CLI tool can either be installed on your own computer, or may be used on the cloud via the "Cloud Shell".
+Essentially all operations on Google Cloud can be performed either via a web GUI, referred to as the [Cloud Console](https://console.cloud.google.com), or via a command-line interpreter using the `gcloud` CLI tool. The `gcloud` CLI tool can either be installed on your own computer, or may be used on the cloud via the "Cloud Shell".
 
 Access the Cloud Shell, by clicking the [**>\_**] icon on the top right, and then clicking "Start Cloud Shell". Multiple "Cloud Shell" sessions can be used simultaneously, and accessed via different tabs.
 
-Create a Google Cloud project (you will have to be a bit creative with the project name, since you are not alone on the cloud)
+Create a Google Cloud project (you will have to be a bit creative with the project id, since you are not alone on the cloud)
 ```
-gcloud projects create <PROJECT_NAME>
+gcloud projects create <PROJECT_ID>
 ```
 Verify access to billing account. You are expected to see an account `Deep machine learning` with account ID `013B3B-8CF3E0-E28AE6`.
 ```
@@ -29,11 +30,11 @@ gcloud alpha billing accounts list
 ```
 Link project to billing account (this allows the project to use the cloud credits)
 ```
-gcloud alpha billing projects link <PROJECT_NAME> --billing-account 013B3B-8CF3E0-E28AE6
+gcloud alpha billing projects link <PROJECT_ID> --billing-account 013B3B-8CF3E0-E28AE6
 ```
 Set the default project & zone (so they need not be specified in the following commands). Alternatively, most commands accept --project & --zone arguments, which override the defaults.
 ```
-gcloud config set core/project <PROJECT_NAME>
+gcloud config set core/project <PROJECT_ID>
 gcloud config set compute/zone europe-west1-b
 ```
 Verify default project & zone

@@ -15,7 +15,7 @@ There are many similarities between a container and a virtual machine:
 But there are also some differences:
 - Virtual machines suffer from degraded performance, while containers are essentially just as fast as running software on the host.
 - A virtual machine is a virtual emulation of a physical computer, on which a guest OS is installed. The virtual machine runs as a single process on the host. On the contrary, containers are not emulated. Containerized processes are run as actual processes on the host, but all their resources are isolated from the host.
-- A virtual machine needs to boot up before processes you can run processes inside of it. A containerized process can be started 
+- A virtual machine needs to boot up before processes you can run processes inside of it. A containerized process can be started
 
 ### Docker glossary
 - **Docker image:** A package with all the dependencies and information needed to create a container. An image includes all the dependencies (such as frameworks) plus deployment and execution configuration to be used by a container runtime.
@@ -44,6 +44,7 @@ cd deep-machine-learning
 ```
 
 When you are inside of it you can run git commands like `git status`, `git pull` etc. You do not need to know git for the purpose of this course, but it might be useful to you.
+Here is a small [cheat sheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf) to get you started.
 
 **DO NOT FORK THIS REPOSITORY**\
 You might be tempted to use git for syncing your work within your groups or between your local computer and the cloud. This is fine as long as you know what you are doing, but you are under no circumstances allowed to make your assignments publicly available. Be aware that GitHub forks of public repositories (such as this one) will always be public.
@@ -58,6 +59,8 @@ First, pull (download) the course Docker image:
 docker pull ssy340dml/dml-image:gpu
 ```
 
+Note: the previous `git clone` command needed the image so it was already downloaded behind the scenes.
+
 Run the `pwd` command inside the container:
 ```
 docker run ssy340dml/dml-image:gpu pwd
@@ -66,7 +69,7 @@ You will see `/workspace` printed out. This is the default path where all proces
 
 Run the `ls -l` command to list the contents of `/workspace` (it should be empty).
 ```
-docker run -v $PWD:/workspace ssy340dml/dml-image:gpu ls -l
+docker run ssy340dml/dml-image:gpu ls -l
 ```
 
 Run the `ls -l` command once again, but now mounting (mapping) your current directory on the host, to the `/workspace` directory inside the container. You should now see the contents of the current directory instead.\

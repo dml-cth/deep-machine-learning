@@ -13,3 +13,8 @@ PASSWD_HASH.txt
 !/Home Assignments/HA3/cartpole.jpg
 !/Poster Template/img/*
 
+tags
+tags.lock
+tags.temp
+
+*.html
