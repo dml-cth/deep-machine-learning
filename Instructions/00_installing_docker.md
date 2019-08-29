@@ -3,7 +3,7 @@ When working on the cloud, you should already have a working Docker installation
 
 ## Dependencies
 For working locally with your CPU:
-* Linux / Mac, or Windows 10 host environment
+* Linux / Mac, or Windows 10 Pro host environment (Note: Windows 10 Home is not included)
 * Docker
 On Windows, Powershell is advised as a convenient CLI environment:
 https://docs.microsoft.com/en-us/powershell/
@@ -25,6 +25,31 @@ On the menu on the left-hand-side there are links to installation instructions f
 There are however other ways to download Docker, e.g. by following the link provided in the instructions under the "Releases" section at https://docs.docker.com/install/
 
 If you want to work locally in your GPU-enabled Linux environment, remember to install all dependencies listed above, i.e. not only Docker (>= 19.03), but also NVIDIA drivers & NVIDIA Container Runtime.
+
+### Unable to install Docker Engine
+
+If your computer does not meet the dependencies (i.e. a non-compatible Windows version), a legacy version called Docker Toolbox, should work.
+
+You install it by following the instructions provided here: https://docs.docker.com/toolbox/toolbox_install_windows/
+
+#### Enable virtualisation
+Under **Step 1: Check your version** -> Point 2, it says:
+
+> If virtualization is not enabled on your system, follow the manufacturer’s instructions for enabling it.
+
+This means that you should change a setting in your BIOS, which is accessible during the booting of your computer.
+Usually you can enter the BIOS settings by pressing `F2` during boot.
+However this might vary between computer manufacturers.
+
+In the BIOS settings, you should look for an option to enable virtualisation.
+It will be named something along the lines of VT-x, Intel VT-x, Virtualization Extensions, Intel Virtualization Technology,
+and there should be an option to enable it.
+Then exit the BIOS menu and let your computer resume booting.
+
+
+Continue following the installation instructions. You will end up with a working Docker installation.
+The installation will provide a special Docker terminal which you can use, but you can just as well use Docker from any command line tool of your choice.
+
 
 <!-- Windows 10
 Install: https://docs.docker.com/docker-for-windows/install/
