@@ -37,7 +37,7 @@ docker run -v ${PWD}:/workspace ssy340dml/dml-image:gpu git clone https://github
 The only solution we have found is to manually enter the path and by adding a forward slash before both host and image paths, you can write unix paths instead:
 
 ```
-# Shorthand
+# Shorthand (assumes you are using Powershell)
 ${PWD}:/workspace
 # As full Windows path
 C:\<path_to_working_dir>:/workspace
