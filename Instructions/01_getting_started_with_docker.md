@@ -35,7 +35,7 @@ Cloning with Docker on Windows:
 ```
 docker run -v ${PWD}:/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
 ```
-**Note:** On the legacy version Docker Toolbox, there is an issue with parsing Windows paths.
+**Windows note 1:** On the legacy version Docker Toolbox, there is an issue with parsing Windows paths.
 The only solution we have found is to manually enter the path and by adding a forward slash before both host and image paths, you can write unix paths instead:
 
 ```
@@ -46,6 +46,9 @@ C:\<path_to_working_dir>:/workspace
 # Unix dito which Docker can parse. Note the extra forward slashes
 //c/<path_to_working_dir>://workspace
 ```
+
+**Windows note 2:** If you receive the `Permission denied` error message when attempting to clone the repository, it is likely due to a failure of allowing the container to access the host file system. We have observed this issue on Windows systems, with no immediate solution at the moment. For an ongoing discussion, please refer to the Canvas forum:
+https://chalmers.instructure.com/courses/7722/discussion_topics/4567
 
 Cloning with Docker on Mac / Linux:
 ```
