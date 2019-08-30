@@ -16,7 +16,7 @@
     ```
   - Windows
     ```
-    docker run -it -v %cd%:/workspace -p 9090:8888 ssy340dml/dml-image:gpu
+    docker run -it -v ${PWD}:/workspace -p 9090:8888 ssy340dml/dml-image:gpu
     ```
 
 - Note that the above command will run the course Docker image, with no explicit command to be run, in which case it defaults to start a Jupyter Notebook server on port 9090. (actually it is port 8888 inside the Docker container, which is mapped to port 9090 outside of it)
