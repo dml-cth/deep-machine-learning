@@ -95,7 +95,7 @@ Mac / Linux:
 ```
 docker run -v "$PWD":/workspace ssy340dml/dml-image:gpu ls -l
 ```
-**Note:** On some systems there is a (really annoying) issue with mounting a host directory, if the path to it contains any spaces. If you receive the error `docker: invalid reference format`, you might be suffering from this. The only workaround we know of, is to move to a path without spaces, and do all your work from there. The issue is mentioned [here](https://www.reddit.com/r/docker/comments/3p3in6/how_do_you_mount_host_directories_with_spaces_in/) as well.
+**Note:** On some systems there is a (really annoying) issue with mounting a host directory, if the path to it contains any spaces. If you receive the error message `docker: invalid reference format` you might be suffering from this problem, although unfortunately this error message could result from a variety of issues. The only workaround we know of, is to move to a path without spaces, and do all your work from there. The issue is mentioned [here](https://www.reddit.com/r/docker/comments/3p3in6/how_do_you_mount_host_directories_with_spaces_in/) as well.
 
 Next, read through the list of arguments below, and make sure you understand their behavior and purpose.
 - `-it` (always use if unsure)\
