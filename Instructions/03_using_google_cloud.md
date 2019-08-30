@@ -188,3 +188,8 @@ Go to http://console.cloud.google.com
 - On the right of the page, under "Promotional credits", you should see your current balance of credits.
 
 - To see your past consumption, click on "Reports" in the left-hand sidebar. Here there are various options for filtering, selecting time period, etc. By default, the checkbox "One time credits" on the right is checked, meaning that all you see is actual money spent, which will always be zero, since the cost is compensated for by the promotional credits we have received. Uncheck the box, and your consumed credits will be taken into account, which is what you want.
+
+- Here are some (rough) estimates for the amount of credits you should use for each part of the course
+  - HA1: $6;
+  - HA2: $6;
+  - Project: $30 (can vary a lot depending on your project).
