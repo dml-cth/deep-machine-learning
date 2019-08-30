@@ -1,4 +1,6 @@
 # Instructions for using Docker, and getting started with the course Docker environment
+If you have any problems with getting up and running with the environment, please refer to the Canvas discussion forum:
+https://chalmers.instructure.com/courses/7722/discussion_topics/4567
 
 ## Why use Docker?
 The main reason we are using Docker in this course is for scalability and predictability. When all of you are working in the same Docker environment, we expect to eliminate most of the issues related to your unique computer environments, that may otherwise have needed (sometimes urgent) attention from our side.
