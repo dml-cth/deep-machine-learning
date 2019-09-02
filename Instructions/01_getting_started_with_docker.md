@@ -50,6 +50,9 @@ C:\<path_to_working_dir>:/workspace
 //c/<path_to_working_dir>://workspace
 ```
 
+We received a tip that replacing `${PWD}` with `${PWD.path}` should fix the path issue, so that you do not have to enter the path by hand.
+This fix has not been tested by us TA's.
+
 **Windows note 2:** If you receive the `Permission denied` error message when attempting to clone the repository, it is likely due to a failure of allowing the container to access the host file system. We have observed this issue on Windows systems, with no immediate solution at the moment. For an ongoing discussion, please refer to the Canvas forum:
 https://chalmers.instructure.com/courses/7722/discussion_topics/4567
 
