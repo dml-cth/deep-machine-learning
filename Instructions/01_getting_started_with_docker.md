@@ -141,6 +141,3 @@ Therefore remember to run the below command, to make sure you have the latest co
 docker pull ssy340dml/dml-image:gpu
 ```
 Note: On Google Cloud, this is done automatically each time you login.
-
-## Lightweight alternative image
-If you have limited resources on your system, there is a version of the docker image without GPU support, which might consume less disk space. Just replace `ssy340dml/dml-image:gpu` with `ssy340dml/dml-image:cpu` in every command involving the image.
