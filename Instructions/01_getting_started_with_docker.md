@@ -2,6 +2,9 @@
 If you have any problems with getting up and running with the environment, please refer to the Canvas discussion forum:
 https://chalmers.instructure.com/courses/7722/discussion_topics/4567
 
+**Note:** You will need to use the terminal whenever you interact with the Docker environment. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).
+
+
 ## Why use Docker?
 The main reason we are using Docker in this course is for scalability and predictability. When all of you are working in the same Docker environment, we expect to eliminate most of the issues related to your unique computer environments, that may otherwise have needed (sometimes urgent) attention from our side.
 
