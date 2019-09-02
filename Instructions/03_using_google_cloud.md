@@ -52,9 +52,8 @@ gcloud compute firewall-rules create open-port-jupyter --allow tcp:9090 --direct
 ```
 
 #### 3. Request GPU quota increase
-**Instructions on this will be provided later**
-<!-- Link to find where to apply for increased GPU quota:
-https://console.cloud.google.com/iam-admin/quotas?_ga=2.233391134.-1027612475.1543580804&project=YOURPROJECTNAME&folder&organizationId&metric=GPUs%20(all%20regions) -->
+When you create a new Google Cloud you won't be allowed to use any GPUs in your instances. In order to increase your quota for the GPUs used for the course (K80), follow the instructions [here](https://stackoverflow.com/a/49737435). The quotas are region specific, so be sure to select the region where you will create your instances.
+
 
 #### 4. Create a compute instance
 Upon creation, a cloud instance is **automatically started**, which also means it starts to consume credits. Therefore, make sure you know how to stop it before proceeding (see instructions down below).
