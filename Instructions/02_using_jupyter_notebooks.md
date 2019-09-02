@@ -8,11 +8,11 @@
 - Start a Jupyter server with one of the following commands:
   - Mac / Linux without GPU access
     ```
-    ./rundocker-mapuid.sh -it -v "$PWD":/workspace -p 9090:8888 ssy340dml/dml-image:gpu
+    ./rundocker-mapuid.sh -v "$PWD":/workspace -p 9090:8888 ssy340dml/dml-image:gpu
     ```
   - Linux with GPU access (the `--gpus all` argument is essential in order to let the container access the host GPU)
     ```
-    ./rundocker-mapuid.sh -it -v "$PWD":/workspace -p 9090:8888 --gpus all ssy340dml/dml-image:gpu
+    ./rundocker-mapuid.sh -v "$PWD":/workspace -p 9090:8888 --gpus all ssy340dml/dml-image:gpu
     ```
   - Windows
     ```
@@ -38,7 +38,7 @@
 
 - Start a Jupyter server with the following command. (The `--gpus all` argument is essential in order to let the container access the host GPU)
   ```
-  ./rundocker-mapuid.sh -it -v "$PWD":/workspace -p 9090:8888 --gpus all ssy340dml/dml-image:gpu
+  ./rundocker-mapuid.sh -v "$PWD":/workspace -p 9090:8888 --gpus all ssy340dml/dml-image:gpu
   ```
   It may prompt you for a password, just as explained above in the case on your local computer.
 

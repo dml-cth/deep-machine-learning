@@ -10,4 +10,4 @@ set -o errexit
 # Just replace "docker run" with the path of this script
 # ==============================================================================
 
-docker run -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) $@
+docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) $@

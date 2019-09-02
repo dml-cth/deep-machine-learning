@@ -36,7 +36,7 @@ Now clone the course git repository into a local repository. If you have git ins
 
 Cloning with Docker on Windows:
 ```
-docker run -v ${PWD}:/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
+docker run -it -v ${PWD}:/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
 ```
 **Windows note 1:** On the legacy version Docker Toolbox, there is an issue with parsing Windows paths.
 The only solution we have found is to manually enter the path and by adding a forward slash before both host and image paths, you can write unix paths instead:
@@ -55,7 +55,7 @@ https://chalmers.instructure.com/courses/7722/discussion_topics/4567
 
 Cloning with Docker on Mac / Linux:
 ```
-docker run -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v "$PWD":/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
+docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) -v "$PWD":/workspace ssy340dml/dml-image:gpu git clone https://github.com/JulianoLagana/deep-machine-learning.git
 ```
 If you receive the error `docker: invalid reference format`, see the note below.
 
@@ -84,30 +84,32 @@ Note: the previous `git clone` command needed the image so it was actually alrea
 
 Run the `pwd` command inside the container:
 ```
-docker run ssy340dml/dml-image:gpu pwd
+docker run -it ssy340dml/dml-image:gpu pwd
 ```
-You will see `/workspace` printed out. This is the default path where all processes will start, as configured in the course Docker image.
+You will see `/workspace` printed out. This is the default path where all processes will start, as configured in the course Docker image. The `-it` argument should always be used when running the course Docker container (see more details below).
 
 Run the `ls -l` command to list the contents of `/workspace` (it should be empty).
 ```
-docker run ssy340dml/dml-image:gpu ls -l
+docker run -it ssy340dml/dml-image:gpu ls -l
 ```
 
 Run the `ls -l` command once again, but now mounting (mapping) your current directory on the host (`${PWD}` or `"$PWD"`), to the `/workspace` directory inside the container. You should now see the contents of the current directory instead.\
 Windows:
 ```
-docker run -v ${PWD}:/workspace ssy340dml/dml-image:gpu ls -l
+docker run -it -v ${PWD}:/workspace ssy340dml/dml-image:gpu ls -l
 ```
 
 Mac / Linux:
 ```
-docker run -v "$PWD":/workspace ssy340dml/dml-image:gpu ls -l
+docker run -it -v "$PWD":/workspace ssy340dml/dml-image:gpu ls -l
 ```
 **Note:** On some systems there is a (really annoying) issue with mounting a host directory, if the path to it contains any spaces. If you receive the error message `docker: invalid reference format` you might be suffering from this problem, although unfortunately this error message could result from a variety of issues. The only workaround we know of, is to move to a path without spaces, and do all your work from there. The issue is mentioned [here](https://www.reddit.com/r/docker/comments/3p3in6/how_do_you_mount_host_directories_with_spaces_in/) as well.
 
 Next, read through the list of arguments below, and make sure you understand their behavior and purpose.
-- `-it` (always use if unsure)\
-    This argument (the `-i` and `-t` arguments combined) lets you interact with the container while its process is running. Your keyboard strokes will only be received by the process if this argument is proved. If no input to the process is required, this argument is actually redundant (i.e. for `cd`, `ls`, `pwd` commands etc.), but it will never cause any harm for you.
+- `-it` (ALWAYS USE!)\
+    This argument (the `-i` and `-t` arguments combined) lets you interact with the container while its process is running. Your keyboard strokes will only be received by the process if this argument is proved. If you forget to pass this argument, you may see the following error messages:\
+    `bash: cannot set terminal process group (-1): Inappropriate ioctl for device`\
+    `bash: no job control in this shell`
 - `-v "$PWD":/workspace` (UNIX) / `-v ${PWD}:/workspace` (Windows)\
     Mount (map) the current directory on the host to `/workspace` inside the container.
 - `-e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g)` (UNIX only)\
@@ -123,7 +125,7 @@ If you are using Mac / Linux, you will suffer from the particularly cumbersome a
 ```
 instead of
 ```
-docker run -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) ARG1 ARG2 ARG3...
+docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) ARG1 ARG2 ARG3...
 ```
 `./rundocker-mapuid.sh` above assumes that you are currently at the root of the git repository. Otherwise you need to specify the path to the script.
 
