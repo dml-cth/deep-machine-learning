@@ -14,7 +14,7 @@ Using the much cheaper CPU version will reduce the toll that the extra cloud dev
 For working locally with your CPU:
 * Linux / Mac, or Windows 10 Pro host environment (Note: Windows 10 Home is not included)
 * Docker
-On Windows, Powershell is advised as a convenient CLI environment:
+On Windows, Powershell (but not Powershell ISE!) is advised as a convenient CLI environment:
 https://docs.microsoft.com/en-us/powershell/
 
 For working locally with your GPU:
