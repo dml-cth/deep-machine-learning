@@ -12,7 +12,7 @@ Using the much cheaper CPU version will reduce the toll that the extra cloud dev
 
 ## Dependencies
 For working locally with your CPU:
-* Linux / Mac, or Windows 10 Pro host environment (Note: Windows 10 Home is not included)
+* Linux / Mac, or Windows 10 Pro host environment (Note: Windows 10 Home is not supported, see workaround below)
 * Docker
 On Windows, Powershell (but not Powershell ISE!) is advised as a convenient CLI environment:
 https://docs.microsoft.com/en-us/powershell/
@@ -35,18 +35,19 @@ There are however other ways to download Docker, e.g. by following the link prov
 
 If you want to work locally in your GPU-enabled Linux environment, remember to install all dependencies listed above, i.e. not only Docker (>= 19.03), but also NVIDIA drivers & NVIDIA Container Runtime.
 
-### Unable to install Docker Engine
+### Docker on Windows 10 Pro
+Docker Desktop is advised. Follow the installation instructions here: https://docs.docker.com/docker-for-windows/install/
 
-If your computer does not meet the dependencies (i.e. a non-compatible Windows version), a legacy version called Docker Toolbox, should work.
+If asked, do not check the option "Use Windows containers instead of Linux containers".
 
-You install it by following the instructions provided here: https://docs.docker.com/toolbox/toolbox_install_windows/
+As explained in the instructions, the "Hyper-V" and "Containers" Windows features must be enabled. Docker might ask to do this for you, otherwise go to the Control Panel -> Programs and Features -> Turn Windows features on and off, and enable both features there, after which you will need to reboot.
 
 #### Enable virtualisation
-Under **Step 1: Check your version** -> Point 2, it says:
+Furthermore, virtualization has to be enabled in BIOS.
 
-> If virtualization is not enabled on your system, follow the manufacturer’s instructions for enabling it.
+See here for how to verify whether virtualization is enabled: https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled
 
-This means that you should change a setting in your BIOS, which is accessible during the booting of your computer.
+If not, this means that you should change a setting in your BIOS, which is accessible during the booting of your computer.
 Usually you can enter the BIOS settings by pressing `F2` during boot.
 However this might vary between computer manufacturers.
 
@@ -55,22 +56,13 @@ It will be named something along the lines of VT-x, Intel VT-x, Virtualization E
 and there should be an option to enable it.
 Then exit the BIOS menu and let your computer resume booting.
 
+#### Docker on Windows troubleshooting
+If you face any issues with your Windows installation of Docker, refer to this page: https://docs.docker.com/docker-for-windows/troubleshoot
 
-Continue following the installation instructions. You will end up with a working Docker installation.
-The installation will provide a special Docker terminal which you can use, but you can just as well use Docker from any command line tool of your choice.
+### Workaround for Windows 10 Home, or older Windows systems
+If you are running any Windows OS other than Windows 10 Pro, there is no fast and convenient way to run Docker. Instead we advise you to following these instructions to setup a Python environment on your local computer using Anaconda: [XX_anaconda_workaround.md](XX_anaconda_workaround.md)
 
-
-<!-- Windows 10
-Install: https://docs.docker.com/docker-for-windows/install/
-Test & get started: https://docs.docker.com/docker-for-windows/
-During installation - if asked - do not check the option "Use Windows containers instead of Linux containers"
-When using docker for the first time, it might ask you to enable "Hyper-V and Container features", which you will have to do. Here is how to manually enable these features (run as administrator):
-https://success.docker.com/article/manually-enable-docker-for-windows-prerequisites
-
-Legacy Windows - will run through Linux VM, introduces performance limitations
-https://docs.docker.com/toolbox/toolbox_install_windows/
-Do Chalmers lab computers have docker installed?
-Final solution: work on cloud with CPU instance -->
+Note however, that you will still need to use Docker when working on the cloud.
 
 ## (Linux) Allow your own user to run Docker
 On Linux, you need to add your user to the `docker` group before you can use Docker. On the cloud, this already setup for the `dml-host` user.

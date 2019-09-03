@@ -1,7 +1,7 @@
 # Instructions for using Jupyter Notebooks
-**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker.
 
-## How to run Jupyter Notebooks on your local computer
+## How to run Jupyter Notebooks on your local computer using Docker
+**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker.
 
 - Open up a terminal (or Windows prompt / Powershell), and `cd` into the git repository you have previously cloned.
 
@@ -32,7 +32,31 @@
 - You will now see the contents of the `/workspace` directory of the Docker container, which should be mapped to the current directory of your host environment, where you issued the command to start the server.
 
 
+## How to run Jupyter Notebooks on your local computer using Anaconda
+
+- Open up a terminal (Powershell / Git Bash advised on Windows), and `cd` into the git repository you have previously cloned.
+
+- Activate the Conda environment (if you haven't), following the instructions in [XX_anaconda_workaround.md](XX_anaconda_workaround.md)).
+
+- Before running Jupyter Notebook from the Conda environment for the first time, set a password by typing the command
+  ```
+  jupyter notebook password
+  ```
+
+- Start a Jupyter server with the command:
+  ```
+  jupyter notebook --port 9090
+  ```
+
+- This should open up a browser, taking you to the Jupyter interface at http://localhost:9090. If not, navigate to this address in your browser. **Note:** if you don't want the server to fire up the browser automatically, use the `--no-browser` option.
+
+- You will now see a web page asking you for a password. Provide the password you set up before, and log in.
+
+- You will now see the contents of the current directory, where you issued the command to start the server.
+
+
 ## How to run Jupyter Notebooks in the Cloud
+**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker.
 
 - Connect to your instance, change to the `dml-host` user, and `cd` into the git repository you have previously cloned.
 
