@@ -41,3 +41,8 @@ How to update the Conda environment:
 - Make sure the conda environment is deactivated (see above).
 - Type `conda env update -f conda-environment-files/conda-environment-cpu.yml --prune`
 - Now you can activate the environment again.
+
+## GPU-version
+On GitHub, there is one `conda-environment-cpu.yml` file and one `conda-environment-gpu.yml` file. If you want to work locally with your GPU-enabled computer, you can try to use the GPU version instead, and hopefully this will work for you. It can however be quite a hassle to properly install a GPU-enabled deep learning environment, and we do not have the resources to help you out here.
+
+That being said, this could be an opportunity for you to use your GPU, despite not running Linux (which is the only OS through which you could utilize your GPU via the Docker solution)
