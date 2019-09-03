@@ -66,7 +66,7 @@ gcloud compute instances create gpu-instance \
      --accelerator type=nvidia-tesla-k80,count=1 \
      --maintenance-policy TERMINATE \
      --restart-on-failure \
-     --boot-disk-size=20GB \
+     --boot-disk-size=35GB \
      --boot-disk-type=pd-standard \
      --image-project ssy340dml-image-project \
      --image ssy340dml-host-image
@@ -103,7 +103,7 @@ gcloud compute instances create cpu-instance \
      --machine-type n1-standard-4 \
      --maintenance-policy TERMINATE \
      --restart-on-failure \
-     --boot-disk-size=20GB \
+     --boot-disk-size=35GB \
      --boot-disk-type=pd-standard \
      --image-project ssy340dml-image-project \
      --image ssy340dml-host-image
