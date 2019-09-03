@@ -8,9 +8,9 @@ PASSWD_HASH.txt
 #*.txt
 *__pycache__*
 
-!/Computer Labs/CL1/iris.csv
-!/Home Assignments/HA2/conll_2002_ner_dataset.csv
-!/Home Assignments/HA3/cartpole.jpg
+!/computer-labs/CL1/iris.csv
+!/home-assignments/HA2/conll_2002_ner_dataset.csv
+!/home-assignments/HA3/cartpole.jpg
 !/Poster Template/img/*
 
 tags
