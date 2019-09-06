@@ -38,4 +38,4 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
     assert ref_cell_ids == curr_cell_ids, \
         '[ERROR] Notebook does not seem to be up-to-date.'
 
-    print('[SUCCESS] Notebook is up-to-date!')
+    print('[SUCCESS] No major notebook mismatch found when comparing to latest GitHub version. (There might be minor updates, but even that is the case, submitting your work based on this notebook version would be acceptable.)')
