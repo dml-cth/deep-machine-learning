@@ -1,5 +1,5 @@
 # Keeping the git repository in sync
-During the course, the GitHub repository is expected to updated many times, for various reasons, e.g.
+During the course, the GitHub repository is expected to be updated many times, for various reasons, e.g.
 - Updating instructions
 - Posting new assignments
 - Updating already released assignments (we will do our best to avoid it, but at times it may be necessary for us to do this)
