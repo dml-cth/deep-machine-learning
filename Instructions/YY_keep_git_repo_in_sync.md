@@ -4,7 +4,7 @@ During the course, the GitHub repository is expected to be updated many times, f
 - Posting new assignments
 - Updating already released assignments (we will do our best to avoid it, but at times it may be necessary for us to do this)
 
-All `git` commands assume that you have navigated to somewhere inside the repository (that is, *deep-machine-learning* directory).
+All `git` commands assume that you have navigated to somewhere inside the repository (that is, the *deep-machine-learning* directory).
 
 ## Determining the state of your local git repository
 If you are using Mac / Linux, and are not very familiar with git but still care about version control, Sourcetree is recommended as a graphical interface to git.
@@ -61,7 +61,10 @@ This assumes some familiarity with git. It is however always possible to abort t
 Your notebook is internally represented as a `.ipynb` text file, and it will not only contain your code, but also a number of other things, such as:
 - The outputs from commands you have run, including plots
 - Execution count, i.e. how many times each cell has been executed.
-Whenever you interact with the notebook, this sort of data will change, which may result in complications when you use git to sync your changes with the changes on GitHub. It is therefore good procedure to clean up this data before attempting to sync. Follow these steps before syncing:
+
+Whenever you interact with the notebook, this sort of data will change, which may result in complications when you use git to sync your changes with the changes on GitHub. It is therefore good procedure to clean up this data before attempting to sync.
+
+Follow these steps before syncing:
 - Click "Kernel" -> "Restart & Clear Output" in the Jupyter interface in the browser.
 - Save the notebook (Important! You cannot always rely on autosave.)
 - Click "File" -> "Close and Halt". If ommitting this step, Jupyter will complain later when git modifies the file from the outside.
