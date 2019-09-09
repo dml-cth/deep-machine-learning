@@ -56,6 +56,8 @@ When you create a new Google Cloud you won't be allowed to use any GPUs in your 
 
 
 #### 4. Create a compute instance
+**Note:** The command below for creating a new compute instances requires you to have access to the ssy340dml-image-project project. Providing you access is a manual step from our side, so it might take a day or so after you confirm the Google Cloud coupon until we have provided you  access. You can simply try running the command, it will crash if you do not have access yet.
+
 Upon creation, a cloud instance is **automatically started**, which also means it starts to consume credits. Therefore, make sure you know how to stop it before proceeding (see instructions down below).
 
 Create a Google Cloud compute instance called `gpu-instance`.
