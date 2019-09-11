@@ -135,6 +135,12 @@ docker run -it -e HOST_USER_ID=$(id -u) -e HOST_GROUP_ID=$(id -g) ARG1 ARG2 ARG3
 If you find it useful, you are encouraged to create your own wrapper scripts.
 
 
+## Kill unused containers (fix for colliding ports etc)
+If you run a docker command with the `-p 9090:8888` argument, and you receive the error message `Bind for 0.0.0.0:9090 failed: port is already allocated.`, it probably means that you (maybe accidentally) got another docker container running.
+- An easy "fix" is just to use another port, say 9091, instead of 9090 (in which case you would need to browse to http://localhost:9091 instead if you run a Jupyter server). It is totally fine to run multiple Docker containers (and Jupyter servers) in parallel.
+- You can see all running Docker containers listed by the `docker ps` command. This includes containers running in the background.
+- You can kill a running Docker container by `docker kill <CONTAINER_ID>`.
+
 ## Keeping the Docker image up to date
 When you use `docker run` (or the `rundocker-mapuid.sh` wrapper script), Docker will first search for the Docker image locally on your computer, but if there is no image, it will conveniently download it from Docker Hub (this is where we host the course Docker image).
 **However**, if we make changes to the Docker image and push a new version to Docker Hub, your `docker run` calls will still use the local image.
