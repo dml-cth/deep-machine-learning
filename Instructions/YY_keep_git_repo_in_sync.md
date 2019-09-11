@@ -27,7 +27,11 @@ https://www.sourcetreeapp.com/
 - In the terminal, navigate to the directory one level above (inside of which *deep-machine-learning-old* resides)
 - Re-run the command for cloning the course repository (according to the instructions you followed when doing this last time)
 - Now, a new directory *deep-machine-learning* will be created next to *deep-machine-learning-old*.
-- Continue working in the new repo. Copy-paste the code from your old notebooks to the new ones.
+- Copy-paste the code from your old notebooks to the new ones. You need to be able to open both the old & new notebooks simultaneously, and there are different ways to do this:
+  1. One way is to first copy the old notebooks to the new repo (with replacing the new notebooks, rather having them side-by-side).
+  1. Another way is to start the Jupyter server one level above the *deep-machine-learning* and *deep-machine-learning-old* directories, so that the files within both are accessible. But note that the `rundocker-mapuid.sh` helper script will then not be accessible with the relative path `./rundocker-mapuid.sh` that you are used to, but `./deep-machine-learning/rundocker-mapuid.sh` should work.
+  1. Yet another way is to run two Jupyter servers simultaneously. Then you need to avoid port collisions. Via docker, you could just modify the 9090 port two something else for one of teh servers.
+- Continue working in the new repo.
 
 This procedure will always work, i.e. you do not need to sync as explained below. Syncing is however much more convenient, and you are encouraged to at least attempt the "easy" sync explained below, since it cannot really cause you any harm.
 
