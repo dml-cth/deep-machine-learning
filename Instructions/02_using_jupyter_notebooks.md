@@ -31,6 +31,12 @@
 
 - You will now see the contents of the `/workspace` directory of the Docker container, which should be mapped to the current directory of your host environment, where you issued the command to start the server.
 
+### Properly shutdown the Jupyter Server
+When you want to shutdown the Jupyter Server, do not just close the terminal window. If you do so, Docker may still keep the server running in the background, which will cause port collisions for you next time you want to start a server on the same port. To resolve this, refer to the instructions for killing unused containers in [https://github.com/JulianoLagana/deep-machine-learning/blob/master/Instructions/01_getting_started_with_docker.md](https://github.com/JulianoLagana/deep-machine-learning/blob/master/Instructions/01_getting_started_with_docker.md).
+
+- Before shutting down, save your current notebooks.
+- Then, properly shutdown the Jupyter Server by pressing `ctrl-c` in the terminal, and then press `y` and enter, when Jupyter asks you if you really want to shutdown.
+
 
 ## How to run Jupyter Notebooks on your local computer using Anaconda
 
