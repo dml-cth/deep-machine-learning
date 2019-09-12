@@ -1,6 +1,7 @@
 import os
 import json
 import urllib
+import ssl
 
 def parse_cell_ids(nb_json_data):
     cell_ids = []
@@ -13,10 +14,11 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
     assignment_name = os.path.basename(nb_dirname)
     commit = 'master' # Should be master (latest version)
     # commit = '3d1588a79b1bd6361f6b12da9e6be022adf0f683' # For debug
-    url = 'https://raw.githubusercontent.com/JulianoLagana/deep-machine-learning/{commit}/home-assignments/{assignment_name}/{assignment_name}.ipynb'.format(assignment_name=assignment_name, commit=commit)
+    url = 'http://raw.githubusercontent.com/JulianoLagana/deep-machine-learning/{commit}/home-assignments/{assignment_name}/{assignment_name}.ipynb'.format(assignment_name=assignment_name, commit=commit)
     try:
-        ref_nb_file = urllib.request.urlopen(url)
-    except:
+        # Create dummy SSL context object, to avoid issues. See https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error
+        ref_nb_file = urllib.request.urlopen(url, context=ssl.SSLContext())
+    except urllib.error.URLError:
         print('[WARNING] Could not fetch reference notebook from GitHub repo. Are you offline?')
         print('[WARNING] Could not verify that current notebook is up-to-date and not corrupted')
         return
