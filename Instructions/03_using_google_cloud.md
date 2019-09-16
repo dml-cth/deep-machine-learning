@@ -42,7 +42,7 @@ Verify default project & zone
 gcloud config get-value core/project
 gcloud config get-value compute/zone
 ```
-Activate Compute Engine for the project (this allows you to create compute instances within it)
+Activate Compute Engine for the project (this allows you to create compute instances within it, and needs to be done before requesting GPU quota increase below)
 ```
 gcloud services enable compute.googleapis.com
 ```
@@ -52,7 +52,15 @@ gcloud compute firewall-rules create open-port-jupyter --allow tcp:9090 --direct
 ```
 
 #### 3. Request GPU quota increase
-When you create a new Google Cloud you won't be allowed to use any GPUs in your instances. In order to increase your quota for the GPUs used for the course (K80), follow the instructions [here](https://stackoverflow.com/a/49737435). One GPU is enough. The quotas are region specific, so be sure to select the region where you will create your instances (*europe-west1*).
+When you create a new Google Cloud you won't be allowed to use any GPUs in your instances. In order to increase your quota for GPUs, follow these instructions:
+- Browse to the Cloud Console [http://console.cloud.google.com](http://console.cloud.google.com).
+- Navigate to IAM & admin -> Quotas.
+- The quota is project specific, so make sure that the project you will use is selected.
+- Click on *Metric*, and then on *None*, to deselect all.
+- Then, still in the *Metric* menu, search for GPUs, and select *GPUs (all regions)*. (**Note:** In order to find this entry, the Compute Engine must first be activated for your project, according to the instructions in the previous steps)
+- Now a single row should be visible, for the service called *Compute Engine API, GPUs (all regions)*. Select this row, and click on **[+] EDIT QUOTAS**.
+- Fill in your personal information, requesting for a new quota limit of 1. In the *Request description*, motivate your quota increase by stating that you need GPU resources for a deep learning course at Chalmers University.
+- Google Cloud may take up to 48h to handle your request, but it is not uncommon that they do it within minutes.
 
 
 #### 4. Create a compute instance
