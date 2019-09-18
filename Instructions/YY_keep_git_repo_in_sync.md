@@ -12,7 +12,7 @@ https://www.sourcetreeapp.com/
 
 ### Knowing whether you need to sync
 - First of all (after you have navigated to your cloned git repo in the terminal), run the command `git fetch`. This will never modify any of the files you are working on - git will just find out which is currently the latest version on GitHub.
-- Now, run `git log --decorate --oneline --graph` to see the commit history (a commit is a set of changes), and locate "*master*" (which should be prepended by "*HEAD ->*"), and "*origin/master*". Note: your terminal & git installation can probably be configured to provide you color-coded output from `git log`, which makes it a bit easier to parse.
+- Now, run `git log --all --decorate --oneline --graph` to see the commit history (a commit is a set of changes), and locate "*master*" (which should be prepended by "*HEAD ->*"), and "*origin/master*". Note: your terminal & git installation can probably be configured to provide you color-coded output from `git log`, which makes it a bit easier to parse.
 - In the output above, "*master*" shows where your local repository is, and "*origin/master*" shows the most recent version on GitHub. If they are not the same, you should probably update.
 - If you get "stuck" inside the git log, press `q` to exit.
 - If you are hesitant to sync, you can further investigate what the changes consist of. For instance, if you run the `git log` command above, but now add the `--stat` argument as well, you will see which files were modified in each commit.
