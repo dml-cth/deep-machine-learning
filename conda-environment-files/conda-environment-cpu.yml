@@ -15,7 +15,7 @@ dependencies:
 - h5py
 - spacy
 - unidecode
-- pytorch-cpu=1.1.0
+- pytorch-cpu=1.2.0
 - torchvision-cpu
 - pip:
   - future

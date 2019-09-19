@@ -15,9 +15,9 @@ dependencies:
 - h5py
 - spacy
 - unidecode
-- pytorch=1.1.0
+- pytorch=1.2.0
 - torchvision
-- cudatoolkit=9.0
+- cudatoolkit=10.0
 - pip:
   - future
   - tb-nightly
