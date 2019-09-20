@@ -32,10 +32,12 @@ Link project to billing account (this allows the project to use the cloud credit
 ```
 gcloud alpha billing projects link <PROJECT_ID> --billing-account <ACCOUNT_ID>
 ```
-Set the default project & zone (so they need not be specified in the following commands). Alternatively, most commands accept --project & --zone arguments, which override the defaults.
+Set the default project & zone (so they need not be specified in the following commands). Alternatively, most commands (e.g. creating / starting / stopping compute instances) accept --project & --zone arguments, which override the defaults.
+
+Previously, we pointed you towards using the `europe-west1-b` zone, but note that any zone for which K80 GPUs are available is fine. We have had some issues with lack of available resources for `europe-west1-b`, and instead recommend trying one of the other zones with K80 support listed (here)[https://cloud.google.com/compute/docs/gpus/] (scroll down to the table and find out for which zones K80 GPUs are supported). For example, you could try `us-central1-c` or `europe-west1-d`.
 ```
 gcloud config set core/project <PROJECT_ID>
-gcloud config set compute/zone europe-west1-b
+gcloud config set compute/zone <ZONE_ID>
 ```
 Verify default project & zone
 ```
@@ -59,7 +61,7 @@ When you create a new Google Cloud you won't be allowed to use any GPUs in your 
 - Click on *Metric*, and then on *None*, to deselect all.
 - Then, still in the *Metric* menu, search for GPUs, and select *GPUs (all regions)*. (**Note:** In order to find this entry, the Compute Engine must first be activated for your project, according to the instructions in the previous steps)
 - Now a single row should be visible, for the service called *Compute Engine API, GPUs (all regions)*. Select this row, and click on **[+] EDIT QUOTAS**.
-- Fill in your personal information, requesting for a new quota limit of 1. In the *Request description*, motivate your quota increase by stating that you need GPU resources for a deep learning course at Chalmers University.
+- Fill in your personal information, requesting for a new quota limit of 5. In the *Request description*, motivate your quota increase by stating that you need GPU resources for a deep learning course at Chalmers University.
 - Google Cloud may take up to 48h to handle your request, but it is not uncommon that they do it within minutes.
 ![screenshot](./figs/gpu_quota_screenshot.png)
 
@@ -69,6 +71,8 @@ When you create a new Google Cloud you won't be allowed to use any GPUs in your 
 Upon creation, a cloud instance is **automatically started**, which also means it starts to consume credits. Therefore, make sure you know how to stop it before proceeding (see instructions down below).
 
 Create a Google Cloud compute instance called `gpu-instance`.
+
+**Note:** If you do not succeed to create the compute instance due to lack of available resources in the zone (usually lack of GPUs), try creating it in another zone instead (see instructions above for how to switch default zone, or pass the `--zone` argument to the create command). Note that you can create and have multiple instances in parallel (provided your GPU quota is high enough, request increase if needed), and as long as they are not running, the cost is reasonable (you pay only for the extra disk storage).
 ```
 gcloud compute instances create gpu-instance \
      --custom-cpu=8 \
@@ -134,6 +138,8 @@ You may now move away from the `gcloud`  CLI tool, and visualize the results usi
 
 #### 7. Connecting to your compute instance
 Start the compute instance. Make sure you know how to stop it before proceeding (see instructions down below).
+
+**Note:** If you do not succeed to start the compute instance due to lack of available resources in the zone (usually lack of GPUs), and this is a re-occurring problem, try creating an instance in another zone instead (you will need to create a new instance, follow the instructions above). Note that you can create and have multiple instances in parallel (provided your GPU quota is high enough, request increase if needed), and as long as they are not running, the cost is reasonable (you pay only for the extra disk storage).
 ```
 gcloud compute instances start gpu-instance
 ```
