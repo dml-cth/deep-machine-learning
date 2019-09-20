@@ -16,7 +16,7 @@ dependencies:
 - spacy
 - unidecode
 - pytorch-cpu=1.2.0
-- torchvision-cpu
+- torchvision=0.4.0
 - pip:
   - future
   - tb-nightly
