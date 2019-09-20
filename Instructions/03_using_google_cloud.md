@@ -34,7 +34,7 @@ gcloud alpha billing projects link <PROJECT_ID> --billing-account <ACCOUNT_ID>
 ```
 Set the default project & zone (so they need not be specified in the following commands). Alternatively, most commands (e.g. creating / starting / stopping compute instances) accept --project & --zone arguments, which override the defaults.
 
-Previously, we pointed you towards using the `europe-west1-b` zone, but note that any zone for which K80 GPUs are available is fine. We have had some issues with lack of available resources for `europe-west1-b`, and instead recommend trying one of the other zones with K80 support listed (here)[https://cloud.google.com/compute/docs/gpus/] (scroll down to the table and find out for which zones K80 GPUs are supported). For example, you could try `us-central1-c` or `europe-west1-d`.
+Previously, we pointed you towards using the `europe-west1-b` zone, but note that any zone for which K80 GPUs are available is fine. We have had some issues with lack of available resources for `europe-west1-b`, and instead recommend trying one of the other zones with K80 support listed (here)[https://cloud.google.com/compute/docs/gpus/#gpus-list] (scroll down to the table and find out for which zones K80 GPUs are supported). For example, you could try `us-central1-c` or `europe-west1-d`.
 ```
 gcloud config set core/project <PROJECT_ID>
 gcloud config set compute/zone <ZONE_ID>
