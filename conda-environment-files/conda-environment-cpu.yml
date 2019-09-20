@@ -22,3 +22,4 @@ dependencies:
   - tb-nightly
   - gym
   - pillow
+  - kaggle
