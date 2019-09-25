@@ -210,3 +210,7 @@ Go to http://console.cloud.google.com
   - Project: $30 (can vary a lot depending on your project).
   
   That is, each person in the group should spend around $3 + $3 + $15 in total.
+
+- You can use (this web page)[https://cloud.google.com/products/calculator] to calculate the cost of your cloud resources.
+  - As a rule of thumb, a GPU compute instance (with 8 CPUs and 16 GB RAM, like the one we propose) costs about $1 / hour and the corresponding disk space of 35 GB costs about $2 / month.
+  - It depends (slightly) between zones.
