@@ -62,7 +62,7 @@ When you want to shutdown the Jupyter Server, do not just close the terminal win
 
 
 ## How to run Jupyter Notebooks in the Cloud
-**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker.
+**Note:** Before starting out, walk through [01_getting_started_with_docker.md](01_getting_started_with_docker.md) and make sure you are familiar with running Docker. Also go through [03_using_google_cloud.md](03_using_google_cloud.md), to famioliarize yourself with how to interact with and connect to Google Cloud.
 
 - Connect to your instance, change to the `dml-host` user, and `cd` into the git repository you have previously cloned.
 
