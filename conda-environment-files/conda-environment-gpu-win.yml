@@ -12,6 +12,7 @@ dependencies:
 - scipy
 - pandas
 - seaborn
+- nltk
 - h5py
 - spacy
 - unidecode
