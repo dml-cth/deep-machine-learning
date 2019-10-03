@@ -1,4 +1,5 @@
 import os
+import io
 import json
 import urllib
 import ssl
@@ -42,7 +43,7 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
         ref_cell_ids = set(ref_cell_ids)
         ref_cell_id_candidates.append(ref_cell_ids)
 
-    with open(os.path.join(nb_dirname, nb_fname), 'r') as f:
+    with io.open(os.path.join(nb_dirname, nb_fname), mode='r', encoding='utf-8') as f:
         curr_nb_data = json.load(f)
     curr_cell_ids = parse_cell_ids(curr_nb_data)
     assert len(curr_cell_ids) == len(set(curr_cell_ids)), \
