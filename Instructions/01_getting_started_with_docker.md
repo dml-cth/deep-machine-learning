@@ -141,6 +141,19 @@ If you run a docker command with the `-p 9090:8888` argument, and you receive th
 - You can see all running Docker containers listed by the `docker ps` command. This includes containers running in the background.
 - You can kill a running Docker container by `docker kill <CONTAINER_ID>`.
 
+## Monitor and remove unused images (if running out of disk space)
+If you for some reason have unused docker images, that could consume a lot of space.
+
+To list your images, run:
+```
+docker image list
+```
+To remove them, run:
+```
+docker image rm --force <IMAGE_ID>
+```
+Removing images is safe to do since they can always be pulled from DockerHub again.
+
 ## Keeping the Docker image up to date
 When you use `docker run` (or the `rundocker-mapuid.sh` wrapper script), Docker will first search for the Docker image locally on your computer, but if there is no image, it will conveniently download it from Docker Hub (this is where we host the course Docker image).
 **However**, if we make changes to the Docker image and push a new version to Docker Hub, your `docker run` calls will still use the local image.
