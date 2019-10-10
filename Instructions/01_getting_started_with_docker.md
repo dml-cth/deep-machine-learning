@@ -23,8 +23,11 @@ But there are also some differences:
 - A virtual machine needs to boot up before processes you can run processes inside of it. A containerized process can be started
 
 ### Docker glossary
-- **Docker image:** A package with all the dependencies and information needed to create a container. An image includes all the dependencies (such as frameworks) plus deployment and execution configuration to be used by a container runtime.
-- **Docker container:** An instance of a Docker image. A container represents the execution of a single application, process, or service.
+- **Docker image:**
+  - A package with all the dependencies and information needed to create a container. An image includes all the dependencies (such as frameworks) plus deployment and execution configuration to be used by a container runtime.
+- **Docker container:**
+  - An instance of a Docker image. A container represents the execution of a single application, process, or service.
+  - A container only lives for as long as the process (e.g. a Jupyter server, or the execution of a Python script) is running. When the process ends, whatever files were made to the "disk" of the container will be lost, unless you are writing to a host directory, which is mounted to the container.
 
 ## Install Docker
 If you haven't already, install Docker as explained in [00_installing_docker.md](00_installing_docker.md), before proceeding.
