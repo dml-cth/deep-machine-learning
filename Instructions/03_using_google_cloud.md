@@ -214,3 +214,14 @@ Go to http://console.cloud.google.com
 - You can use (this web page)[https://cloud.google.com/products/calculator] to calculate the cost of your cloud resources.
   - As a rule of thumb, a GPU compute instance (with 8 CPUs and 16 GB RAM, like the one we propose) costs about $1 / hour and the corresponding disk space of 35 GB costs about $2 / month.
   - It depends (slightly) between zones.
+
+
+#### 11. Increasing disk space on compute instance
+The command above for creating a compute instance reserves 35 GB only, but you are of course free to extend this if you run out of disk space. The following CLI command can be used to resize the disk of the compute instance:
+```
+gcloud compute disks resize <DISK_NAME> --project <PROJECT_ID> --zone <ZONE_ID> --size <SIZE_GB>
+```
+- `<DISK_NAME>` is the name of the disk and defaults to the same as the compute instance, e.g. `gpu-instance`.
+- `<PROJECT_ID>` is the project ID, and may be omitted as usual if you have set the `core/project` property.
+- `<ZONE_ID>` is the zone in which you created the compute instance, e.g. `europe-west1-b`. May not be omitted, even if you have set the `compute/zone` property.
+- `<SIZE_GB>` is the number of gigabytes of disk space you want.
