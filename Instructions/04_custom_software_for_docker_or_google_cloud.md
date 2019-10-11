@@ -20,9 +20,91 @@ To install custom software in the Docker environment, follow the steps below. Do
   - Before the container stops, make the changes permanent - according to the next section.
 
 ### Make the installed software permanent
-You can use the `docker commit` command while the container is still running, in order to create a new image based on the container. If you then start a new container (with the `docker run` command) with the image you just created, instead of an image we provided (e.g. `ssy340dml/dml-image:gpu`), the software you installed should be preserved.
+You can use the `docker commit` command while the container is still running, in order to create a new image based on the container. If you then start a new container (with the `docker run` command) with the image you just created, instead of an image we provided (e.g. `ssy340dml/dml-image:gpu`), the software you installed will be preserved.
 
-More specific instructions on this might follow later. If not refer to [https://docs.docker.com/engine/reference/commandline/commit/](https://docs.docker.com/engine/reference/commandline/commit/).
+The documentation for this command can be found here: [https://docs.docker.com/engine/reference/commandline/commit/](https://docs.docker.com/engine/reference/commandline/commit/).
+
+The gist of it is: install software in your container, according to instructions above, then run in a terminal, *outside of the container*
+
+```bash
+# Check what images already exist
+docker image ls
+
+REPOSITORY            TAG                             IMAGE ID            CREATED             SIZE
+ssy340dml/dml-image   gpu                             2d6011daf7a1        18 hours ago        9.15GB
+
+docker ps
+
+CONTAINER ID        IMAGE               			COMMAND             CREATED   	...
+c3f279d17e0a        ssy340dml/dml-image:gpu   /bin/bash           7 days ago  ...
+
+# docker commit CONTAINER [REPOSITORY[:TAG]]
+docker commit c3f279d17e0a my_own/image:tag_name
+
+sha256:<some_hash>
+
+# Check images again
+docker image ls
+
+REPOSITORY            TAG                             IMAGE ID            CREATED             SIZE
+my_own/image          tag_name                        d64ab5954617        7 seconds ago       9.18GB
+ssy340dml/dml-image   gpu                             2d6011daf7a1        18 hours ago        9.15GB
+```
+
+## Build you own docker file
+
+**Note:** You should know your way around your computer if you want to try this
+
+We have published the Dockerfiles we use to build the images from scratch.
+You can find the in the public repo at `Tools/Docker`
+If you are feeling adventurous you can build your very own docker image from a Dockerfile.
+
+The documentation for this command can be found here: [https://docs.docker.com/engine/reference/commandline/build/](https://docs.docker.com/engine/reference/commandline/build/)
+
+### Change the Dockerfile
+
+Edit `Tools/Docker/dml-image/context/Dockerfile` to make your changes.
+To install packages, add them to the `RUN apt-get` command:
+
+```bash
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends apt-utils && \
+    apt-get install -y --no-install-recommends \
+        curl \
+		<name_of_your_package> \
+        unzip \
+        git
+```
+
+To add python packages via conda: edit `Tools/Docker/dml-image/context/conda-environment-<cpu/gpu>.yml`,
+by adding packages in the `pip` section.
+
+### Build the image
+
+These commands will build the CPU/GPU course Docker images, respectively.
+
+```bash
+docker build --build-arg CONDA_ENV_SUFFIX=cpu -t ssy340dml/dml-image:cpu Tools/Docker/dml-image/context
+docker build --build-arg CONDA_ENV_SUFFIX=gpu -t ssy340dml/dml-image:gpu Tools/Docker/dml-image/context
+```
+
+### Important with failed builds
+Even though a build of a docker image fails, it still produces a quasi-image with `<none>` repo and tag:
+
+```bash
+docker image ls # After a failed build
+REPOSITORY          TAG                             IMAGE ID            CREATED                  SIZE
+<none>              <none>                          68bcd71e6d92        Less than a second ago   9.13GB
+nvidia/cuda         10.0-cudnn7-devel-ubuntu16.04   b739d7317c55        4 weeks ago              3.12GB
+```
+
+Failure to remove these artefacts may have something to do with strange computer issues (e.g. computer not booting).
+By forcing the removal of the artefacts, the issues seem to go away:
+
+```bash
+docker image rm --forced <IMAGE ID>
+```
+*Note:* This is a working hypotheses, but it does not hurt to be careful.
 
 
 ## Install custom software on cloud without Docker
