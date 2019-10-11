@@ -12,6 +12,10 @@ groupadd -g $GROUP_ID -o dml-guest
 useradd --shell /bin/bash -u $USER_ID -g dml-guest -o -m dml-guest
 export HOME=/home/dml-guest
 
+# Provide sudo rights to dml-guest, without requiring password
+usermod -aG sudo dml-guest
+echo 'dml-guest ALL=(ALL) NOPASSWD: ALL'>/etc/sudoers.d/dml-guest
+
 # Setup conda environment (which is installed for the proxy "condauser")
 ln -s /home/condauser/.conda /home/dml-guest/.conda
 /usr/local/bin/gosu dml-guest conda init bash>/dev/null
