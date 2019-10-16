@@ -58,6 +58,8 @@ COPY conda-environment-"$CONDA_ENV_SUFFIX".yml /tmp/environment.yml
 RUN groupadd -g 7892 -o condauser
 RUN useradd --shell /bin/bash -u 7892 -g condauser -o -m condauser
 WORKDIR /home/condauser
+RUN /usr/local/bin/gosu condauser conda init bash
+RUN echo 'conda activate dml'>>/home/condauser/.bashrc
 USER condauser
 RUN conda env create -f /tmp/environment.yml
 # Optionally provide write permissions to conda packages: (but read permissions should be enough, and running recursive chmod takes a lot of time) 
