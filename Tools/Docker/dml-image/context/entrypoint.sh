@@ -8,6 +8,8 @@ USER_ID=${HOST_USER_ID:-9001}
 GROUP_ID=${HOST_GROUP_ID:-9001}
 
 echo "Starting with UID : $USER_ID, GID : $GROUP_ID"
+id -u dml-guest >/dev/null 2>/dev/null && echo "User dml-guest already exists - deleting." && userdel -r dml-guest
+echo "Creating user dml-guest."
 groupadd -g $GROUP_ID -o dml-guest
 useradd --shell /bin/bash -u $USER_ID -g dml-guest -o -m dml-guest
 export HOME=/home/dml-guest
