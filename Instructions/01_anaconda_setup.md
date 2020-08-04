@@ -1,10 +1,4 @@
-# Instructions for using Anaconda as a Docker workaround
-If you are having issues with installing Docker (in particular if you are using Windows, but not Windows 10 Pro), we will here outline an alternative to get up and running with a local Python environment using Anaconda.
-
-## (Windows) Install & configure Powershell
-- Install Powershell if not installed already.
-- Open up the startup menu, and type "powershell", after which "Windows Powershell" should show up. Right-click on it, and click "Run as administrator".
-- Once Powershell has started running as administrator, allow scripts to be executed by typing `Set-ExecutionPolicy RemoteSigned`, pressing Enter, typing `y` for Yes, and pressing Enter once again. Now you can close Powershell, and will not have to run it as administrator again.
+# Instructions for using Anaconda
 
 ## Download & install Anaconda
 1. Download Anaconda Python 3.7 from https://www.anaconda.com/distribution/
