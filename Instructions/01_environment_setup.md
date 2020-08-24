@@ -1,4 +1,4 @@
-# Instructions for using Anaconda
+# Instructions for setting up the course environment
 
 ## Download & install Anaconda
 1. Download Anaconda Python 3.7 from https://www.anaconda.com/distribution/
@@ -15,12 +15,21 @@
 1. Start up a terminal (On Windows, use Powershell)
 1. Clone the course GitHub repo, by the following command (this creates a folder in your current directory with the necessary files for the next instructions): `git clone https://github.com/JulianoLagana/deep-machine-learning.git`
 
-## Install Python dependencies, and get started with Conda environments
+## Create a Conda environment and install Python dependencies
 1. Navigate to the folder created by the cloning, using the command `cd`, followed by the directory's name.
-1. Create the Conda environment for the course by typing `conda env create -f conda-environment-files/conda-environment-cpu-<x>.yml`, where you substitute the `<x>` by either `unix` or `win`, depending if you're following the instructions in a unix machine (Linux, Mac, etc), or a Windows one.
+1. Create the Conda environment for the course by typing
+   ```
+   conda env create -f conda-environment-files/conda-environment-cpu-<x>.yml
+   ```
+   , where you substitute the `<x>` by either `unix` or `win`, depending if you're following the instructions in a unix machine (Linux, Mac, etc), or a Windows one.
 1. Wait for the installations to complete, and make sure there were no errors.
-1. Now, you have created a virtual Conda environment with all Python dependencies installed. Still, in order to get access to this environment, you must activate it (and this has to be done every time you start up a new terminal window). Activate it by the command `conda activate dml`.
-1. You should from now on see `(dml)` printed at the start of every row in the terminal, indicating, that the `dml` environment is activated. If this does not happen, most probably the `conda init` step was not carried out successfully during installation.
+
+## Activating and testing the Conda environment
+1. Now, you have created a virtual Conda environment with all Python dependencies installed.
+   Still, in order to get access to this environment, you must activate it.
+   This has to be done every time you start up a new terminal window.
+   Activate it by the command `conda activate dml`.
+1. You should now see `(dml)` printed at the start of every row in the terminal, indicating, that the `dml` environment is activated. If this does not happen, most probably the `conda init` step was not carried out successfully during installation.
 1. Now you can start using Jupyter notebook. To do so, type `jupyter notebook`
 1. Please have a look at the two Jupyter notebooks, *testing_notebook.ipynb* and *Getting started with JN.ipynb*, available in the folder [`python-crash-course`](https://github.com/JulianoLagana/deep-machine-learning/tree/master/python-crash-course). The first file checks if the installation was successful, whereas the second file give you initial advices regarding how to use Jupyter notebooks.
 1. To deactivate the conda environment, you simply type `conda deactivate`.
