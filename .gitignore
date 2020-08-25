@@ -12,7 +12,7 @@ computer-labs/data
 !/computer-labs/CL1/iris.csv
 !/home-assignments/HA2/conll_2002_ner_dataset.csv
 !/home-assignments/HA3/cartpole.jpg
-!/Poster Template/img/*
+!/poster-template/img/*
 
 tags
 tags.lock
