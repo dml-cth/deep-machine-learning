@@ -42,8 +42,16 @@ Make sure that your Conda environment is always up-to-date with the latest envir
 How to update the Conda environment:
 - Navigate to the git repo you have cloned.
 - Make sure the conda environment is deactivated (see above).
-- Type `conda env update -f conda-environment-files/conda-environment-cpu.yml --prune`
+- Type e.g. `conda env update -f conda-environment-files/conda-environment-cpu-win.yml --prune`. Note however that the appropriate environment file to be used varies depending on your system. See section below for more info.
 - Now you can activate the environment again.
 
-## GPU-version
-On GitHub, there is one `conda-environment-cpu.yml` file and one `conda-environment-gpu.yml` file. If you want to work locally with your GPU-enabled computer, you can try to use the GPU version instead, and hopefully this will work for you. It can however be quite a hassle to properly install a GPU-enabled deep learning environment, and we do not have the resources to help you out here.
+## CPU / GPU and Windows / Unix conda environment files
+On GitHub, there are different conda environment files intended for CPU / GPU as well as Windows / Unix platforms:
+- `conda-environment-cpu-win.yml`
+- `conda-environment-cpu-unix.yml`
+- `conda-environment-gpu-win.yml`
+- `conda-environment-gpu-unix.yml`
+
+If, while working in the cloud, you have reason to update the (pre-installed) conda environment, the `conda-environment-gpu-unix.yml` file is always to be used.
+
+When working on your own computer however, you should use the `win` rather than `unix` version if you are running Windows rather than Mac / Linux / etc. In this case, the `cpu` version should typically be used. If you have a compatible Nvidia GPU, you can however try to make use of it by simply using the `gpu` version instead, and hopefully this will work well. It can however be quite a hassle to properly install a GPU-enabled deep learning environment, and we do not have the resources to help you out here.
