@@ -30,7 +30,7 @@
    This has to be done every time you start up a new terminal window.
    Activate it by the command `conda activate dml`.
 1. You should now see `(dml)` printed at the start of every row in the terminal, indicating, that the `dml` environment is activated. If this does not happen, most probably the `conda init` step was not carried out successfully during installation.
-1. Now you can start using Jupyter notebook. To do so, type `jupyter notebook`
+1. Now you can start using Jupyter notebook. To do so, type `jupyter notebook`. Your web browser should automatically open up and navigate to http://localhost:8888, letting you access Jupyter.
 1. Please have a look at the two Jupyter notebooks, *testing_notebook.ipynb* and *Getting started with JN.ipynb*, available in the folder [`python-crash-course`](https://github.com/JulianoLagana/deep-machine-learning/tree/master/python-crash-course). The first file checks if the installation was successful, whereas the second file give you initial advices regarding how to use Jupyter notebooks.
 1. To deactivate the conda environment, you simply type `conda deactivate`.
 

@@ -1,29 +1,34 @@
 # Instructions for using Jupyter Notebooks in the cloud
+In the [01_environment_setup.md](01_environment_setup.md) instructions, you learned how to access Jupyter notebooks when working on your own computer. When working on a virtual machine in the cloud, the process is similar, but requires some extra manual steps.
+
+- Start your virtual machine instance.
+
+- Once it has started, determine the IP address of the virtual machine, which will be needed later. In the [Azure Portal](http://portal.azure.com/) click on the virtual machine you just started, and navigate to "Overview". Under "Networking" identify the Public IP address (e.g. 
+52.183.118.98). Note that the IP might change every time you start up the instance.
 
 - Connect to your virtual machine instance, and activate the `dml` environment.
 
-- Start a Jupyter server with the command:
+- If this is the first time you use Jupyter on this virtual machine, configure a password by running the following command:
+
+```bash
+jupyter notebook password
+```
+
+- Now you can start a Jupyter server with the command:
 
   ```bash
   jupyter notebook
   ```
 
-This will print some information to the terminal, including a string looking something like this: `http://(gpu-instance or 127.0.0.1):8888/?token=6d0810daf275a4a15c1237f8f44657ace6036d68de27609e`. The part after `token=` is the authentication token you will need to connect to your Jupyter server from you local machine (in this case it's `6d0810daf275a4a15c1237f8f44657ace6036d68de27609e`).
+- The browser will not pop up automatically, like when you worked on your own computer. Instead, you need to navigate to the appropriate page automatically, for which you first need the IP address of the virtual machine, that you determined earlier.
 
-- Now take a look at the VM instances web page in the Google Cloud's console. There, in the same line where you see the name of your instance, you will also see its external IP. For instance, something like 35.255.15.79.
+- Open up your browser and navigate to e.g. `
+http://52.183.118.98:8888`, but replace the IP witht he appropriate one.
 
-- Open a new browser window in your local machine and navigate to the address `http://<external_ip>:8888`, where `external_ip` is the IP address you obtained in the previous step. For instance, in my case I would connect to `http://35.255.15.79:8888`.
-
-- If all of the steps above have been followed correctly, you will now see a web page asking you for the authentication token you obtained when starting the Jupyter server. In my case, that was `6d0810daf275a4a15c1237f8f44657ace6036d68de27609e`, so I input that and press "Log in".
+- If all of the steps above have been followed correctly, you will now see a web page asking you to provide the password you created before starting the Jupyter server.
 
 - You are now connected to your Jupyter server running in the Google Cloud's instance.
 
 ### Tips
 
 - You can use the Jupyter web interface to upload files to your instance (for example, Python notebooks you have developed when working in your local computer, or datasets that you'll use to train on the Cloud). To do so, simply click the button "Upload" on the top of the Jupyter web interface (to the right of the text "Select items to perform actions on them.", and to the left of the "New" button).
-
-- Instead of using an authentication token, you can specify a password for logging in more easily with the command:
-
-```bash
-jupyter notebook password
-```
