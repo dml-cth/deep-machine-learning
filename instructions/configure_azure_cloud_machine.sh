@@ -15,13 +15,12 @@ chmod +x /tmp/miniconda.sh
 
 # Run as user (modifies .bashrc, adding conda to path)
 ~/conda/bin/conda init bash
-# Ensure immediate effect:
-source .bashrc
 
 # Update base conda environment
-conda update -n base -c defaults conda
+~/conda/bin/conda update -n base -c defaults conda
+
 # Create conda environment
-conda env create -f ~/deep-machine-learning/conda-environment-files/conda-environment-gpu-unix.yml
+~/conda/bin/conda env create -f ~/deep-machine-learning/conda-environment-files/conda-environment-gpu-unix.yml
 
 # Create jupyter notebook config file (overwrite if exists)
 mkdir -p ~/.jupyter
