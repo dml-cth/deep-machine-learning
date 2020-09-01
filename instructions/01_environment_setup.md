@@ -15,6 +15,12 @@
 1. Start up a terminal (On Windows, use Powershell)
 1. Clone the course GitHub repo, by the following command (this creates a folder in your current directory with the necessary files for the next instructions): `git clone https://github.com/JulianoLagana/deep-machine-learning.git`
 
+## Keeping the repo in sync
+Cloning a repo creates a local copy of the Github repo on your computer. Whenever new changes are uplooaded, or *pushed*,
+to the Github repo you can get the new changes by *pulling* them to your local version with the `git pull` command.
+If you have made changes in the same files as the new version on Github, there could be a conflict and git would not be able to automatically *merge* the changes.
+There are a few ways to handle this, see [separate instructions](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/04_keep_git_repo_in_sync.md).
+
 ## Create a Conda environment and install Python dependencies
 1. Navigate to the folder created by the cloning, using the command `cd`, followed by the directory's name.
 1. Create the Conda environment for the course by typing
@@ -40,7 +46,9 @@
 Make sure that your Conda environment is always up-to-date with the latest environment file available from the GitHub repo. We will try to make a Canvas announcement whenever it is updated.
 
 How to update the Conda environment:
+
 - Navigate to the git repo you have cloned.
+- Make sure that you have the latest version of the repo (see [above](#keeping-the-repo-in-sync)).
 - Make sure the conda environment is deactivated (see above).
 - Type e.g. `conda env update -f conda-environment-files/conda-environment-cpu-win.yml --prune`. Note however that the appropriate environment file to be used varies depending on your system. See section below for more info.
 - Now you can activate the environment again.

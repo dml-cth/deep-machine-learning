@@ -4,6 +4,12 @@ During the course, the GitHub repository is expected to be updated many times, f
 - Posting new assignments
 - Updating already released assignments (we will do our best to avoid it, but at times it may be necessary for us to do this)
 
+Sometimes this is as simple as running the command
+```
+git pull
+```
+but when your local repo and the one on Github have made diverging changes to the same files, you need to sort out the difference manually.
+
 All `git` commands assume that you have navigated to somewhere inside the repository (that is, the *deep-machine-learning* directory).
 
 ## Determining the state of your local git repository
