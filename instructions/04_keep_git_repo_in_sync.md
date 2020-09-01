@@ -13,7 +13,7 @@ but when your local repo and the one on Github have made diverging changes to th
 All `git` commands assume that you have navigated to somewhere inside the repository (that is, the *deep-machine-learning* directory).
 
 ## Determining the state of your local git repository
-If you are using Mac / Linux, and are not very familiar with git but still care about version control, Sourcetree is recommended as a graphical interface to git.
+If you are using Mac / Windows, and are not very familiar with git but still care about version control, Sourcetree is recommended as a graphical interface to git.
 https://www.sourcetreeapp.com/
 
 ### Knowing whether you need to sync
