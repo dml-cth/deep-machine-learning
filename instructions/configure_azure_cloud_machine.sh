@@ -24,6 +24,6 @@ chmod +x /tmp/miniconda.sh
 
 # Create jupyter notebook config file (overwrite if exists)
 mkdir -p ~/.jupyter
-echo "c.NotebookApp.ip = '*'">~/.jupyter/jupyter_notebook_config.json
-echo "c.NotebookApp.open_browser = False">>~/.jupyter/jupyter_notebook_config.json
-echo "c.NotebookApp.port = 8888">>~/.jupyter/jupyter_notebook_config.json
+echo "c.NotebookApp.ip = '*'">~/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.open_browser = False">>~/.jupyter/jupyter_notebook_config.py
+echo "c.NotebookApp.port = 8888">>~/.jupyter/jupyter_notebook_config.py
