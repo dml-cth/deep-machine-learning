@@ -21,7 +21,6 @@ source .bashrc
 # Update base conda environment
 conda update -n base -c defaults conda
 # Create conda environment
-git clone https://github.com/JulianoLagana/deep-machine-learning.git ~/deep-machine-learning
 conda env create -f ~/deep-machine-learning/conda-environment-files/conda-environment-gpu-unix.yml
 
 # Create jupyter notebook config file (overwrite if exists)
