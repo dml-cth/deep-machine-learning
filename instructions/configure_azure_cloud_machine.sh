@@ -29,12 +29,3 @@ mkdir -p ~/.jupyter
 echo "c.NotebookApp.ip = '*'">~/.jupyter/jupyter_notebook_config.json
 echo "c.NotebookApp.open_browser = False">>~/.jupyter/jupyter_notebook_config.json
 echo "c.NotebookApp.port = 8888">>~/.jupyter/jupyter_notebook_config.json
-
-
-
-# Activate conda environment
-conda activate dml
-
-jupyter notebook password
-
-jupyter notebook --no-browser
