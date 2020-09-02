@@ -1,7 +1,7 @@
 # Instructions for setting up the course environment
 
 ## Download & install Anaconda
-1. Download Anaconda Python 3.7 from https://www.anaconda.com/distribution/
+1. Download Anaconda Python from https://www.anaconda.com/distribution/ . The below remarks refer to the command line version of the installer.
 1. Run the installer, but first read through **all** of the below remarks.
   - If on Windows, you might need to run the downloaded installation file as administrator, depending on choice of installation directory (right-click the file, and click "Run as administrator").
   - Do not use the default installation path, if it contains spaces or other special characters. We do not know exactly when this could turn out to be an issue, but it is discouraged by Anaconda (more info [here](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)). For instance, if John Doe ran the installer, the default path might be `C:\Users\John Doe\Anaconda3`, which could be an issue since his username has a space in it. An alternative would be `C:\anaconda3`, although this would probably require you to run the installation as administrator.
