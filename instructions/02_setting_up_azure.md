@@ -86,7 +86,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - When you're done using your instance, you can type `exit` in the terminal to disconnect from it. **Note that this does not stop the instance**. To do so, and stop consuming credits, you have to manually click on the *Stop* button for your instance. Make sure the instance is stopped by waiting until the *Stop* button is greyed out, and the *Start* button becomes available again.
 
   - **Important note**: Forgetting to stop your instance is a common mistake that will cost you many (if not all) credits! Be mindful of this and always click on the stop button after using the instance, and wait for the confirmation that the instance was truly stopped
-  - **Important note 2**: To the best of our knowledge, clicking the stop button on the GUI is the *only* action that truly stops your instance from consuming credits. Other options, e.g. `sudo poweroff` in the terminal, *do not* do the trick. 
+  - **Important note 2**: There are a couple of gotchas regarding stopping the instance, i.e. you might thing you have stopped it but you actually haven't. This includes running `sudo poweroff` or using the Azure CLI to stop the instance, without **deallocating** it. No matter how you choose to stop the virtual machine, make sure that its state goes to **Stopped (deallocated)**.
 
 
 
