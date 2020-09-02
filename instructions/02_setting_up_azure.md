@@ -11,7 +11,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 ### 1. Registering for Azure Students
 
 - Navigate to https://azure.microsoft.com/en-us/free/students/ and click the green *Activate now* button.
-- Create a Microsoft account and follow the steps for activating your free credits. Use your institutional e-mail (e.g. @net.chalmers.se, @chalmers.se) for the registration.
+- Create a Microsoft account and follow the steps for activating your free credits. Use your institutional e-mail (@net.chalmers.se, @chalmers.se or @student.gu.se) for the registration.
 - Once everything is approved you'll get an e-mail confirmation. Now you're ready to follow the next steps in this guide.
 
 
