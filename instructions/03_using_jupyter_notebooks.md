@@ -1,5 +1,5 @@
 # Instructions for using Jupyter Notebooks in the cloud
-In the [01_environment_setup.md](01_environment_setup.md) instructions, you learned how to access Jupyter notebooks when working on your own computer. When working on a virtual machine in the cloud, the process is similar, but requires some extra manual steps.
+In the [01_environment_setup.md](01_environment_setup.md) instructions, you learned how to access Jupyter notebooks when working on your own computer. When working on a virtual machine in the cloud, the process is similar, but requires some extra manual steps. Be sure to have completed the guide [02_setting_up_azure.md](02_setting_up_azure.md) before proceeding.
 
 - Start your virtual machine instance.
 
@@ -20,12 +20,12 @@ jupyter notebook password
   jupyter notebook
   ```
 
-- The browser will not pop up automatically, like when you worked on your own computer. Instead, you need to navigate to the appropriate page automatically, for which you first need the IP address of the virtual machine, that you determined earlier.
+- The browser will not pop up automatically, like when you worked on your own computer. Instead, you need to navigate to the appropriate page automatically, for which you first need the IP address of the virtual machine that you determined earlier.
 
 - Open up your browser and navigate to e.g. `
-http://52.183.118.98:8888`, but replace the IP witht he appropriate one.
+http://52.183.118.98:8888`, but replace the IP with the appropriate one.
 
-- If all of the steps above have been followed correctly, you will now see a web page asking you to provide the password you created before starting the Jupyter server.
+- If all of the steps above have been followed correctly (and you set up your Azure machine correctly), you will now see a web page asking you to provide the password you created before starting the Jupyter server.
 
 - You are now connected to your Jupyter server running in the Google Cloud's instance.
 
