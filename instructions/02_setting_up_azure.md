@@ -120,9 +120,4 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
   and then connect to it again like described previously. **Note**: This is important for the setup, so that the terminal is reinitialized; don't skip this step.
 
-- You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/02_using_jupyter_notebooks.md).
-
-
-
-
-
+- You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/03_using_jupyter_notebooks.md).
