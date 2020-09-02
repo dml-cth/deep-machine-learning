@@ -4,7 +4,7 @@ For assignments HA1, HA2, and your final project, you will need a GPU-enabled ma
 
 You will always be interacting with your virtual machine in Azure's servers via a terminal, or terminal emulator. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).
 
- You are advised to perform these steps early on in the course, in order to minimize the possibility of not having access to your machine 
+ You are advised to perform these steps early on in the course, in order to minimize the possibility of not having access to your machine.
 
 
 
