@@ -28,11 +28,12 @@ You will always be interacting with your virtual machine in Azure's servers via 
   - In **Region** choose one of the recommended regions, preferably `Central US`, or `West Europe` (note that some regions might not have GPUs available, if that's the case try another region).
   - In **Image**, click on *Browse all public and private images*. Search for `ngc` in the search box, and click on the result with the name `NVIDIA GPU-optimized Image for AI & HPC - v20.06.3`.
   - In **Size**, click on *Select size*. Then, search for `NC6`, and choose the result with the name `NC6`, then click the blue button on the bottom named *Select*. (There are other GPU-enabled machines to choose from, but we have only tested running the assignments for NC6 and NV6. You can find all GPU options by filtering on Family: GPU.)
-  - In **Username**, select a username for logging in to your instance. Remember this, we'll use it later for connecting to the instance.
+  - In **Username**, select a username for logging in to your instance. 
+    - **Note**: Write this down, we'll use it later for connecting to the instance. If you forget it you won't be able to login to your instance.
 - Click on the blue button on the bottom of the page named *Review + Create*, and wait for the final validation to pass.
-- Fill in the required fields for accepting the terms associated with the Marketplace offerings.
+- Fill in the required fields (name, e-mail, phone number) and accept the terms associated with the Marketplace offerings.
 - Click on the blue button on the bottom of the page named *Create*.
-- A pop-up will appear requesting you to generate new key pairs. Click on *Download private key and create resource*. A `*.pem` file will be downloaded, keep it stored in a safe place, we'll use it to connect to the instance later.
+- A pop-up will appear requesting you to generate new key pairs. Click on *Download private key and create resource*. A `*.pem` file will be downloaded, keep it stored in a safe place, we'll use it to connect to the instance later (if you misplace this file you won't be able to connect to your instance anymore).
 - You will be taken to a webpage that says *Deployment is in progress*. Wait for it to finish, when it will then exhibit the message *Your deployment is complete*
 - Click on the blue button *Go to resource*.
 - Click on the button with a square on its left, named *Stop*. A message will show up regarding IP addresses, click on *ok*.
@@ -51,15 +52,17 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 - Click on *Start* and wait until the instance has started; the *Start* button will be greyed out when this happens, and the *Status* of the instance will be shown as *Running*. 
 
-- **Note**: As soon as the instance starts it will be consuming credits. This only halts when you stop it. Take this into account when following the next steps.
+  - **Note**: As soon as the instance starts it will be consuming credits. This only halts when you stop it. Take this into account when following the next steps.
 
 - In the *Properties* part of the webpage you're currently in, you'll find your instance's *Public IP address*, under *Networking*. Write it down somewhere, we'll use it in the next steps. 
+
+  - **Note**: Sometimes it takes a few seconds for the IP of a recently-started machine to show up in the webpage. If that's the case, refresh your webpage after starting the instance.
 
 - Now we're going to open the browser-based Shell that Azure provides, so we can login to the instance. Click on the shell icon on the blue bar at the top of your screen. It is a square with the symbols `>_` inside it (and when you hover over it it says *Cloud Shell*).
 
 - You'll be prompted to create some storage for the shell, accept it.
 
-- The bottom part of the webpage will now become a terminal, where you can type commands for the next steps of this guide.
+- The bottom part of the webpage will now become a terminal, where you can type commands for the next steps of this guide. The rest of this guide assumes you will use the Bash version of the terminal (by default, this is the one you start with), instead of the Powershell version.
 
 - Drag-and-drop the `*.pem` that you downloaded when creating this instance into the terminal. A message will appear on the bottom-right telling you that the upload was successful.
 
@@ -72,7 +75,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
     (substitute `<filename>` with the name of your `*.pem` file).
 
   - ```
-    ssh -i <filename> <user>@<public-ip>
+    ssh -i <filename>.pem <user>@<public-ip>
     ```
 
     (substitute `<user>` with the username you chose when creating the instance, and `<public-ip>` with the *Public IP address* mentioned previously in this guide).
@@ -102,15 +105,25 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
   This will create a folder in your home directory called `deep-machine-learning` (you can check the contents of your current directory with the command `ls`).
 
+  - **Note**: This command must be run from your `home` directory (which is the one you start on after connecting to the instance). 
+
 - Now run the command:
   
   ```
   deep-machine-learning/instructions/configure_azure_cloud_machine.sh
   ```
   
-  When prompted whether to proceed, simply press enter. This will install all the required software for the course, and will create a conda environment for you. It may take a few minutes.
+  When prompted whether to proceed, simply press enter. This will install all the required software for the course, and will create a conda environment for you. It may take a few minutes, specially the part where conda is installing pip dependencies.
   
   - **Note**: If you just created your instance, you might run into the error `Unable to acquire dpkg frontend lock`. If that's the case, just wait a few minutes and try the same command again, the instance is still updating some packages in the background.
+  
+  - **Note** 2: Another possible error states that `dpkg was interrupted`. If you run into that, execute the command
+  
+    ```
+    sudo dpkg --configure -a
+    ```
+  
+    and re-run the previous command.
   
 - Once everything is installed, disconnect from the instance with the command 
 
