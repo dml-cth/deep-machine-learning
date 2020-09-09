@@ -131,6 +131,6 @@ You will always be interacting with your virtual machine in Azure's servers via 
   exit
   ```
 
-  and then connect to it again like described previously. **Note**: This is important for the setup, so that the terminal is reinitialized; don't skip this step.
+  and then connect to it again like described previously. **Note**: This is important for the setup, so that the terminal is reinitialized; don't skip this step. **Note 2**: This command *does not* stop your instance, it just disconnects you from it while leaving it running in the background.
 
 - You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/03_using_jupyter_notebooks.md).
