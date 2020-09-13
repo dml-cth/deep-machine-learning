@@ -4,8 +4,6 @@ For assignments HA1, HA2, and your final project, you will need a GPU-enabled ma
 
 You will always be interacting with your virtual machine in Azure's servers via a terminal, or terminal emulator. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).
 
- You are advised to perform these steps early on in the course, in order to minimize the possibility of not having access to your machine.
-
 
 
 ### 1. Registering for Azure Students
@@ -38,7 +36,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - Click on the blue button *Go to resource*.
 - Click on the button with a square on its left, named *Stop*. A message will show up regarding IP addresses, click on *ok*.
 - Now click on *Networking* in your instance's Properties tab. Then, click on *Add inbound port rule*. Under *Destination port ranges*, type `8888`. Under *Name*,  type `JUPYTER_PORT`. Finally, click on *Add*.
-- Congratulations, you have now created your instance! You also stopped it, so that it doesn't consume credits while you're not using it. You can now go back to the home portal by clicking on *Home* on the top-left corner of the screen.
+- Congratulations, you have now created your instance! You also stopped it, so that it doesn't consume credits while you're not using it. Now keep following the next steps, in order to connect to it, and set up all the required software.
 
 
 
@@ -110,7 +108,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - Now run the command:
   
   ```
-  deep-machine-learning/instructions/configure_azure_cloud_machine.sh
+  ./deep-machine-learning/instructions/configure_cloud_machine.sh
   ```
   
   When prompted whether to proceed, simply press enter. This will install all the required software for the course, and will create a conda environment for you. It may take a few minutes, specially the part where conda is installing pip dependencies.
