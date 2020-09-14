@@ -36,7 +36,7 @@ You will always be interacting with your instance in Google's servers via a term
 - You will now see quotas for various GPU resources. If the column named "Quota status" is empty, it means that the there is no quota for the corresponding resource at the moment, meaning it is effectively disabled.
 - These are the quotas you may want to take a look at:
   - The most important one is called "GPUs (all regions)". It controls how many GPU-enabled instances you can have in parallel, and so definitely needs to be 1 or larger. More than 1 might be useful, but we suggest 1 to start with, as the chances for approval might be lower for higher numbers. If desired, later on you can try to increase this further.
-  - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA K80 GPUs", and "NVIDIA T4 GPUs". Other GPUs can be explored, but the "Preemptible" and "Committed" GPUs will not be necessary. These GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
+  - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA K80 GPUs". Other GPUs can be explored, and might perform better, but in any case the "Preemptible" and "Committed" GPU quotas will not be necessary. The GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
 - For each quota you want to increase, click on *ALL QUOTAS*, which will show you the "Quota metric details" page. Now, select all lines in the table, and click *EDIT QUOTAS*. Fill in your contact details, and click *Next*.
 - Now set a new limit. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA T4 GPUs") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University.", and then submit the request.
 - Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. This could potentially take two business days, but is usually done within a couple of minutes.
@@ -54,7 +54,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Move on to the machine configuration. Select the "General-purpose" machine family, and the N1 series.
 - Now select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Expand the "CPU platform and GPU" menu, in order to add a GPU to the machine.
-  - We have only tested the assignments on K80 and T4.
+  - We have only tested the assignments on K80.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
   - Avoid V100 and P100 since they are more expensive. Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
 - Under *Boot disk*, click on *Change*.
