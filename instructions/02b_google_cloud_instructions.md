@@ -54,6 +54,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Move on to the machine configuration. Select the "General-purpose" machine family, and the N1 series.
 - Now select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Expand the "CPU platform and GPU" menu, in order to add a GPU to the machine.
+  - If the *Add GPU* button is greyed out, you need to change the region/zone to one where you can add GPUs.
   - We have only tested the assignments on K80.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
   - Avoid V100 and P100 since they are more expensive. Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
@@ -87,7 +88,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Access the console menu.
 - Navigate to *Compute Engine* -> *VM Instances*, where you can see your instances (e.g. like below).
 - Unless started already, select the instance you want to start, and click on the start button at the top of the page (the play symbol).
-  - If the instance does not start due to an availability issue, try creating an instance in another region/zone instead. Note however that if you have a limit of 1 for the "GPUs (all regions)" quota, you will need to delete the previously created instance before creating another one.
+  - If the instance does not start due to an availability issue, try creating an instance in another region/zone instead. Note however that if you have a limit of 1 for the "GPUs (all regions)" quota, you will need to delete the previously created instance before creating another one. **Tip**: In order to preserve the work you have done, there is a possibility to first create a "machine image" from the current instance, then delete the instance, and finally use the machine image when creating the new instance. However, we do not provide detailed instructions on this. Furthermore, if you are unsure about this, always make sure to backup your work in a way that you are confident with.
 - When the instance has started, click on the *SSH* symbol (as seen below), in order to connect to it.
 ![Running instance](figs/running-vm-instance.png)
 - Now, the Google Cloud Shell, which is basically a browser-based Linux terminal, will open up, and it will automatically connect to your instance through an SSH session.
