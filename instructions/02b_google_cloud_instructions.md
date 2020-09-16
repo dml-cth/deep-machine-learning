@@ -15,7 +15,7 @@ You will always be interacting with your instance in Google's servers via a term
 
 ### Create a project
 - Log in to http://console.cloud.google.com
-- On Google Cloud, there is a concept called "projects". The purpose of a project is to organize your resources. In the Google Cloud portal, the currently selected project can always be seen in, and changed via, the dropdown menu at the top left of the console (e.g. "my-project" in below screenshot).
+- On Google Cloud, there is a concept called "projects". The purpose of a project is to organize your resources. In the Google Cloud portal, the currently selected project can always be seen in, and changed via, the dropdown menu at the top left of the console (e.g. "my-project" in below screenshot).<br />
 ![Top-left corner of the Google Cloud portal](figs/gcp-project-dropdown.png)
 - Expand the dropdown menu, and then create a new project, in which you will put your virtual machines later on.
 
@@ -62,7 +62,7 @@ You will always be interacting with your instance in Google's servers via a term
   - For "Operating system", select "Deep Learning on Linux", and then the Version named "GPU Optimized Debian m32 (with CUDA 10.0)".
   - Select "Standard persistent disk" for the "Boot disk type", and 50 GB disk size.
 - Next, click *Create*.
-- **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.
+- **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
 ![Running instance](figs/gcp-running-vm-instance.png)
 - **Note 2:** It is possible that the instance does not start, with an error message about the region/zone not having enough resources available to fulfill the request. This is probably due to the scarcity of GPU resources. If this happens, you can either try again later, or try recreating the instance in another region/zone.
 - Finally, add a firewall rule for using Jupyter notebook. (This only has to be done once, despite creating additional instances in the future.)
@@ -86,7 +86,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Navigate to *Compute Engine* -> *VM Instances*, where you can see your instances (e.g. like below).
 - Unless started already, select the instance you want to start, and click on the start button at the top of the page (the play symbol).
   - If the instance does not start due to an availability issue, try creating an instance in another region/zone instead. Note however that if you have a limit of 1 for the "GPUs (all regions)" quota, you will need to delete the previously created instance before creating another one. **Tip**: In order to preserve the work you have done, there is a possibility to first create a "machine image" from the current instance, then delete the instance, and finally use the machine image when creating the new instance. However, we do not provide detailed instructions on this. Furthermore, if you are unsure about this, always make sure to backup your work in a way that you are confident with.
-- When the instance has started, click on the *SSH* symbol (as seen below), in order to connect to it.
+- When the instance has started, click on the *SSH* symbol (as seen below), in order to connect to it.<br />
 ![Running instance](figs/gcp-running-vm-instance.png)
 - Now, the Google Cloud Shell, which is basically a browser-based Linux terminal, will open up, and it will automatically connect to your instance through an SSH session.
   - It can take a little while for the instance to get ready after startup, such that you can connect to it. E.g. if you get the error message "Connection via Cloud Identity-Aware Proxy Failed", try to wait a little while and connect again.
