@@ -6,7 +6,7 @@ In the [01_environment_setup.md](01_environment_setup.md) instructions, you lear
 - Once it has started, determine the IP address of the virtual machine, which will be needed later.
   - In the [Azure Portal](http://portal.azure.com/) click on the virtual machine you just started, and navigate to "Overview". Under "Networking" identify the Public IP address (e.g. 52.183.118.98). Note that the IP might change every time you start up the instance.
   - In the Google Cloud console, the external IP will be clearly displayed in the list of virtual machine instances. In the example below, it is 34.123.45.90.
-![Running instance](figs/running-vm-instance.png)
+![Running instance](figs/gcp-running-vm-instance.png)
 
 - Connect to your virtual machine instance, and activate the `dml` environment.
 
