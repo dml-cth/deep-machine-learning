@@ -12,9 +12,6 @@ You will always be interacting with your instance in Google's servers via a term
 - If you do not have a @student.chalmers.se or @chalmers.se email address, reach out to Lennart, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
 - At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached. You can use your existing one or create a new one, but you will need to let us know which account you used in the next step.
-- If you haven't done so already, fill in [this Google Form]() and provide your Gmail / Google account you used when redeeming your Google Cloud coupons, which will allow us (the TAs) to distribute the necessary virtual machine image, that you will need to create your virtual machine instances later on.
-  - This is a manual step from our side, and might require a working day or two.
-  - Once we have done our part, you will receive a confirmation email from Google Cloud, saying that you are invited to a project. Accept this invitation.
 
 ## Create a project
 - Log in to http://console.cloud.google.com
