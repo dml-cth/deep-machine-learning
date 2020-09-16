@@ -11,7 +11,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Open [this link](https://google.secure.force.com/GCPEDU?cid=6Vjl8%2BVYZyCofZsbwD%2BGwpVpFn9LZXeAmTOli1V01e4ItAF3zXhcMmnWuzuh9%2Bgs), and fill in your full name as well as institutional email address.
 - If you do not have a @student.chalmers.se or @chalmers.se email address, reach out to Lennart, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
-- At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached. You can use your existing one or create a new one, but you will need to let us know which account you used in the next step.
+- At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached.
 
 ## Create a project
 - Log in to http://console.cloud.google.com
