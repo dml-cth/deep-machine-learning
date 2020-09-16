@@ -6,7 +6,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 
 
-### 1. Registering for Azure Students
+## 1. Registering for Azure Students
 
 - Navigate to https://azure.microsoft.com/en-us/free/students/ and click the green *Activate now* button.
 - Create a Microsoft account and follow the steps for activating your free credits. Use your institutional e-mail (@net.chalmers.se, @student.chalmers.se, @chalmers.se or @student.gu.se) for the registration.
@@ -14,7 +14,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 
 
-### 2. Creating an instance
+## 2. Creating an instance
 
 - **Note**: As soon as the instance is created it will be started, already consuming your credits. Make sure you follow this step until the end to stop it after creation.
 - Navigate to https://portal.azure.com/ and login.
@@ -40,7 +40,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 
 
-### 3. Connecting to the instance
+## 3. Connecting to the instance
 
 - Navigate to https://portal.azure.com/ and login.
 
@@ -91,7 +91,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 
 
-### 4. Setting up all the required software in your instance
+## 4. Setting up all the required software in your instance
 
 - Connect to your instance, like described previously.
 
