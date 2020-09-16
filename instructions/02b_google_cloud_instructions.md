@@ -6,20 +6,20 @@ You will always be interacting with your instance in Google's servers via a term
 
 
 
-### 1. Registration to, and preparations for using Google Cloud
+## 1. Registration to, and preparations for using Google Cloud
 
 - Open [this link](https://google.secure.force.com/GCPEDU?cid=6Vjl8%2BVYZyCofZsbwD%2BGwpVpFn9LZXeAmTOli1V01e4ItAF3zXhcMmnWuzuh9%2Bgs), and fill in your full name as well as institutional email address.
 - If you do not have a @student.chalmers.se or @chalmers.se email address, reach out to Lennart, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
 - At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached.
 
-## Create a project
+### Create a project
 - Log in to http://console.cloud.google.com
 - On Google Cloud, there is a concept called "projects". The purpose of a project is to organize your resources. In the Google Cloud portal, the currently selected project can always be seen in, and changed via, the dropdown menu at the top left of the console (e.g. "my-project" in below screenshot).
 ![Top-left corner of the Google Cloud portal](figs/gcp-project-dropdown.png)
 - Expand the dropdown menu, and then create a new project, in which you will put your virtual machines later on.
 
-## Increase GPU quota(s)
+### Increase GPU quota(s)
 - For each project (you only need one) within which you want to use GPU-enabled virtual machines, you must first make sure that GPU resources are enabled, i.e. having enough quota to use them.
 - Before continuing to increase the quotas, you need to have made sure that the Google Cloud "compute engine" is activated - otherwise the quotas to be increased will not be visible.
   - Click on the icon of three horizontal bars at the very top left of the console, and access the console menu.
@@ -39,7 +39,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. This could potentially take two business days, but is usually done within a couple of minutes.
 - At this point, you should be able to create GPU-enabled virtual machine instances!
 
-### 2. Creating a virtual machine instance
+## 2. Creating a virtual machine instance
 
 - Log in to http://console.cloud.google.com
 - Select the project in which you want to the instance, and make sure that this project has enough quota for GPU resources (see previous step).
@@ -79,7 +79,7 @@ You will always be interacting with your instance in Google's servers via a term
 
 
 
-### 3. Connecting to the instance
+## 3. Connecting to the instance
 
 - Select the project in which you have created your instance.
 - Access the console menu.
@@ -107,7 +107,7 @@ sudo -Hu student bash -c 'cd; bash'
 
 
 
-### 4. Setting up all the required software in your instance
+## 4. Setting up all the required software in your instance
 
 - Connect to your instance, like described previously, and don't forget to switch to the `student` user.
 
