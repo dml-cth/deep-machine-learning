@@ -1,10 +1,12 @@
 # Instructions for using Jupyter Notebooks in the cloud
-In the [01_environment_setup.md](01_environment_setup.md) instructions, you learned how to access Jupyter notebooks when working on your own computer. When working on a virtual machine in the cloud, the process is similar, but requires some extra manual steps. Be sure to have completed the guide [02_setting_up_azure.md](02_setting_up_azure.md) before proceeding.
+In the [01_environment_setup.md](01_environment_setup.md) instructions, you learned how to access Jupyter notebooks when working on your own computer. When working on a virtual machine in the cloud, the process is similar, but requires some extra manual steps. Be sure to have completed the either the Azure Cloud guide [02a_azure_cloud_instructions.md](02a_azure_cloud_instructions.md), or the Google Cloud guide [02b_google_cloud_instructions.md](02b_google_cloud_instructions.md) before proceeding.
 
-- Start your virtual machine instance.
+- Start your virtual machine instance (On Google Cloud, don't forget to first select the correct "project").
 
-- Once it has started, determine the IP address of the virtual machine, which will be needed later. In the [Azure Portal](http://portal.azure.com/) click on the virtual machine you just started, and navigate to "Overview". Under "Networking" identify the Public IP address (e.g. 
-52.183.118.98). Note that the IP might change every time you start up the instance.
+- Once it has started, determine the IP address of the virtual machine, which will be needed later.
+  - In the [Azure Portal](http://portal.azure.com/) click on the virtual machine you just started, and navigate to "Overview". Under "Networking" identify the Public IP address (e.g. 52.183.118.98). Note that the IP might change every time you start up the instance.
+  - In the Google Cloud console, the external IP will be clearly displayed in the list of virtual machine instances. In the example below, it is 34.123.45.90.
+![Running instance](figs/gcp-running-vm-instance.png)
 
 - Connect to your virtual machine instance, and activate the `dml` environment.
 
