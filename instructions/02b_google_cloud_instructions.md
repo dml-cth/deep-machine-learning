@@ -55,9 +55,7 @@ You will always be interacting with your instance in Google's servers via a term
   - We have only tested the assignments on K80.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
   - Avoid V100 and P100 since they are more expensive. Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
-- Under *Boot disk*, click on *Change*.
-  <!-- - Go to the *Custom images* tab.
-  - Select to show images from the project called "ssy340dml-image-project" (which you will be invited to, provided you filled in the Google Form), and choose the image named "ssy340dml-image". -->
+- Under *disk*, click on *Change*.
   - Go to the *Public images* tab.
   - For "Operating system", select "Deep Learning on Linux", and then the Version named "GPU Optimized Debian m32 (with CUDA 10.0)".
   - Select "Standard persistent disk" for the "Boot disk type", and 50 GB disk size.
