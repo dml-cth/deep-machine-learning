@@ -23,7 +23,8 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - Don't change anything in this page except for the following:
   - In **Resource group**, click on *Create new*. Name it `MyRG` and click on *ok*.
   - In **Virtual machine name** give your instance an appropriate name, e.g. "`dml-instance`".
-  - In **Region** choose one of the recommended regions, preferably `Central US`, or `West Europe` (note that some regions might not have GPUs available, if that's the case try another region).
+  - In **Region** choose one of the recommended regions. 
+    - **Note** Some regions might not have GPUs available, if that's the case try another region. Here's a list of all the regions that (at the time of writing this) have the GPU we'll use: East US; South Central US; Australia East; Southeast Asia; North Europe; UK South.
   - In **Image**, click on *Browse all public and private images*. Search for `ngc` in the search box, and click on the result with the name `NVIDIA GPU-optimized Image for AI & HPC - v20.06.3`.
   - In **Size**, click on *Select size*. Then, search for `NC6`, and choose the result with the name `NC6`, then click the blue button on the bottom named *Select*. (There are other GPU-enabled machines to choose from, but we have only tested running the assignments for NC6 and NV6. You can find all GPU options by filtering on Family: GPU.)
   - In **Username**, select a username for logging in to your instance. 
@@ -106,23 +107,23 @@ You will always be interacting with your virtual machine in Azure's servers via 
   - **Note**: This command must be run from your `home` directory (which is the one you start on after connecting to the instance). 
 
 - Now run the command:
-  
+
   ```
   ./deep-machine-learning/instructions/configure_cloud_machine.sh
   ```
-  
+
   When prompted whether to proceed, simply press enter. This will install all the required software for the course, and will create a conda environment for you. It may take a few minutes, specially the part where conda is installing pip dependencies.
-  
+
   - **Note**: If you just created your instance, you might run into the error `Unable to acquire dpkg frontend lock`. If that's the case, just wait a few minutes and try the same command again, the instance is still updating some packages in the background.
-  
+
   - **Note** 2: Another possible error states that `dpkg was interrupted`. If you run into that, execute the command
-  
+
     ```
     sudo dpkg --configure -a
     ```
-  
+
     and re-run the previous command.
-  
+
 - Once everything is installed, disconnect from the instance with the command 
 
   ```
