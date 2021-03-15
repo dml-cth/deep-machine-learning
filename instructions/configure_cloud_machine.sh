@@ -20,7 +20,7 @@ chmod +x /tmp/miniconda.sh
 ~/conda/bin/conda update -n base -c defaults conda
 
 # Create conda environment
-~/conda/bin/conda env create -f ~/deep-machine-learning/conda-environment-files/conda-environment-gpu-unix.yml
+~/conda/bin/conda env create -f ~/conda-environment-gpu-unix.yml
 
 # Create jupyter notebook config file (overwrite if exists)
 mkdir -p ~/.jupyter

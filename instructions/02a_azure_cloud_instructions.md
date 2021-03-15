@@ -88,22 +88,17 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 ## 4. Setting up all the required software in your instance
 
-- Connect to your instance, like described previously.
+- Copy the setup script: cloud_setup.zip to your instance. This can be done in multiple ways, e.g., through the `scp` command. It's similar to the `ssh` command but will instead copy files between computers over the `ssh` protocol. Use it like this:
 
-- In your instance, clone the course repository using the command:
+```
+scp -i <filename>.pem <path_to_cloud_setup.zip> <user>@<public-ip>:
+```
 
-  ```
-  git clone https://github.com/JulianoLagana/deep-machine-learning.git
-  ```
-
-  This will create a folder in your home directory called `deep-machine-learning` (you can check the contents of your current directory with the command `ls`).
-
-  - **Note**: This command must be run from your `home` directory (which is the one you start on after connecting to the instance).
-
-- Now run the command:
+- Connect to your instance, like described previously. If the zip file is on the instance, you should now be able to run the commands:
 
   ```
-  ./deep-machine-learning/instructions/configure_cloud_machine.sh
+  unzip ~/cloud_setup.zip
+  bash configure_cloud_machine.sh
   ```
 
   When prompted whether to proceed, simply press enter. This will install all the required software for the course, and will create a conda environment for you. It may take a few minutes, specially the part where conda is installing pip dependencies.
