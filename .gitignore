@@ -1,9 +1,10 @@
-.*
+#.*
 !/.gitignore
 *.csv
 *.jpg
 *.h5
 *.tfevents*
+.ipynb_checkpoints
 PASSWD_HASH.txt
 #*.txt
 *__pycache__*
