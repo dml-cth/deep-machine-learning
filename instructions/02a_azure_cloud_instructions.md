@@ -21,18 +21,18 @@ You will always be interacting with your virtual machine in Azure's servers via 
   - In **Virtual machine name** give your instance an appropriate name, e.g. "`dml-instance`".
   - In **Region** choose one of the recommended regions.
     - **Note** Some regions might not have GPUs available, if that's the case try another region. Here's a list of all the regions that (at the time of writing this) have the GPU we'll use: East US; South Central US; Australia East; Southeast Asia; North Europe; UK South.
-  - In **Image**, click on _See all images_. Search for `ngc` in the search box, and click on the result with the name `NVIDIA GPU-optimized Image for AI & HPC - v20.06.3`.
-  - In **Size**, click on _Select all sizes_. Then, search for `NC6`, and choose the result with the name `NC6`, then click the blue button on the bottom named _Select_. (There are other GPU-enabled machines to choose from, but we have only tested running the assignments for NC6 and NV6. You can find all GPU options by filtering on Family: GPU.)
+  - In **Image**, click on _See all images_. Search for `ngc` in the search box, and click on the result with the name `NVIDIA GPU-optimized Image for AI & HPC - v20.08.1`.
+  - In **Size**, click on _Select all sizes_. Then, search for `NC6`, and click on "Non-premium storage VM sizes". Now choose the result with the name `NC6`, then click the blue button on the bottom named _Select_. (There are other GPU-enabled machines to choose from, but we have only tested running the assignments for NC6 and NV6. You can find all GPU options by filtering on Family: GPU.)
   - In **Username**, select a username for logging in to your instance.
     - **Note**: Write this down, we'll use it later for connecting to the instance. If you forget it you won't be able to login to your instance.
 - Click on the blue button on the bottom of the page named _Review + Create_, and wait for the final validation to pass.
 - Fill in the required fields (name, e-mail, phone number) and accept the terms associated with the Marketplace offerings.
 - Click on the blue button on the bottom of the page named _Create_.
 - A pop-up will appear requesting you to generate new key pairs. Click on _Download private key and create resource_. A `*.pem` file will be downloaded, keep it stored in a safe place, we'll use it to connect to the instance later (if you misplace this file you won't be able to connect to your instance anymore).
-- You will be taken to a webpage that says _Deployment is in progress_. Wait for it to finish, when it will then exhibit the message _Your deployment is complete_
+- After waiting a bit, you will be taken to a webpage that says _Deployment is in progress_. Wait for it to finish, when it will then exhibit the message _Your deployment is complete_
 - Click on the blue button _Go to resource_.
-- Click on the button with a square on its left, named _Stop_. A message will show up regarding IP addresses, click on _ok_.
-- Now click on _Networking_ in your instance's Properties tab. Then, click on _Add inbound port rule_. Under _Destination port ranges_, type `8888`. Under _Name_, type `JUPYTER_PORT`. Finally, click on _Add_.
+- Click on the button with a square on its left, named _Stop_. A message will show up regarding IP addresses, click on _ok_. Wait until you get the instance stops (when the *Stop* button is greyed out, and the *Start* button isn't).
+- Now click on _Networking_, under your instance's *Properties* tab. Then, click on _Add inbound port rule_. Under _Destination port ranges_, type `8888`. Under _Name_, type `JUPYTER_PORT`. Finally, click on _Add_.
 - Congratulations, you have now created your instance! You also stopped it, so that it doesn't consume credits while you're not using it. Now keep following the next steps, in order to connect to it, and set up all the required software.
 
 ## 3. Connecting to the instance
@@ -41,13 +41,13 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 - Under _Azure Services_, click on _Virtual machines_, you'll be redirected to a new page.
 
-- If you followed step 1 of this guide correctly, you should now see your newly-created instance in this page. Click on its name.
+- If you followed step 1 of this guide correctly, you should now see your newly-created, stopped instance in this page. Click on its name.
 
 - Click on _Start_ and wait until the instance has started; the _Start_ button will be greyed out when this happens, and the _Status_ of the instance will be shown as _Running_.
 
   - **Note**: As soon as the instance starts it will be consuming credits. This only halts when you stop it. Take this into account when following the next steps.
 
-- In the _Properties_ part of the webpage you're currently in, you'll find your instance's _Public IP address_, under _Networking_. Write it down somewhere, we'll use it in the next steps.
+- In the _Properties_ part of your instance, you'll find your instance's _Public IP address_, under _Networking_. Write it down somewhere, we'll use it in the next steps.
 
   - **Note**: Sometimes it takes a few seconds for the IP of a recently-started machine to show up in the webpage. If that's the case, refresh your webpage after starting the instance.
 
@@ -57,7 +57,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 - The bottom part of the webpage will now become a terminal, where you can type commands for the next steps of this guide. The rest of this guide assumes you will use the Bash version of the terminal (by default, this is the one you start with), instead of the Powershell version.
 
-- Drag-and-drop the `*.pem` that you downloaded when creating this instance into the terminal. A message will appear on the bottom-right telling you that the upload was successful.
+- Drag-and-drop the `*.pem` that you downloaded when creating this instance into the terminal. A message will appear on the bottom-right telling you that the upload was successful. 
 
 - In the terminal, type the following commands:
 
@@ -71,7 +71,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
     ssh -i <filename>.pem <user>@<public-ip>
     ```
 
-    (substitute `<user>` with the username you chose when creating the instance, and `<public-ip>` with the _Public IP address_ mentioned previously in this guide).
+    (substitute `<user>` with the username you chose when creating the instance, and `<public-ip>` with the _Public IP address_ mentioned previously in this guide). If you see a message about the authenticity of the host, simply type `yes` and press enter.
 
   - **Note**: If after running the `ssh` command nothing happens for a while, make sure you typed the correct IP address for your instance. If not, use `Ctrl+c` to cancel the current command and type in the correct address. Also note that even if the instance is marked as "running" after starting up, it might take a little while before you can actually connect to it.
 
@@ -81,10 +81,10 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 - When you're done using your instance, you can type `exit` in the terminal to disconnect from it. **Note that this does not stop the instance**. To do so, and stop consuming credits, you have to manually click on the _Stop_ button for your instance. Make sure the instance is stopped by waiting until the _Stop_ button is greyed out, and the _Start_ button becomes available again.
 
-  - **Important note**: Forgetting to stop your instance is a common mistake that will cost you many (if not all) credits! Be mindful of this and always click on the stop button after using the instance, and wait for the confirmation that the instance was truly stopped
+  - **Important note**: Forgetting to stop your instance is a common mistake that will cost you many (if not all) credits! Be mindful of this and always click on the stop button after using the instance, and wait for the confirmation that the instance was truly stopped.
   - **Important note 2**: There are a couple of gotchas regarding stopping the instance, i.e. you might thing you have stopped it but you actually haven't. This includes running `sudo poweroff` or using the Azure CLI to stop the instance, without **deallocating** it. No matter how you choose to stop the virtual machine, make sure that its state goes to **Stopped (deallocated)**.
 
-  - **Important note 3**: Leaving the browser based shell in a semi-active state (like training networks) for a long time can cause the shell to terminate the VM connection. We don't have a good fix for this but using a proper shell on your computer, rather than the browser one, will be more stable.
+  - **Important note 3**: Leaving the browser-based shell in a semi-active state (like training networks) for a long time can cause the shell to terminate the VM connection. We don't have a good fix for this but using a proper shell on your computer, rather than the browser one, will be more stable.
 
 ## 4. Setting up all the required software in your instance
 
