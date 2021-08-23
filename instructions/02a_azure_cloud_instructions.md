@@ -15,7 +15,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - **Note**: As soon as the instance is created it will be started, already consuming your credits. Make sure you follow this step until the end to stop it after creation.
 - Navigate to https://portal.azure.com/ and login.
 - Under _Azure Services_, click on _Virtual machines_, you'll be redirected to a new page.
-- Click on Add > Virtual Machine.
+- Click on Create > Virtual Machine.
 - Don't change anything in this page except for the following:
   - In **Resource group**, click on _Create new_. Name it `MyRG` and click on _ok_.
   - In **Virtual machine name** give your instance an appropriate name, e.g. "`dml-instance`".
