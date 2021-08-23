@@ -31,8 +31,8 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - A pop-up will appear requesting you to generate new key pairs. Click on _Download private key and create resource_. A `*.pem` file will be downloaded, keep it stored in a safe place, we'll use it to connect to the instance later (if you misplace this file you won't be able to connect to your instance anymore).
 - After waiting a bit, you will be taken to a webpage that says _Deployment is in progress_. Wait for it to finish, when it will then exhibit the message _Your deployment is complete_
 - Click on the blue button _Go to resource_.
-- Click on the button with a square on its left, named _Stop_. A message will show up regarding IP addresses, click on _ok_. Wait until you get the instance stops (when the *Stop* button is greyed out, and the *Start* button isn't).
-- Now click on _Networking_, under your instance's *Properties* tab. Then, click on _Add inbound port rule_. Under _Destination port ranges_, type `8888`. Under _Name_, type `JUPYTER_PORT`. Finally, click on _Add_.
+- Click on the button with a square on its left, named _Stop_. A message will show up regarding IP addresses, click on _ok_. Wait until you get the instance stops (when the _Stop_ button is greyed out, and the _Start_ button isn't).
+- Now click on _Networking_, under your instance's _Properties_ tab. Then, click on _Add inbound port rule_. Under _Destination port ranges_, type `8888`. Under _Name_, type `JUPYTER_PORT`. Finally, click on _Add_.
 - Congratulations, you have now created your instance! You also stopped it, so that it doesn't consume credits while you're not using it. Now keep following the next steps, in order to connect to it, and set up all the required software.
 
 ## 3. Connecting to the instance
@@ -57,7 +57,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 
 - The bottom part of the webpage will now become a terminal, where you can type commands for the next steps of this guide. The rest of this guide assumes you will use the Bash version of the terminal (by default, this is the one you start with), instead of the Powershell version.
 
-- Drag-and-drop the `*.pem` that you downloaded when creating this instance into the terminal. A message will appear on the bottom-right telling you that the upload was successful. 
+- Drag-and-drop the `*.pem` that you downloaded when creating this instance into the terminal. A message will appear on the bottom-right telling you that the upload was successful.
 
 - In the terminal, type the following commands:
 
@@ -117,6 +117,13 @@ You will always be interacting with your virtual machine in Azure's servers via 
     ```
 
     and re-run the previous command.
+    This can also fail with an error message that proposes you to run:
+
+    ```
+    sudo apt --fix-broken install
+    ```
+
+    which should solve the problem. Again, you need to rerun the original `configure_cloud_machine.sh` script.
 
 - Once everything is installed, disconnect from the instance with the command
 
