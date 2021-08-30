@@ -43,19 +43,19 @@ You will always be interacting with your instance in Google's servers via a term
 - Select the project in which you want to the instance, and make sure that this project has enough quota for GPU resources (see previous step).
 - Click on the icon of three horizontal bars at the very top left of the console, and access the console menu.
 - Navigate to _Compute Engine_ -> _VM Instances_. The very first time you reach this page, you might have to wait a while for the compute engine to activate.
-- To start creating your first instance, click on _Create_. In the future, if creating additional instances, instead look for the ![+](figs/gcp-add-icon.png) icon.
+- To start creating your first instance, click on _Create instance_.
 - Set a name for the instance.
 - Select a region and a corresponding zone, e.g. "us-central1-a" or "europe-west1-b".
 - Move on to the machine configuration. Select the "General-purpose" machine family, and the N1 series.
 - Now select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Expand the "CPU platform and GPU" menu, in order to add a GPU to the machine.
-  - If the _Add GPU_ button is greyed out, you need to change the region/zone to one where you can add GPUs.
+  - If you can't add a GPU, you need to change the region/zone to one where you can add GPUs.
   - We have only tested the assignments on K80.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
   - Avoid V100 and P100 since they are more expensive. Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
-- Under _disk_, click on _Change_.
+- Under _Boot disk_, click on _Change_.
   - Go to the _Public images_ tab.
-  - For "Operating system", select "Deep Learning on Linux", and then the Version named "GPU Optimized Debian m32 (with CUDA 10.0)".
+  - For "Operating system", select "Deep Learning on Linux", and then the Version named "Deep Learning Image: Base m78 CUDA11.0".
   - Select "Standard persistent disk" for the "Boot disk type", and 50 GB disk size.
 - Next, click _Create_.
 - **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
@@ -148,4 +148,4 @@ sudo -Hu student bash -c 'cd; bash'
 - Once everything is installed, execute the `exit` command, and then log in again (as before, with `sudo -Hu student bash -c 'cd; bash'`).
   **Note**: This is important for the setup, so that the terminal is reinitialized; don't skip this step.
 
-- You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/03_using_jupyter_notebooks.md).
+- You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/03_using_jupyter_notebooks_on_cloud.md).
