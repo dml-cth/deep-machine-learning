@@ -6,7 +6,7 @@ You will always be interacting with your instance in Google's servers via a term
 
 ## 1. Registration to, and preparations for using Google Cloud
 
-- Open [this link](https://google.secure.force.com/GCPEDU?cid=6Vjl8%2BVYZyCofZsbwD%2BGwpVpFn9LZXeAmTOli1V01e4ItAF3zXhcMmnWuzuh9%2Bgs), and fill in your full name as well as institutional email address.
+- Open [this link](https://gcp.secure.force.com/GCPEDU?cid=CJlpF0JS1fx5Ytf8jETOZUd7uzt3khHt25Y9%2FlZX40TK0uzE0oO0ikSXWD9MQ2JT/), and fill in your full name as well as institutional email address.
 - If you do not have a @net.chalmers.se @student.chalmers.se, @chalmers.se, or @student.gu.se email address, reach out to Lennart, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
 - At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached.
@@ -26,16 +26,14 @@ You will always be interacting with your instance in Google's servers via a term
   - Navigate to _Compute Engine_ -> _VM Instances_ page.
   - Now, the compute engine will most likely be automatically activated.
   - If unsure, you can also try to create an instance of any kind, and delete it, but we don't expect this to be necessary.
-- At the _Compute Engine_ -> _VM Instances_ page, if there is a button named _Enable billing_, click on it, and then link the project with the billing account called "Deep machine learning Aug2020". This makes sure that you will use the free credits redeemed earlier. If you did not find any button _Enable billing_, it probably means that the project is already linked with the billing account.
+- At the _Compute Engine_ -> _VM Instances_ page, if there is a button named _Enable_, click on it, and follow the instructions to link your project with a billing account. This makes sure that you will use the free credits redeemed earlier. If you did not find any button _Enable_, it probably means that the project is already linked with the billing account.
 - Again, access the console menu.
 - Navigate to _IAM & Admin_ -> _Quotas_.
-- Click on "filter table", type a search term (e.g. "gpu"), and hit enter.
-- You will now see quotas for various GPU resources. If the column named "Quota status" is empty, it means that the there is no quota for the corresponding resource at the moment, meaning it is effectively disabled.
-- These are the quotas you may want to take a look at:
+- Select the "filter" field, type a search term (e.g. "gpu"), and hit enter.
+- These are the quotas you may want to take a closer look at:
   - The most important one is called "GPUs (all regions)". It controls how many GPU-enabled instances you can have in parallel, and so definitely needs to be 1 or larger. More than 1 might be useful, but we suggest 1 to start with, as the chances for approval might be lower for higher numbers. If desired, later on you can try to increase this further.
   - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA K80 GPUs". Other GPUs can be explored, and might perform better, but in any case the "Preemptible" and "Committed" GPU quotas will not be necessary. The GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
-- For each quota you want to increase, click on _ALL QUOTAS_, which will show you the "Quota metric details" page. Now, select all lines in the table, and click _EDIT QUOTAS_. Fill in your contact details, and click _Next_.
-- Now set a new limit. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA T4 GPUs") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University.", and then submit the request.
+- For each quota you want to increase: Select it and click _EDIT QUOTAS_. Set a new limit and click _Next_, fill in your contact details and complete the request. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA K80 GPUs") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University.", and then submit the request.
 - Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. This could potentially take two business days, but is usually done within a couple of minutes.
 - At this point, you should be able to create GPU-enabled virtual machine instances!
 

@@ -14,6 +14,8 @@ computer-labs/data
 !/home-assignments/HA3/cartpole.jpg
 !/poster-template/img/*
 
+*.ipynb_checkpoints
+
 tags
 tags.lock
 tags.temp
