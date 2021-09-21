@@ -25,3 +25,4 @@ dependencies:
   - gym
   - pillow
   - kaggle
+  - ipywidgets
