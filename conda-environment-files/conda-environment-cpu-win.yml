@@ -3,7 +3,10 @@ channels:
 - defaults
 - pytorch
 dependencies:
-- python=3.7
+- python=3.9
+- pytorch=1.11
+- torchvision=0.12
+- cpuonly
 - pip
 - numpy
 - jupyter
@@ -17,9 +20,6 @@ dependencies:
 - spacy
 - unidecode
 - pywin32
-- pytorch=1.2.0
-- torchvision=0.4.0
-- cpuonly
 - pip:
   - future
   - tb-nightly
