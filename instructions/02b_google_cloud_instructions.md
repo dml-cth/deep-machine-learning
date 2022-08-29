@@ -1,5 +1,9 @@
 # Instructions for setting up Google Cloud
 
+_Due to component shortages, there is limited access to GPUs from both Google Cloud and Azure._
+_We are in contact with respective service for how to deal with it._
+_You will not be needing cloud resources until HA1 which is still some weeks away._
+_We advise you to hold off on setting this up, until we are ready._
 For assignments HA1, HA2, and your final project, you will need a GPU-enabled machine. This guide will show you how to set up and connect to a Google Cloud machine with GPU, referred to as an instance.
 
 You will always be interacting with your instance in Google's servers via a terminal, or terminal emulator. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).

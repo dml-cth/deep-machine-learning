@@ -1,12 +1,17 @@
 # Instructions for setting up Azure
 
+_Due to component shortages, there is limited access to GPUs from both Google Cloud and Azure._
+_We are in contact with respective service for how to deal with it._
+_You will not be needing cloud resources until HA1 which is still some weeks away._
+_We advise you to hold off on setting this up, until we are ready._
+
 For assignments HA1, HA2, and your final project, you will need a GPU-enabled machine. This guide will show you how to set up and connect to an Azure cloud machine with GPU, referred to as a virtual machine.
 
 You will always be interacting with your virtual machine in Azure's servers via a terminal, or terminal emulator. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).
 
 ## 1. Registering for Azure Students
 
-- Navigate to https://azure.microsoft.com/en-us/free/students/ and click the green _Activate now_ button.
+- Navigate to https://azure.microsoft.com/en-us/free/students/ and click the green _Start free_ button.
 - Create a Microsoft account and follow the steps for activating your free credits. Use your institutional e-mail (@net.chalmers.se, @student.chalmers.se, @chalmers.se or @student.gu.se) for the registration.
 - Once everything is approved you'll get an e-mail confirmation. Now you're ready to follow the next steps in this guide.
 
@@ -15,7 +20,7 @@ You will always be interacting with your virtual machine in Azure's servers via 
 - **Note**: As soon as the instance is created it will be started, already consuming your credits. Make sure you follow this step until the end to stop it after creation.
 - Navigate to https://portal.azure.com/ and login.
 - Under _Azure Services_, click on _Virtual machines_, you'll be redirected to a new page.
-- Click on Create > Virtual Machine.
+- Click on Create > Azure virtual Machine.
 - Don't change anything in this page except for the following:
   - In **Resource group**, click on _Create new_. Name it `MyRG` and click on _ok_.
   - In **Virtual machine name** give your instance an appropriate name, e.g. "`dml-instance`".
