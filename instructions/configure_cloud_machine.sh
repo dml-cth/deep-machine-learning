@@ -5,6 +5,11 @@ set -e
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends unzip
 
+# Nvidia drivers
+curl https://raw.githubusercontent.com/GoogleCloudPlatform/compute-gpu-installation/main/linux/install_gpu_driver.py --output install_gpu_driver.py
+sudo rm -f /usr/bin/nvidia-smi # Needed, since the above script checks it for installed drivers
+sudo python3 install_gpu_driver.py
+
 curl -o /tmp/miniconda.sh -O  https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 chmod +x /tmp/miniconda.sh
 

@@ -47,7 +47,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Move on to the machine configuration. Select the "GPU" machine family.
 - Add a GPU to the machine:
   - The K80 is sufficient for the home assignments and is relatively cheap.
-    The T4 is a bit less capable but is also an option.
+    The T4 is a bit less capable, but is also an option.
   - If you can't add a GPU, you need to change the region/zone to one where you can add GPUs.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
   - You may need more powerful GPUs for the final project in the course, but know that they use more of your credits.
