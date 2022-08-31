@@ -1,11 +1,5 @@
 # Instructions for setting up Google Cloud
 
-_Due to component shortages, there is limited access to GPUs from both Google Cloud and Azure._
-_We are in contact with respective service for how to deal with it._
-_You will not be needing cloud resources until HA1 which is still some weeks away._
-_We advise you to hold off on setting this up, until we are ready._
-For assignments HA1, HA2, and your final project, you will need a GPU-enabled machine. This guide will show you how to set up and connect to a Google Cloud machine with GPU, referred to as an instance.
-
 You will always be interacting with your instance in Google's servers via a terminal, or terminal emulator. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).
 
 ## 1. Registration to, and preparations for using Google Cloud
@@ -50,17 +44,18 @@ You will always be interacting with your instance in Google's servers via a term
 - To start creating your first instance, click on _Create instance_.
 - Set a name for the instance.
 - Select a region and a corresponding zone, e.g. "us-central1-a" or "europe-west1-b".
-- Move on to the machine configuration. Select the "General-purpose" machine family, and the N1 series.
-- Now select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
-- Expand the "CPU platform and GPU" menu, in order to add a GPU to the machine.
+- Move on to the machine configuration. Select the "GPU" machine family.
+- Add a GPU to the machine:
+  - The K80 is sufficient for the home assignments and is relatively cheap.
+    The T4 is a bit less capable but is also an option.
   - If you can't add a GPU, you need to change the region/zone to one where you can add GPUs.
-  - We have only tested the assignments on K80.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
-  - Avoid V100 and P100 since they are more expensive. Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
+  - You may need more powerful GPUs for the final project in the course, but know that they use more of your credits.
+    Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
+- In the "Machine type" menu, select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Under _Boot disk_, click on _Change_.
   - Go to the _Public images_ tab.
-  - For "Operating system", select "Deep Learning on Linux", and then the Version named "Deep Learning Image: Base m78 CUDA11.0".
-  - Select "Standard persistent disk" for the "Boot disk type", and 50 GB disk size.
+  - For "Operating system", select "Deep Learning on Linux", and then the version named "Debian 10 based Deep Learning VM with CUDA 11.0 M95".
 - Next, click _Create_.
 - **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
   ![Running instance](figs/gcp-running-vm-instance.png)
