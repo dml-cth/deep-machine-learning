@@ -84,7 +84,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Now, the Google Cloud Shell, which is basically a browser-based Linux terminal, will open up, and it will automatically connect to your instance through an SSH session.
   - It can take a little while for the instance to get ready after startup, such that you can connect to it. E.g. if you get the error message "Connection via Cloud Identity-Aware Proxy Failed", try to wait a little while and connect again.
 - If it is your first time connecting to the instance:
-  - You might be prompted to install Nvidia drivers. If this happens, confirm the installation by typing `y` and pressing enter.
+  - You might be prompted to install Nvidia drivers. New drivers will be installed in our setup script so to save time you can decline this installation by typing `n`. Don't worry if you accept by mistake as these drivers will get replaced later.
   - Create a user named `student`: (Depending on how you connect to Google Cloud, you might end up logging in as different users. This way, you always use the same user named `student`, and know where you store all your files etc.)
   ```
   sudo useradd -mG sudo,google-sudoers student

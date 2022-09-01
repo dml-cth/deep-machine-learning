@@ -28,6 +28,7 @@ jupyter notebook password
 http://52.183.118.98:8888`, but replace the IP with the appropriate one.
 
 - If all of the steps above have been followed correctly (and you set up your Azure machine correctly), you will now see a web page asking you to provide the password you created before starting the Jupyter server.
+  - If the page is broken or is displayed incorrectly, make sure that you disable all your browser extensions and that the security settings for the webpage allows content to be viewed.
 
 - You are now connected to your Jupyter server running in the Google Cloud's instance.
 
