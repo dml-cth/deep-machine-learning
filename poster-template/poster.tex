@@ -2,7 +2,7 @@
 
 
 \documentclass{beamer}
-\usepackage[orientation=portrait,size=a0,scale=1.4,debug]{beamerposter}
+\usepackage[orientation=portrait,size=a2,scale=1.3,debug]{beamerposter}
 \mode<presentation>{\usetheme{ZH}}
 \usepackage{chemformula}
 \usepackage[utf8]{inputenc}
@@ -19,7 +19,7 @@
 \usepackage{helvet}
 
 \newcolumntype{Z}{>{\centering\arraybackslash}X} % centered tabularx columns
-\sisetup{per=frac,fraction=sfrac}
+%\sisetup{per=frac,fraction=sfrac}
 
 \title{\huge Template for your posters - Deep Machine Learning}
 \author{Student1 Studentsson, Student2 Studentsson}
@@ -28,7 +28,7 @@
 
 % edit this depending on how tall your header is.
 \newlength{\columnheight}
-\setlength{\columnheight}{104cm}
+\setlength{\columnheight}{50cm}
 
 
 \begin{document}
@@ -43,7 +43,7 @@
 				    
 				        \begin{figure}
 				            \centering
-				            \includegraphics{img/love-is-real-cats-and-dogs-4.jpg}
+				            \includegraphics[width=0.95\linewidth]{img/love-is-real-cats-and-dogs-4.jpg}
 				            \caption{Very relevant image}
 				            \label{fig:my_label}
 				        \end{figure}
@@ -76,7 +76,7 @@
                         
                         \begin{figure}
                             \centering
-                            \fbox{\includegraphics[scale=2]{img/loremipsum_exampletext.png}}
+                            \fbox{\includegraphics[scale=1]{img/loremipsum_exampletext.png}}
                             \caption{A bad idea for posters...}
                             \label{fig:my_label}
                         \end{figure}
@@ -93,7 +93,7 @@
                         
                         \begin{figure}
                             \centering
-                            \includegraphics[scale=2]{img/lorem_ipsum_image.jpg}
+                            \includegraphics[scale=0.7]{img/lorem_ipsum_image.jpg}
                             \caption{Of course, the diagram needs to be useful.}
                             \label{fig:my_label}
                         \end{figure}
@@ -121,18 +121,18 @@
 					    
 					\end{myblock}\vfill
 					\begin{myblock}{Short example}
-					    \vspace{1cm}
+					    \vspace{0.9cm}
 					    \begin{columns}
-					        \begin{column}{0.5\textwidth}
+					        \begin{column}{0.45\textwidth}
 					            \begin{figure}
 					                \centering
-					                \includegraphics[scale=0.8]{img/catdog.jpg}
+					                \includegraphics[width=0.9\linewidth]{img/catdog.jpg}
 					                \caption{A catdog}
 					                \label{fig:my_label}
 					            \end{figure}
 					        \end{column}
 					        
-					        \begin{column}{0.5\textwidth}
+					        \begin{column}{0.45\textwidth}
 					            Is this a cat or a dog?
 					            \begin{itemize}
 					                \item Pretty easy to tell, right?
@@ -142,25 +142,25 @@
 					        \end{column}
 					    \end{columns}
 					    
-					    \vspace{1cm}
+					    \vspace{0.8cm}
 					    Current best approach
-					    \vspace{1cm}
+					    \vspace{0.8cm}
 					    \begin{itemize}
 					        \item Convolutional neural networks (CNNs)
 					        \item Training CNNs requires large amounts of data
 					        \item For each data point, we need to know its correct class beforehand
 					    \end{itemize}
 					    
-					    \vspace{1cm}
+					    \vspace{0.8cm}
 					    \begin{figure}
 					        \centering
-					        \includegraphics[scale=0.9]{img/cnn.jpg}
+					        \includegraphics[scale=0.45]{img/cnn.jpg}
 					        \caption{CNN framework}
 					        \label{fig:my_label}
 					    \end{figure}
 					    
 					    We compare the outputs from the CNN to the desired ones, and adjust its parameterization accordingly, using one of many optimization algorithms.
-					    \vspace{1cm}
+					    \vspace{0.8cm}
 					    \begin{itemize}
 					        \item Used gradient descent\cite{Paivi} for optimization
 					        \item Kaggle dataset of Cats vs Dogs \cite{Oegren2008} (25k images of cats and dogs)
@@ -169,7 +169,7 @@
 					    					    
 					    \begin{figure}
 					        \centering
-					        \includegraphics[scale=1.5]{img/accuracy_train.png}
+					        \includegraphics[scale=0.6]{img/accuracy_train.png}
 					        \caption{Caption}
 					        \label{fig:my_label}
 					    \end{figure}
