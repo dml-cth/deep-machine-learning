@@ -4,7 +4,7 @@ You will always be interacting with your instance in Google's servers via a term
 
 ## 1. Registration to, and preparations for using Google Cloud
 
-- Open [this link](https://gcp.secure.force.com/GCPEDU?cid=jz%2FdZp2c1y90SBSR1YHeIGI94t0%2FoU1jngObpX0Lauo8xOEWrddN5dsQIzN3UPrR/), and fill in your full name as well as institutional email address.
+- Open [this link](https://gcp.secure.force.com/GCPEDU?cid=iR0E%2Bf4DOH8x52mkRkV3gfVhEYbmhK0Vm2d8v186sFKN3Y5plSCZXbO5pf5iG9GH/), and fill in your full name as well as institutional email address.
 - If you do not have a @net.chalmers.se @student.chalmers.se, @chalmers.se, or @student.gu.se email address, reach out to Lennart, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
 - At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached.
@@ -55,7 +55,7 @@ You will always be interacting with your instance in Google's servers via a term
 - In the "Machine type" menu, select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Under _Boot disk_, click on _Change_.
   - Go to the _Public images_ tab.
-  - For "Operating system", select "Deep Learning on Linux", and then the version named "Debian 10 based Deep Learning VM with CUDA 11.0 M95".
+  - For "Operating system", select "Deep Learning on Linux", and then the version named "Debian 10 based deep learning VM with M109: Base CUDA 11.0, Deep Learning VM Image with CUDA 11.0 preinstalled".
 - Next, click _Create_.
 - **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
   ![Running instance](figs/gcp-running-vm-instance.png)
@@ -106,7 +106,7 @@ sudo -Hu student bash -c 'cd; bash'
 - In your instance, clone the course repository using the command:
 
   ```
-  git clone https://github.com/JulianoLagana/deep-machine-learning.git
+  git clone https://github.com/dml-cth/deep-machine-learning.git
   ```
 
   This will create a folder in your home directory called `deep-machine-learning` (you can check the contents of your current directory with the command `ls`).
