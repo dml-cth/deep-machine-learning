@@ -1,7 +1,7 @@
 # Instructions for setting up the course environment
 
 ## Download & install Anaconda
-1. Download Anaconda Python from https://www.anaconda.com/distribution/ . The below remarks refer to the command line version of the installer.
+1. Download Anaconda Python from [anaconda.com](https://www.anaconda.com/download#downloads). The below remarks refer to the command line version of the installer.
 1. Run the installer, but first read through **all** of the below remarks.
   - If on Windows, you might need to run the downloaded installation file as administrator, depending on choice of installation directory (right-click the file, and click "Run as administrator").
   - Do not use the default installation path, if it contains spaces or other special characters. We do not know exactly when this could turn out to be an issue, but it is discouraged by Anaconda (more info [here](https://docs.anaconda.com/anaconda/user-guide/faq/#distribution-faq-windows-folder)). For instance, if John Doe ran the installer, the default path might be `C:\Users\John Doe\Anaconda3`, which could be an issue since his username has a space in it. An alternative would be `C:\anaconda3`, although this would probably require you to run the installation as administrator.
@@ -13,13 +13,13 @@
 ## Install Git and clone course repository
 1. Install Git, https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
 1. Start up a terminal (On Windows, use Powershell)
-1. Clone the course GitHub repo, by the following command (this creates a folder in your current directory with the necessary files for the next instructions): `git clone https://github.com/JulianoLagana/deep-machine-learning.git`
+1. Clone the course GitHub repo, by the following command (this creates a folder in your current directory with the necessary files for the next instructions): `git clone https://github.com/dml-cth/deep-machine-learning.git`
 
 ## Keeping the repo in sync
-Cloning a repo creates a local copy of the Github repo on your computer. Whenever new changes are uplooaded, or *pushed*,
+Cloning a repo creates a local copy of the Github repo on your computer. Whenever new changes are uploaded, or *pushed*,
 to the Github repo you can get the new changes by *pulling* them to your local version with the `git pull` command.
 If you have made changes in the same files as the new version on Github, there could be a conflict and git would not be able to automatically *merge* the changes.
-There are a few ways to handle this, see [separate instructions](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/04_keep_git_repo_in_sync.md).
+There are a few ways to handle this, see [separate instructions](https://github.com/dml-cth/deep-machine-learning/blob/master/instructions/04_keep_git_repo_in_sync.md).
 
 ## Create a Conda environment and install Python dependencies
 1. Navigate to the folder created by the cloning, using the command `cd`, followed by the directory's name.
@@ -37,7 +37,7 @@ There are a few ways to handle this, see [separate instructions](https://github.
    Activate it by the command `conda activate dml`.
 1. You should now see `(dml)` printed at the start of every row in the terminal, indicating, that the `dml` environment is activated. If this does not happen, most probably the `conda init` step was not carried out successfully during installation.
 1. Now you can start using Jupyter notebook. To do so, type `jupyter notebook`. Your web browser should automatically open up and navigate to http://localhost:8888, letting you access Jupyter.
-1. Please have a look at the two Jupyter notebooks, *testing_notebook.ipynb* and *Getting started with JN.ipynb*, available in the folder [`python-crash-course`](https://github.com/JulianoLagana/deep-machine-learning/tree/master/python-crash-course). The first file checks if the installation was successful, whereas the second file give you initial advices regarding how to use Jupyter notebooks.
+1. Please have a look at the two Jupyter notebooks, *testing_notebook.ipynb* and *Getting started with JN.ipynb*, available in the folder [`python-crash-course`](https://github.com/dml-cth/deep-machine-learning/tree/master/python-crash-course). The first file checks if the installation was successful, whereas the second file give you initial advices regarding how to use Jupyter notebooks.
 1. To deactivate the conda environment, you simply type `conda deactivate`.
 
 ### Update the Conda environment
