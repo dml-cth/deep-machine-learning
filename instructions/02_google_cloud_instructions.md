@@ -2,6 +2,15 @@
 
 You will always be interacting with your instance in Google's servers via a terminal, or terminal emulator. Hence, it's important to know [a few commands](http://www.informit.com/blogs/blog.aspx?uk=The-10-Most-Important-Linux-Commands) to be able to perform simple tasks (like changing directories, copying files, moving files, etc).
 
+# General tips to save cloud credits
+
+ - Only have the virtual machine running when its actually running code.
+ - Not all assignments need to run in the cloud.
+ - A good workflow is to write code and run tests on your local machines. Once you confirm that everything works, only then you start the VM and run the full training.
+ - The correct choice of batch size can increase training speeds significantly.
+ - If your credits run out, you can exchange late days for new credits but this is discouraged. The initial credits your receive should last the entire course.
+
+
 ## 1. Registration to, and preparations for using Google Cloud
 
 - Open [this link](https://gcp.secure.force.com/GCPEDU?cid=iR0E%2Bf4DOH8x52mkRkV3gfVhEYbmhK0Vm2d8v186sFKN3Y5plSCZXbO5pf5iG9GH/), and fill in your full name as well as institutional email address.
@@ -30,8 +39,8 @@ You will always be interacting with your instance in Google's servers via a term
 - Select the "filter" field, type a search term (e.g. "gpu"), and hit enter.
 - These are the quotas you may want to take a closer look at:
   - The most important one is called "GPUs (all regions)". It controls how many GPU-enabled instances you can have in parallel, and so definitely needs to be 1 or larger. More than 1 might be useful, but we suggest 1 to start with, as the chances for approval might be lower for higher numbers. If desired, later on you can try to increase this further.
-  - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA K80 GPUs". Other GPUs can be explored, and might perform better, but in any case the "Preemptible" and "Committed" GPU quotas will not be necessary. The GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
-- For each quota you want to increase: Select it and click _EDIT QUOTAS_. Set a new limit and click _Next_, fill in your contact details and complete the request. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA K80 GPUs") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University.", and then submit the request.
+  - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA T4". Other GPUs can be explored, and might perform better, but in any case the "Preemptible" and "Committed" GPU quotas will not be necessary. The GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
+- For each quota you want to increase: Select it and click _EDIT QUOTAS_. Set a new limit and click _Next_, fill in your contact details and complete the request. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA T4") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University.", and then submit the request.
 - Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. This could potentially take two business days, but is usually done within a couple of minutes.
 - At this point, you should be able to create GPU-enabled virtual machine instances!
 
@@ -46,8 +55,9 @@ You will always be interacting with your instance in Google's servers via a term
 - Select a region and a corresponding zone, e.g. "us-central1-a" or "europe-west1-b".
 - Move on to the machine configuration. Select the "GPU" machine family.
 - Add a GPU to the machine:
-  - The K80 is sufficient for the home assignments and is relatively cheap.
-    The T4 is a bit less capable, but is also an option.
+  - The T4 is sufficient for the home assignments and is relatively cheap **This is the recommended choice**.
+  - The P4 is a bit less capable but is also an option, note that you might need to use smaller batch sizes with this one.
+  - The L4 has more memory but is more expensive per hour, to fully utilize it use larger batch sizes.
   - If you can't add a GPU, you need to change the region/zone to one where you can add GPUs.
   - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
   - You may need more powerful GPUs for the final project in the course, but know that they use more of your credits.
@@ -55,7 +65,7 @@ You will always be interacting with your instance in Google's servers via a term
 - In the "Machine type" menu, select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Under _Boot disk_, click on _Change_.
   - Go to the _Public images_ tab.
-  - For "Operating system", select "Deep Learning on Linux", and then the version named "Debian 10 based deep learning VM with M109: Base CUDA 11.0, Deep Learning VM Image with CUDA 11.0 preinstalled".
+  - For "Operating system", select "Deep Learning on Linux", and then the version named "Deep learning VM with CUDA 11.3 MXXX: Debian 10, Python 3.7, With CUDA 11.3 preinstalled". Where MXXX is the latest image version, for example M110. 
 - Next, click _Create_.
 - **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
   ![Running instance](figs/gcp-running-vm-instance.png)
@@ -84,7 +94,7 @@ You will always be interacting with your instance in Google's servers via a term
 - Now, the Google Cloud Shell, which is basically a browser-based Linux terminal, will open up, and it will automatically connect to your instance through an SSH session.
   - It can take a little while for the instance to get ready after startup, such that you can connect to it. E.g. if you get the error message "Connection via Cloud Identity-Aware Proxy Failed", try to wait a little while and connect again.
 - If it is your first time connecting to the instance:
-  - You might be prompted to install Nvidia drivers. New drivers will be installed in our setup script so to save time you can decline this installation by typing `n`. Don't worry if you accept by mistake as these drivers will get replaced later.
+  - You will be prompted to install Nvidia drivers, say YES here.
   - Create a user named `student`: (Depending on how you connect to Google Cloud, you might end up logging in as different users. This way, you always use the same user named `student`, and know where you store all your files etc.)
   ```
   sudo useradd -mG sudo,google-sudoers student
