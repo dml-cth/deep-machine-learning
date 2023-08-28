@@ -23,7 +23,7 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
     nbr_candidate_urls = len(nb_fname_candidates)
     url_candidates = []
     for expected_nb_fname in nb_fname_candidates:
-        url_candidates.append('http://raw.githubusercontent.com/JulianoLagana/deep-machine-learning/{commit}/home-assignments/{assignment_name}/{expected_nb_fname}'.format(
+        url_candidates.append('http://raw.githubusercontent.com/dml-cth/deep-machine-learning/{commit}/home-assignments/{assignment_name}/{expected_nb_fname}'.format(
             assignment_name=assignment_name,
             expected_nb_fname=expected_nb_fname,
             commit=commit,
@@ -65,6 +65,6 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
     if len(curr_cell_ids - ref_cell_ids) > 0:
         print('Found unexpected cells: {}'.format(sorted(curr_cell_ids - ref_cell_ids)))
     assert ref_cell_ids == curr_cell_ids, \
-        '[ERROR] Notebook does not seem to be up-to-date. Please follow these instructions to sync with latest GitHub version: https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/YY_keep_git_repo_in_sync.md'
+        '[ERROR] Notebook does not seem to be up-to-date. Please follow these instructions to sync with latest GitHub version: https://github.com/dml-cth/deep-machine-learning/blob/master/instructions/YY_keep_git_repo_in_sync.md'
 
     print('[SUCCESS] No major notebook mismatch found when comparing to latest GitHub version. (There might be minor updates, but even that is the case, submitting your work based on this notebook version would be acceptable.)')
