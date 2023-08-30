@@ -1,11 +1,12 @@
 name: dml
 channels:
-- defaults
 - pytorch
+- conda-forge
+- defaults
 dependencies:
 - python=3.9
-- pytorch=1.11
-- torchvision=0.12
+- pytorch=2.0.1
+- torchvision=0.15.2
 - cpuonly
 - pip
 - numpy
@@ -26,3 +27,6 @@ dependencies:
   - pillow
   - kaggle
   - ipywidgets
+  - einops
+  - transformers
+  - datasets

@@ -1,12 +1,9 @@
 name: dml
 channels:
+- conda-forge
 - defaults
-- pytorch
 dependencies:
 - python=3.9
-- pytorch=1.11
-- torchvision=0.12
-- cudatoolkit=11.3
 - pip
 - numpy
 - jupyter
@@ -26,3 +23,9 @@ dependencies:
   - pillow
   - kaggle
   - ipywidgets
+  - einops
+  - transformers
+  - datasets
+  - --extra-index-url https://download.pytorch.org/whl/cu117
+  - torch==2.0.1+cu117
+  - torchvision==0.15.2+cu117
