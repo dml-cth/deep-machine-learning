@@ -95,6 +95,11 @@ You will always be interacting with your instance in Google's servers via a term
   - It can take a little while for the instance to get ready after startup, such that you can connect to it. E.g. if you get the error message "Connection via Cloud Identity-Aware Proxy Failed", try to wait a little while and connect again.
 - If it is your first time connecting to the instance:
   - You will be prompted to install Nvidia drivers, say YES here.
+    - **Note**: If NVIDIA drivers fails to install for some reason, you can install them manually after the machine has started:
+    ```
+    curl https://raw.githubusercontent.com/GoogleCloudPlatform/compute-gpu-installation/main/linux/install_gpu_driver.py --output install_gpu_driver.py
+    sudo python3 install_gpu_driver.py
+    ```
   - Create a user named `student`: (Depending on how you connect to Google Cloud, you might end up logging in as different users. This way, you always use the same user named `student`, and know where you store all your files etc.)
   ```
   sudo useradd -mG sudo,google-sudoers student
