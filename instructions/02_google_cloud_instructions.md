@@ -157,4 +157,4 @@ sudo -Hu student bash -c 'cd; bash'
 - Once everything is installed, execute the `exit` command, and then log in again (as before, with `sudo -Hu student bash -c 'cd; bash'`).
   **Note**: This is important for the setup, so that the terminal is reinitialized; don't skip this step.
 
-- You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/JulianoLagana/deep-machine-learning/blob/master/instructions/03_using_jupyter_notebooks_on_cloud.md).
+- You are now ready to start a Jupyter notebook in the instance and connect to it by following the instructions [here](https://github.com/dml-cth/deep-machine-learning/blob/master/instructions/03_using_jupyter_notebooks_on_cloud.md).
