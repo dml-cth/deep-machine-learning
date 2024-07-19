@@ -1,5 +1,5 @@
-% Copyright 2007 by 
-% Philippe Dreuw <dreuw@cs.rwth-aachen.de> and 
+% Copyright 2007 by
+% Philippe Dreuw <dreuw@cs.rwth-aachen.de> and
 % Thomas Deselaers <deselaers@cs.rwth-aachen.de>
 %
 % This file may be distributed and/or modified
@@ -96,7 +96,7 @@
     \edef\fontscale{0.25}          % fontscale=(1/sqrt(2))^4
     \or
     \@beamerposter@customsizetrue
-    \fi    
+    \fi
   }{%
     \beamerposter@Warning{the input \val\ was incorrect and was ignored.}
   }%
@@ -110,7 +110,7 @@
     \@beamerposter@portraittrue
     \or
     \@beamerposter@portraitfalse
-    \fi    
+    \fi
   }{%
     \beamerposter@Warning{the input \val\ was incorrect and was ignored.}
   }%
@@ -129,7 +129,7 @@
 
 %% enable debug mode for fp package (mainly for upn functions)
 \if@beamerposter@debug
-  \FPdebugtrue  
+  \FPdebugtrue
 \fi
 
 %% normalize scale depending on poster size
@@ -176,9 +176,9 @@
   paperheight=\the\paperheight,
   hmargin=1cm,%
   vmargin=0cm,%
-  head=0.5cm, % 
+  head=0.5cm, %
   headsep=0pt,%
-  foot=0.5cm  % 
+  foot=0.5cm  %
 }
 
 %%
@@ -203,7 +203,7 @@
     \beamerposter@Error{%
       resultmaxwidth=\resultmaxwidth \MessageBreak
       printermaxwidthValue=\printermaxwidthValue \MessageBreak
-      paperwidthValue=\paperwidthValue \MessageBreak 
+      paperwidthValue=\paperwidthValue \MessageBreak
       The specified poster dimensions might not be printable using
       '\printerToUse'.
     }{%
@@ -221,7 +221,7 @@
 \FPupn{\resulttinyY}{myfontscale fontSizeY * 2 round}
 \renewcommand*{\tiny}{\fontsize{\resulttinyX}{\resulttinyY}\selectfont}
 
-\edef\fontSizeX{14.4}\edef\fontSizeY{18}   
+\edef\fontSizeX{14.4}\edef\fontSizeY{18}
 \FPupn{\resultscriptsizeX}{myfontscale fontSizeX * 2 round}
 \FPupn{\resultscriptsizeY}{myfontscale fontSizeY * 2 round}
 \renewcommand*{\scriptsize}{\fontsize{\resultscriptsizeX}{\resultscriptsizeY}\selectfont}

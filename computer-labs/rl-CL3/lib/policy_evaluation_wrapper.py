@@ -12,11 +12,22 @@ def policy_evaluation_wrapper():
     value_table = np.zeros(9)
 
     # Policy being evaluated
-    policy = np.array([[1, 0, 0, 0], [0.5, 0.5, 0, 0], [0, 1, 0, 0],
-                       [0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0], [1, 0, 0, 0]])
+    policy = np.array(
+        [
+            [1, 0, 0, 0],
+            [0.5, 0.5, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 0, 1],
+            [0, 0, 1, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 1, 0],
+            [1, 0, 0, 0],
+        ]
+    )
 
-    btn = widgets.Button(description='Next step')
-    btn_finish_iter = widgets.Button(description='Finish iteration')
+    btn = widgets.Button(description="Next step")
+    btn_finish_iter = widgets.Button(description="Finish iteration")
     output = widgets.Output()
 
     env.reset()

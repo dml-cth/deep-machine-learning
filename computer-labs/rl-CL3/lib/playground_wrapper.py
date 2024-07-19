@@ -8,10 +8,18 @@ from lib.playground_app import Playground
 
 
 def playground_wrapper(env):
-    btn_up = widgets.Button(description='↑', layout=widgets.Layout(width='10%', height='50px'))
-    btn_right = widgets.Button(description='→', layout=widgets.Layout(width='10%', height='50px'))
-    btn_down = widgets.Button(description='↓', layout=widgets.Layout(width='10%', height='50px'))
-    btn_left = widgets.Button(description='←', layout=widgets.Layout(width='10%', height='50px'))
+    btn_up = widgets.Button(
+        description="↑", layout=widgets.Layout(width="10%", height="50px")
+    )
+    btn_right = widgets.Button(
+        description="→", layout=widgets.Layout(width="10%", height="50px")
+    )
+    btn_down = widgets.Button(
+        description="↓", layout=widgets.Layout(width="10%", height="50px")
+    )
+    btn_left = widgets.Button(
+        description="←", layout=widgets.Layout(width="10%", height="50px")
+    )
     hbox = widgets.HBox([btn_up, btn_right, btn_down, btn_left])
     output = widgets.Output()
     env.reset()
@@ -24,6 +32,7 @@ def playground_wrapper(env):
             output.clear_output(True)
             with output:
                 playground.take_action(action)
+
         return move_up
 
     btn_up.on_click(create_move_fn(0))

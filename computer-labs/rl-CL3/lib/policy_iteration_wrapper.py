@@ -12,11 +12,22 @@ import matplotlib.pyplot as plt
 def policy_iteration_wrapper():
     env.reset()
     value_table = np.zeros(9)
-    policy = np.array([[1, 0, 0, 0], [0.5, 0.5, 0, 0], [0, 1, 0, 0],
-                       [0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0], [1, 0, 0, 0]])
+    policy = np.array(
+        [
+            [1, 0, 0, 0],
+            [0.5, 0.5, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 0, 1],
+            [0, 0, 1, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 1, 0],
+            [1, 0, 0, 0],
+        ]
+    )
 
-    btn_eval = widgets.Button(description='Policy eval iteration')
-    btn_improve = widgets.Button(description='Policy improvement')
+    btn_eval = widgets.Button(description="Policy eval iteration")
+    btn_improve = widgets.Button(description="Policy improvement")
 
     display(btn_eval)
     display(btn_improve)

@@ -8,7 +8,7 @@ Here you will find instructions on how to setup the environment that will be use
 
 ### 2 - Google cloud instructions
 
-In this course you will utilize a virtual machine in Google cloud for HA1, HA2 and the project.  
+In this course you will utilize a virtual machine in Google cloud for HA1, HA2 and the project.
 Note that we _strongly_  recommend that you setup this machine as early as possible to make sure that everything works, preferably before HA1 is released.
 
 ### 3 - Using Jupyter notebooks on cloud

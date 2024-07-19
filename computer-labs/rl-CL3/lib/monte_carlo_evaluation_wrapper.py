@@ -11,15 +11,26 @@ import matplotlib.pyplot as plt
 def monte_carlo_evaluation_wrapper():
     env.reset()
     value_table = np.zeros(9)
-    policy = np.array([[1, 0, 0, 0], [0.5, 0.5, 0, 0], [0, 1, 0, 0],
-                       [0, 0, 0, 1], [0, 0, 1, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 1, 0], [1, 0, 0, 0]])
+    policy = np.array(
+        [
+            [1, 0, 0, 0],
+            [0.5, 0.5, 0, 0],
+            [0, 1, 0, 0],
+            [0, 0, 0, 1],
+            [0, 0, 1, 0],
+            [0, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 1, 0],
+            [1, 0, 0, 0],
+        ]
+    )
 
-    btn = widgets.Button(description='Next step')
-    finish_episode_btn = widgets.Button(description='Finish episode')
+    btn = widgets.Button(description="Next step")
+    finish_episode_btn = widgets.Button(description="Finish episode")
     output = widgets.Output()
 
     mc_eval = MonteCarloEvaluation(env, policy, value_table)
-    
+
     def on_click_fn(obj):
         plt.close()
         output.clear_output(True)

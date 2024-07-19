@@ -10,7 +10,7 @@ class Playground:
         self.current_episode_rewards = []
         self.env.reset()
         self.draw_env_and_agent()
-        self.phase = 'interacting'
+        self.phase = "interacting"
 
     @property
     def s(self):
@@ -33,39 +33,39 @@ class Playground:
         plt.show()
 
     def take_action(self, a):
-        if self.phase == 'interacting':
+        if self.phase == "interacting":
             old_s = self.s
             s_prime, r, t = self.env.step(a)
             self.current_episode_rewards.append(r)
             self.draw_env_and_agent(old_s=old_s)
-            print(f'Rewards so far:')
+            print("Rewards so far:")
             for i, r in enumerate(self.current_episode_rewards):
-                print(f'r{i+1} = {r:.1f}, ', end='')
+                print(f"r{i+1} = {r:.1f}, ", end="")
             print()
             if t:
                 self.show_end_of_episode()
 
-        elif self.phase == 'cleaning_up':
+        elif self.phase == "cleaning_up":
             self.env.reset()
             self.current_episode_rewards = []
 
             self.draw_env_and_agent()
-            print('Resetting environment.')
+            print("Resetting environment.")
 
-            self.phase = 'interacting'
+            self.phase = "interacting"
 
         else:
-            raise ValueError(f'Phase {self.phase} not recognized. Quitting.')
+            raise ValueError(f"Phase {self.phase} not recognized. Quitting.")
 
     def show_end_of_episode(self):
-        print('\nTerminal state reached, end of episode.')
-        return_msg = ''
+        print("\nTerminal state reached, end of episode.")
+        return_msg = ""
         g = 0
         for i, r in enumerate(self.current_episode_rewards):
-            g += (0.9 ** i) * r
-            return_msg += f'0.9^{i}*{r:.1f} '
-            if i != len(self.current_episode_rewards)-1:
-                return_msg += '+ '
-        print(f'Return for t=1: {return_msg} = {g:.2f}')
+            g += (0.9**i) * r
+            return_msg += f"0.9^{i}*{r:.1f} "
+            if i != len(self.current_episode_rewards) - 1:
+                return_msg += "+ "
+        print(f"Return for t=1: {return_msg} = {g:.2f}")
 
-        self.phase = 'cleaning_up'
+        self.phase = "cleaning_up"

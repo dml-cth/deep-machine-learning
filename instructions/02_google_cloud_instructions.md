@@ -65,7 +65,7 @@ You will always be interacting with your instance in Google's servers via a term
 - In the "Machine type" menu, select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
 - Under _Boot disk_, click on _Change_.
   - Go to the _Public images_ tab.
-  - For "Operating system", select "Deep Learning on Linux", and then the version named "Deep learning VM with CUDA 11.3 MXXX: Debian 10, Python 3.7, With CUDA 11.3 preinstalled". Where MXXX is the latest image version, for example M110. 
+  - For "Operating system", select "Deep Learning on Linux", and then the version named "Deep learning VM with CUDA 11.3 MXXX: Debian 10, Python 3.7, With CUDA 11.3 preinstalled". Where MXXX is the latest image version, for example M110.
 - Next, click _Create_.
 - **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
   ![Running instance](figs/gcp-running-vm-instance.png)

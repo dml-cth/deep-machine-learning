@@ -12,9 +12,11 @@ def mc_control_wrapper():
     env.reset()
     initial_q_table = np.zeros((len(env.states), 4))
 
-    btn = widgets.Button(description='Next step')
-    finish_episode_btn = widgets.Button(description='Finish episode')
-    epsilon_textbox = widgets.BoundedFloatText(value=1.0, min=0.0, max=1.0, step=0.1, description='Epsilon:')
+    btn = widgets.Button(description="Next step")
+    finish_episode_btn = widgets.Button(description="Finish episode")
+    epsilon_textbox = widgets.BoundedFloatText(
+        value=1.0, min=0.0, max=1.0, step=0.1, description="Epsilon:"
+    )
 
     output = widgets.Output()
 

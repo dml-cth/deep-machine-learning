@@ -17,14 +17,15 @@ def policy_evaluation_one_step(env, policy, value_table, gamma=0.9):
             for s_prime_idx, trans_prob in enumerate(s_prime_pmf):
                 r = env.reward_table[s_idx, a]
                 if env.terminal_table[s_prime_idx] == 0:
-                    new_v += pi_prob * trans_prob * (r + gamma * value_table[s_prime_idx])
+                    new_v += (
+                        pi_prob * trans_prob * (r + gamma * value_table[s_prime_idx])
+                    )
                 else:
                     new_v += pi_prob * trans_prob * r
         value_table[s_idx] = new_v
 
 
 def policy_improvement(env, policy, value_table, gamma=0.9):
-
     for i_s, s in enumerate(env.states):
         # Initialize q-values for current state and new policy
         q = np.zeros(4)
@@ -47,12 +48,12 @@ def epsilon_greedy_pi_from_q_table(env, q_table, epsilon):
     for i_s, s in enumerate(env.states):
         q_values = q_table[i_s]
         a_star = np.argmax(q_values)
-        policy[i_s, :] = [epsilon/4]*4
-        policy[i_s, a_star] += 1-epsilon
+        policy[i_s, :] = [epsilon / 4] * 4
+        policy[i_s, a_star] += 1 - epsilon
     return policy
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from lib.grid_world import grid_world_3x3 as env
     from lib.plot_utils import plot_policy, plot_value_table
     import matplotlib.pyplot as plt
