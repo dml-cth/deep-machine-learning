@@ -42,7 +42,7 @@ You will always be interacting with your instance in Google's servers via a term
   - The most important one is called "GPUs (all regions)" (it will be easier to find it if you type the whole name of it). It controls how many GPU-enabled instances you can have in parallel, and so definitely needs to be 1 or larger. More than 1 might be useful, but we suggest 1 to start with, as the chances for approval might be lower for higher numbers. If desired, later on you can try to increase this further.
   - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA T4". Other GPUs can be explored, and might perform better, but in any case the "Preemptible" and "Committed" GPU quotas will not be necessary. The GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
 - For each quota you want to increase: Select it and click `EDIT` that should appear at the top. Set a new limit. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA T4") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University." Click `Next`, fill in your contact details and complete the request.
-- Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. This could potentially take two business days, but is usually done within a couple of minutes.
+- Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. **Note**: This could potentially take **two business days**, but is usually done within a couple of minutes.
 - At this point, you should be able to create GPU-enabled virtual machine instances!
 
 ## 2. Creating a virtual machine instance
@@ -85,7 +85,7 @@ To stop the instance, select it, and click on the square stop symbol at the top 
   - **Direction of traffic**: ingress
   - **Targets**: All instances in the network
   - **Source IP ranges**: `0.0.0.0/0`
-  - **Specified protocols and ports**: Check `tcp`, and write `8888` in the corresponding textbox to the right side of it.
+  - **Specified protocols and ports**: Check `TCP`, and write `q` in the corresponding textbox to the right side of it.
   - Click on `Create`
 - Congratulations, you have now created your instance! You also stopped it, so that it doesn't consume credits while you're not using it. Now keep following the next steps, in order to connect to it, and set up all the required software.
 
@@ -95,13 +95,13 @@ To stop the instance, select it, and click on the square stop symbol at the top 
 - Access the console menu.
 - Navigate to `Compute Engine` -> `VM Instances`, where you can see your instances (e.g. like below).
 - Unless started already, select the instance you want to start, and click on the start button at the top of the page (the play symbol).
-  - If the instance does not start due to an availability issue, try creating an instance in another region/zone instead. Note however that if you have a limit of 1 for the "GPUs (all regions)" quota, you will need to delete the previously created instance before creating another one. **Tip**: In order to preserve the work you have done, there is a possibility to first create a "machine image" from the current instance, then delete the instance, and finally use the machine image when creating the new instance. However, we do not provide detailed instructions on this. Furthermore, if you are unsure about this, always make sure to backup your work in a way that you are confident with.
+  - If the instance does not start due to an availability issue, try creating an instance in another region/zone instead. Note, however, that if you have a limit of 1 for the "GPUs (all regions)" quota, you will need to delete the previously created instance before creating another one. **Tip**: In order to preserve the work you have done, there is a possibility to first create a "machine image" from the current instance, then delete the instance, and finally use the machine image when creating the new instance. However, we do not provide detailed instructions on this. Furthermore, if you are unsure about this, always make sure to backup your work in a way that you are confident with.
 - When the instance has started, click on the `SSH` symbol (as seen below), in order to connect to it.<br />
   ![Running instance](figs/gcp-running-vm-instance.png)
 - Now, the Google Cloud Shell, which is basically a browser-based Linux terminal, will open up, and it will automatically connect to your instance through an SSH session.
   - It can take a little while for the instance to get ready after startup, such that you can connect to it. E.g. if you get the error message "Connection via Cloud Identity-Aware Proxy Failed", try to wait a little while and connect again.
 - If it is your first time connecting to the instance:
-  - You will be prompted to install Nvidia drivers, say YES here.
+  - You will be prompted to install Nvidia drivers, type `y` (YES) there.
     - **Note**: If NVIDIA drivers fails to install for some reason, you can install them manually after the machine has started:
     ```
     curl https://raw.githubusercontent.com/GoogleCloudPlatform/compute-gpu-installation/main/linux/install_gpu_driver.py --output install_gpu_driver.py
