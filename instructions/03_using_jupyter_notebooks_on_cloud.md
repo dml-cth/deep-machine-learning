@@ -7,7 +7,11 @@ In the [01_environment_setup.md](01_environment_setup.md) instructions, you lear
   - The **External IP** should be clearly displayed in the list of virtual machine instances. In the example below, it is 34.123.45.90.
 ![Running instance](figs/gcp-running-vm-instance.png)
 
-- Connect to your virtual machine instance by clicking **SSH**, log in with `sudo -Hu student bash -c 'cd; bash'`, and activate the `dml` environment with `conda activate dml`.
+- Connect to your virtual machine instance by clicking **SSH**, log in and activate the `dml` environment:
+```bash
+sudo -Hu student bash -c 'cd; bash'
+conda activate dml
+```
 
 - If this is the first time you use Jupyter on this virtual machine, configure a password by running the following command:
 
