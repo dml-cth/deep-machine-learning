@@ -31,7 +31,7 @@ You will always be interacting with your instance in Google's servers via a term
 - For each project (you only need one) within which you want to use GPU-enabled virtual machines, you must first make sure that GPU resources are enabled, i.e. having enough quota to use them.
 - Before continuing to increase the quotas, you need to have made sure that the Google Cloud "compute engine" is activated - otherwise the quotas to be increased will not be visible.
   - Click on the icon of three horizontal bars at the very top left of the console, and access the console menu.
-  - Navigate to `Compute Engine` -> `VM Instances` page. If you don't see `Compute Engine` in the console, go to `VIEW ALL PRODUCTS` and find it there. You can also pin it to the console.
+  - Navigate to `Compute Engine` -> `VM Instances` page. If you don't see `Compute Engine` in the console, go to `VIEW ALL PRODUCTS` and find it there. You can also pin it to the console menu.
   - Now, the compute engine will most likely be automatically activated.
   - If unsure, you can also try to create an instance of any kind, and delete it, but we don't expect this to be necessary.
 - At the `Compute Engine` -> `VM Instances` page, if there is a button named `Enable`, click on it, and follow the instructions to link your project with a billing account. This makes sure that you will use the free credits redeemed earlier. If you did not find any button `Enable`, it probably means that the project is already linked with the billing account.
@@ -41,36 +41,42 @@ You will always be interacting with your instance in Google's servers via a term
 - These are the quotas you may want to take a closer look at:
   - The most important one is called "GPUs (all regions)" (it will be easier to find it if you type the whole name of it). It controls how many GPU-enabled instances you can have in parallel, and so definitely needs to be 1 or larger. More than 1 might be useful, but we suggest 1 to start with, as the chances for approval might be lower for higher numbers. If desired, later on you can try to increase this further.
   - Also make sure that you have quota for the specifics GPUs you might want to use. We have tested the assignments on "NVIDIA T4". Other GPUs can be explored, and might perform better, but in any case the "Preemptible" and "Committed" GPU quotas will not be necessary. The GPU-specific quotas are set per region, and 1 per region should be enough for your purposes.
-- For each quota you want to increase: select it and click `EDIT` that should appear at the top. Set a new limit. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA T4") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University.", and then submit the request. Click `Next`, fill in your contact details and complete the request.
+- For each quota you want to increase: Select it and click `EDIT` that should appear at the top. Set a new limit. To start with we suggest 1 for "GPUs (all regions)". The GPU-specific quotas (e.g. "NVIDIA T4") should be set for each region individually. Set 1 for each region. In the request description, write e.g. "For the use of GPU resources during a deep machine learning course at Chalmers University." Click `Next`, fill in your contact details and complete the request.
 - Once submitted, wait until you receive an email from Google, confirming that the quota is indeed increased. This could potentially take two business days, but is usually done within a couple of minutes.
 - At this point, you should be able to create GPU-enabled virtual machine instances!
 
 ## 2. Creating a virtual machine instance
 
 - Log in to http://console.cloud.google.com
-- Select the project in which you want to the instance, and make sure that this project has enough quota for GPU resources (see previous step).
+- Select the project in which you want to have the instance, and make sure that this project has enough quota for GPU resources (see previous step).
 - Click on the icon of three horizontal bars at the very top left of the console, and access the console menu.
 - Navigate to `Compute Engine` -> `VM Instances`. The very first time you reach this page, you might have to wait a while for the compute engine to activate.
 - To start creating your first instance, click on `Create instance`.
 - Set a name for the instance.
 - Select a region and a corresponding zone, e.g. "us-central1-a" or "europe-west1-b".
-- Move on to the machine configuration. Select the "GPU" machine family.
+- Move on to the **"Machine configuration"**. Select "GPUs".
 - Add a GPU to the machine:
-  - The T4 is sufficient for the home assignments and is relatively cheap **This is the recommended choice**.
-  - The P4 is a bit less capable but is also an option, note that you might need to use smaller batch sizes with this one.
-  - The L4 has more memory but is more expensive per hour, to fully utilize it use larger batch sizes.
+  - The `T4` is sufficient for the home assignments and is relatively cheap. **This is the recommended choice**.
+  - The `P4` is a bit less capable but is also an option, note that you might need to use smaller batch sizes with this one.
+  - The `L4` has more memory but is more expensive per hour, to fully utilize it use larger batch sizes.
   - If you can't add a GPU, you need to change the region/zone to one where you can add GPUs.
-  - Availability of different GPUs varies between regions / zones, see this page: https://cloud.google.com/compute/docs/gpus
+  - Availability of different GPUs varies between regions/zones, see this page: https://cloud.google.com/compute/docs/gpus
   - You may need more powerful GPUs for the final project in the course, but know that they use more of your credits.
     Hourly GPU prices can be seen here, for each region: https://cloud.google.com/compute/gpus-pricing#gpus.
-- In the "Machine type" menu, select "custom" in the "Machine type" dropdown list, and select 8 vCPU cores, and 16 GB memory.
+- In the **"Machine type"** menu, select "custom": 8 vCPU cores and 16 GB memory.
 - Under `Boot disk`, click on `Change`.
   - Go to the `Public images` tab.
   - For "Operating system", select "Deep Learning on Linux", and then the version named "Deep learning VM with CUDA 11.3 MXXX: Debian 10, Python 3.7, With CUDA 11.3 preinstalled". Where MXXX is the latest image version, for example M110.
 - Next, click `Create`.
-- **Note:** once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running. To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.<br />
-  ![Running instance](figs/gcp-running-vm-instance.png)
-- **Note 2:** It is possible that the instance does not start, with an error message about the region/zone not having enough resources available to fulfill the request. This is probably due to the scarcity of GPU resources. If this happens, you can either try again later, or try recreating the instance in another region/zone.
+
+**Note:** Once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running.<br />
+![Running instance](figs/gcp-running-vm-instance.png)<br /> 
+To stop the instance, select it, and click on the square stop symbol at the top of the page. If you get a warning message, just proceed.
+
+**Note 2:** It is possible that the instance does not start, with an error message about the region/zone not having enough resources available to fulfill the request. This is probably due to the scarcity of GPU resources. If this happens, you can either try again later, or try recreating the instance in another region/zone.
+
+**Note 3:** You can check how much you have used so far by going to the console menu, then `Billing` (-> `GO TO LINKED BILLING ACCOUNT` if you have multiple billing accounts) -> `Credits`.
+
 - Finally, add a firewall rule for using Jupyter notebook. (This only has to be done once, despite creating additional instances in the future.)
   - Again, access the console menu.
   - Go to `VPC network` > `Firewall`
