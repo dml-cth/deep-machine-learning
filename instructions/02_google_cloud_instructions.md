@@ -24,6 +24,7 @@ You will always be interacting with your instance in Google's servers via a term
 - On Google Cloud, there is a concept called "projects". The purpose of a project is to organize your resources. In the Google Cloud portal, the currently selected project can always be seen in, and changed via, the dropdown menu at the top left of the console (e.g. "my-project" in below screenshot).<br />
   ![Top-left corner of the Google Cloud portal](figs/gcp-project-dropdown.png)
 - Expand the dropdown menu, and then create a new project, in which you will put your virtual machines later on.
+- In the section on billing information, make sure to choose “Billing Account for Education”
 
 ### Increase GPU quota(s)
 
