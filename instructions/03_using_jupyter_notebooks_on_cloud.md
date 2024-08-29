@@ -35,8 +35,10 @@ http://52.183.118.98:8888`, but replace the IP with the appropriate one.
 
 - You are now connected to your Jupyter server running in the Google Cloud's instance.
 
-- When you are done working with it, go back to `SSH-in-browser`, stop Jupyter server with `ctrl`+`C`, and type `exit` twice.
+- When you are done working with it, go back to `SSH-in-browser`, stop Jupyter server with `ctrl`+`C`, and type `exit` twice. Remember to stop the VM instance once you're done with training. 
 
 ### Tips
 
 - You can use the Jupyter web interface to upload files to your instance (for example, Python notebooks you have developed when working in your local computer, or datasets that you'll use to train on the Cloud). To do so, simply click the button "Upload" on the top of the Jupyter web interface (to the right of the text "Select items to perform actions on them.", and to the left of the "New" button).
+
+- If your `SSH-in-browser` is inactive for some time, it will ask you to authorize again. It might also fail to re-authorize for some reason, you just try it again then. It should not interrupt your work in the Jupyter notebooks though. 
