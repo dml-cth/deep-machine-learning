@@ -13,7 +13,7 @@ You will always be interacting with your instance in Google's servers via a term
 
 ## 1. Registration to, and preparations for using Google Cloud
 
-- Open [this link](https://gcp.secure.force.com/GCPEDU?cid=iR0E%2Bf4DOH8x52mkRkV3gfVhEYbmhK0Vm2d8v186sFKN3Y5plSCZXbO5pf5iG9GH/), and fill in your full name as well as institutional email address.
+- Open [this link](https://vector.my.salesforce-sites.com/GCPEDU?cid=fwejFepd2zgWBfK4wYqon5KXy4lXVTgAiA%2BMuSs692Grp1xYwNr24vLG%2BYbgke5S), and fill in your full name as well as institutional email address.
 - If you do not have a @net.chalmers.se @student.chalmers.se, @chalmers.se, or @student.gu.se email address, reach out to Lennart, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
 - At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached.
