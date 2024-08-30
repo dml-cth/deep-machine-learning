@@ -85,7 +85,7 @@ To stop the instance, select it, and click on the square stop symbol at the top 
   - **Direction of traffic**: ingress
   - **Targets**: All instances in the network
   - **Source IP ranges**: `0.0.0.0/0`
-  - **Specified protocols and ports**: Check `TCP`, and write `q` in the corresponding textbox to the right side of it.
+  - **Specified protocols and ports**: Check `TCP`, and write `8888` in the corresponding textbox to the right side of it.
   - Click on `Create`
 - Congratulations, you have now created your instance! You also stopped it, so that it doesn't consume credits while you're not using it. Now keep following the next steps, in order to connect to it, and set up all the required software.
 
