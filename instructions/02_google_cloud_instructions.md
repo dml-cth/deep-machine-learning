@@ -66,7 +66,7 @@ You will always be interacting with your instance in Google's servers via a term
 - In the **"Machine type"** menu, select "custom": 8 vCPU cores and 16 GB memory.
 - Under `Boot disk`, click on `Change`.
   - Go to the `Public images` tab.
-  - For "Operating system", select "Deep Learning on Linux", and then the version named "Deep learning VM with CUDA 11.3 MXXX: Debian 10, Python 3.7, With CUDA 11.3 preinstalled". Where MXXX is the latest image version, for example M110.
+  - For "Operating system", select "Deep Learning on Linux", and then the version named "Deep learning VM with CUDA 11.8 MXXX: Debian 11, Python 3.10, With CUDA 11.8 preinstalled". Where MXXX is the latest image version, for example M110.
 - Next, click `Create`.
 
 **Note:** Once the instance is created, it will be automatically started, and will begin to consume your credits. You will see it listed like in below screenshot, where the green symbol indicates it is running.<br />
