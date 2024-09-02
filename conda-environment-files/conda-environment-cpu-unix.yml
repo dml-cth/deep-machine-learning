@@ -4,30 +4,24 @@ channels:
 - conda-forge
 - defaults
 dependencies:
-- python=3.9
-- pytorch=2.0.1
-- torchvision=0.15.2
+- python=3.11
+- pytorch=2.3.1
+- torchvision=0.18.1
 - cpuonly
 - pip
 - numpy
 - jupyter
-- notebook==6.5.4
-- traitlets==5.9.0
 - matplotlib
 - scikit-learn
 - scipy
 - pandas
 - seaborn
-- nltk
-- h5py
-- spacy
-- unidecode
 - pip:
   - future
   - tb-nightly
-  - gym
+  - gymnasium==0.29.1
   - pillow
-  - kaggle
+  - kaggle==1.6.14
   - ipywidgets
   - einops
   - transformers
