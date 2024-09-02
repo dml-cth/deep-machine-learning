@@ -1,7 +1,8 @@
-import os
 import json
-import urllib
+import os
 import ssl
+import urllib
+
 import numpy as np
 
 
