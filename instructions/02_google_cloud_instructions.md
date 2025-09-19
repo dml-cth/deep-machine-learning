@@ -25,7 +25,7 @@ To mitigate these difficulties, please consider the following:
 
 ## 1. Registration to, and preparations for using Google Cloud
 
-- Open [this link](https://gcp.secure.force.com/GCPEDU?cid=RUadWrw2SXZxZQ2BxAnG1HJ2YmSm9qToF9wN9UZg2PTDCQRfSqSLY%2FSUCmUlBbzn/), and fill in your full name as well as institutional email address.
+- Open the registration link provided in the canvas announcement and fill in your full name as well as institutional email address.
 - If you do not have a @net.chalmers.se @student.chalmers.se, @chalmers.se, or @student.gu.se email address, reach out to Lars, who should be able to help you out manually.
 - After submitting your credentials, you will receive an email with a coupon code. Follow the URL in order to redeem the coupon.
 - At this point, you will need a Gmail / Google account which you will use to log in to Google Cloud, and to which the coupons will be attached.
