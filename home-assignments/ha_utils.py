@@ -1,7 +1,8 @@
 import json
 import os
 import ssl
-import urllib
+import urllib.error
+import urllib.request
 
 import numpy as np
 
