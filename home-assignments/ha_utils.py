@@ -26,7 +26,7 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
 
     # Fetch all of these files from server. If the cell IDs of any of them matches the cell IDs of this notebook, check should succeed.
     nb_fname_candidates = (
-        ["HA2-Part1.ipynb", "HA2-Part2.ipynb"]
+        ["HA2.ipynb"]
         if os.path.basename(nb_dirname) == "HA2"
         else [assignment_name + ".ipynb"]
     )
