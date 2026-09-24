@@ -25,5 +25,5 @@ dependencies:
   - kaggle==1.6.14
   - ipywidgets
   - einops
-  - transformers
+  - transformers==5.0.0
   - datasets
