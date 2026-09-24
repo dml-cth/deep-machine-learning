@@ -26,8 +26,8 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
 
     # Fetch all of these files from server. If the cell IDs of any of them matches the cell IDs of this notebook, check should succeed.
     nb_fname_candidates = (
-        ["HA2.ipynb"]
-        if os.path.basename(nb_dirname) == "HA2"
+        ["HA4-Part1.ipynb", "HA4-Part2.ipynb"]
+        if os.path.basename(nb_dirname) == "HA4"
         else [assignment_name + ".ipynb"]
     )
 
@@ -63,9 +63,9 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
     with open(os.path.join(nb_dirname, nb_fname), "r") as f:
         curr_nb_data = json.load(f)
     curr_cell_ids = parse_cell_ids(curr_nb_data)
-    assert (
-        len(curr_cell_ids) == len(set(curr_cell_ids))
-    ), "[ERROR] Notebook appears to be corrupt - detected multiple cells with same cell ID. Did you copy/paste any cells?"
+    assert len(curr_cell_ids) == len(set(curr_cell_ids)), (
+        "[ERROR] Notebook appears to be corrupt - detected multiple cells with same cell ID. Did you copy/paste any cells?"
+    )
     curr_cell_ids = set(curr_cell_ids)
 
     # Determine URL, by seeing which matches most cell IDs
@@ -78,16 +78,16 @@ def check_notebook_uptodate_and_not_corrupted(nb_dirname, nb_fname):
 
     print("Matching current notebook against the following URL:\n{url}".format(url=url))
 
-    assert (
-        len(curr_cell_ids) > 0
-    ), "[ERROR] Notebook appears to be corrupt - no cell IDs found. Did you perhaps run it on Google Colab?"
+    assert len(curr_cell_ids) > 0, (
+        "[ERROR] Notebook appears to be corrupt - no cell IDs found. Did you perhaps run it on Google Colab?"
+    )
     if len(ref_cell_ids - curr_cell_ids) > 0:
         print("Missing cells: {}".format(sorted(ref_cell_ids - curr_cell_ids)))
     if len(curr_cell_ids - ref_cell_ids) > 0:
         print("Found unexpected cells: {}".format(sorted(curr_cell_ids - ref_cell_ids)))
-    assert (
-        ref_cell_ids == curr_cell_ids
-    ), "[ERROR] Notebook does not seem to be up-to-date. Please follow these instructions to sync with latest GitHub version: https://github.com/dml-cth/deep-machine-learning/blob/master/Instructions/YY_keep_git_repo_in_sync.md"
+    assert ref_cell_ids == curr_cell_ids, (
+        "[ERROR] Notebook does not seem to be up-to-date. Please follow these instructions to sync with latest GitHub version: https://github.com/dml-cth/deep-machine-learning/blob/master/Instructions/YY_keep_git_repo_in_sync.md"
+    )
 
     print(
         "[SUCCESS] No major notebook mismatch found when comparing to latest GitHub version. (There might be minor updates, but even that is the case, submitting your work based on this notebook version would be acceptable.)"
