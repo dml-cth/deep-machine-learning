@@ -1,0 +1,26 @@
+name: dml
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - jupyter
+  - matplotlib
+  - scikit-learn
+  - scipy
+  - pandas
+  - seaborn
+  - pip:
+      - future
+      - tb-nightly
+      - gymnasium==0.29.1
+      - pillow
+      - kaggle==1.6.14
+      - ipywidgets
+      - einops
+      - transformers
+      - datasets
+      - torch
+      - torchvision
